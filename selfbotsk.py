@@ -2164,22 +2164,12 @@ def dhenzaBot(op):
             msg = op.message
             if msg.toType == 2:
                 if wait["mimic"] == True:
-                    #if msg.from_ in wait["tmimic"]:
                     text = msg.text
-                    #    if text in helpMessage:
-                    #        pass
-                    #    elif text in helpMessage1:
-                    #        pass
-                    #    elif text in helpMessage2:
-                    #        pass
-                    #    elif text in helpMessage3:
-                    #        pass
-                    #    else:
                     dz.sendMessage(msg.to,text)
-                    else:
-                        pass
                 else:
                     pass
+            else:
+                pass
 
             if msg.toType == 2:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
