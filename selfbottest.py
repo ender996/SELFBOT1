@@ -217,7 +217,7 @@ pro = {
     'Protectcancl':{},
     'Protectjoin':{},
     'Protectinvite':{},
-    'wellcome':True,
+    'wellcome':False,
     'bymsg':False,
     'intaPoint':{},
     "Autokick":{}
@@ -226,7 +226,7 @@ pro = {
 Dhenza = {
     "comment":"╔═════════════════════\nAuto like by:TBP\n╚══════════════════════",
     "cctvteks":"Masuk sayang\nUdah keciduk juga",
-    "message":"Cieee kepo @!\n╔═════════════════════\nᵀᴴᴬᴺᴷˢ ᶠᴼᴿ ᴬᴰᴰ ᴹᴱ\n╚══════════════════════",
+    "message":"╔═════════════════════\nThanks for adding me!\n╚══════════════════════",
     "welmsg":"╔═════════════════════\nSILENT TΣΔM βΩT\n╚══════════════════════",
     "leftmsg":"╔═════════════════════\nSILENT TΣΔM βΩT\n╚══════════════════════",
     "tagteks1":"Tag mau minta jajan ya",
