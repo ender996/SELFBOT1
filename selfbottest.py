@@ -194,7 +194,7 @@ wait = {
     "asilent":False,
     "dsilent":False,
     "santet":True,
-    "Autojoin":False,
+    "Autojoin":True,
     "Timeline":False,
     "LikeOn":True,
     "getmid":True,
@@ -2164,7 +2164,7 @@ def dhenzaBot(op):
             msg = op.message
             if msg.toType == 2:
                 if wait["mimic"] == True:
-                    if 'tagall' in msg.text:
+                    if 'tagall' in msg.text.lower:
                         dz.sendMessage(msg.to,"Tag")
                     else:
                         pass
