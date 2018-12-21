@@ -197,8 +197,8 @@ wait = {
     "Autojoin":False,
     "Timeline":False,
     "LikeOn":True,
-    "getmid":False,
-    "mimic":False,
+    "getmid":True,
+    "mimic":True,
     }
 
 org = {
