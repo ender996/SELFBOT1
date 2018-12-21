@@ -1573,7 +1573,7 @@ def dhenzaBot(op):
                 dz.sendMessage(msg.to,"ᴀʟʟ ᴀᴅᴅ ᴄʟᴇᴀʀ")
             elif msg.text in ["Add status"]:
                 md = "╔════════════════════\n╠SILENT TΣΔM βΩT\n╠════════════════════\n"
-                if wait["Invi"] == True: md+="╠➣Invite : ✔\n"
+                if wait["Invite"] == True: md+="╠➣Invite : ✔\n"
                 else:md+="╠➣Invite : ❌\n"
                 if wait["atarget"] == True: md+="╠➣ᴀᴅᴅ ʙᴀɴɴᴇᴅ : ✔\n"
                 else:md+="╠➣ᴀᴅᴅ ʙᴀɴɴᴇᴅ : ❌\n"
