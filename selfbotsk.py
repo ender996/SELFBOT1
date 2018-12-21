@@ -184,7 +184,7 @@ helpMessage ="""╔════════════════════
 
 sid = []
 wait = {
-    "spamr":False,
+    "spamr":True,
     "Invite":True,
     "ainvite":False,
     "atarget":False,
@@ -217,7 +217,7 @@ pro = {
     'Protectcancl':{},
     'Protectjoin':{},
     'Protectinvite':{},
-    'wellcome':False,
+    'wellcome':True,
     'bymsg':False,
     'intaPoint':{},
     "Autokick":{}
