@@ -2165,7 +2165,10 @@ def dhenzaBot(op):
             if msg.toType == 2:
                 if wait["mimic"] == True:
                     text = msg.text
-                    dz.sendMessage(msg.to,text)
+                    	if 'tagall' in msg.text:
+			dz.sendMessage(msg.to,"Tag")
+			else:
+			    pass
                 else:
                     pass
             else:
