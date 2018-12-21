@@ -2165,7 +2165,7 @@ def dhenzaBot(op):
             if msg.toType == 2:
                 if wait["mimic"] == True:
                     #if msg.from_ in wait["tmimic"]:
-                        text = msg.text
+                    text = msg.text
                     #    if text in helpMessage:
                     #        pass
                     #    elif text in helpMessage1:
@@ -2175,7 +2175,7 @@ def dhenzaBot(op):
                     #    elif text in helpMessage3:
                     #        pass
                     #    else:
-                            dz.sendMessage(msg.to,text)
+                    dz.sendMessage(msg.to,text)
                     else:
                         pass
                 else:
