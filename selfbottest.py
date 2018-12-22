@@ -2161,7 +2161,7 @@ def dhenzaBot(op):
                 dz.sendMessage(msg.to,"ᴍsɢ ᴛᴇxᴛ: \n\n" + Dhenza["message"])
 #=============================================
         if op.type == 26:
-            msg = op.message.toLowerCase()
+            msg = op.message
             if msg.toType == 2:
                 if wait["mimic"] == True:
                     if 'tagall' in msg.text:
