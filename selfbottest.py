@@ -1011,7 +1011,7 @@ def dhenzaBot(op):
                             dz.sendMessage(msg.to, teks)
                         except:
                             dz.sendMessage(msg.to, "cek lagi deh bos")
-                            
+
             elif "/tag @" in msg.text:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
                     names = re.findall(r'@(\w+)', msg.text)
@@ -1038,7 +1038,40 @@ def dhenzaBot(op):
                         except:
                             print ("error")
                         print ("spamtag Berhasil.")
-                        
+
+            elif "Spamtag @" in msg.text:
+                _name = msg.text.replace("Spamtag @","")
+                _nametarget = _name.rstrip(' ')
+                gs = cl.getGroup(msg.to)
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        xname = g.displayName
+                        xlen = str(len(xname)+1)
+                        msg.contentType = 0
+                        msg.text = "@"+xname+" "
+                        msg.contentMetadata ={'MENTION':'{"MENTIONEES":[{"S":"0","E":'+json.dumps(xlen)+',"M":'+json.dumps(g.mid)+'}]}','EMTVER':'4'}
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        cl.sendMessage(msg)
+                        print "Spamtag Berhasil."
+
             elif msg.text in ["/blank"]:
                 blank = "'"
                 dz.sendContact(msg.to, blank)	
