@@ -1051,6 +1051,13 @@ def dhenzaBot(op):
                         msg.text = "@"+xname+" "
                         msg.contentMetadata ={'MENTION':'{"MENTIONEES":[{"S":"0","E":'+json.dumps(xlen)+',"M":'+json.dumps(g.mid)+'}]}','EMTVER':'4'}
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
 
             elif msg.text in ["/blank"]:
                 blank = "'"
