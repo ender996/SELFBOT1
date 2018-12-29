@@ -1070,7 +1070,6 @@ def dhenzaBot(op):
                         cl.sendMessage(msg)
                         cl.sendMessage(msg)
                         cl.sendMessage(msg)
-                        print "Spamtag Berhasil."
 
             elif msg.text in ["/blank"]:
                 blank = "'"
