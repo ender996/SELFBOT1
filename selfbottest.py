@@ -2188,6 +2188,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"Tag")
                     elif 'Tagall' in msg.text:
                         dz.sendMessage(msg.to,"Tag")
+                    elif 'Spamtag' in msg.text:
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetdata)
                     else:
                         pass
                 else:
