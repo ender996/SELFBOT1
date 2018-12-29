@@ -1050,7 +1050,7 @@ def dhenzaBot(op):
                         msg.contentType = 0
                         msg.text = "@"+xname+" "
                         msg.contentMetadata ={'MENTION':'{"MENTIONEES":[{"S":"0","E":'+json.dumps(xlen)+',"M":'+json.dumps(g.mid)+'}]}','EMTVER':'4'}
-                        dz.sendMessage(msg.text)
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
 
             elif msg.text in ["/blank"]:
                 blank = "'"
