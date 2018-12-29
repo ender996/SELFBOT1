@@ -1042,7 +1042,7 @@ def dhenzaBot(op):
             elif "Spamtag @" in msg.text:
                 _name = msg.text.replace("Spamtag @","")
                 _nametarget = _name.rstrip(' ')
-                gs = cl.getGroup(msg.to)
+                gs = dz.getGroup(msg.to)
                 for g in gs.members:
                     if _nametarget == g.displayName:
                         xname = g.displayName
@@ -1050,26 +1050,26 @@ def dhenzaBot(op):
                         msg.contentType = 0
                         msg.text = "@"+xname+" "
                         msg.contentMetadata ={'MENTION':'{"MENTIONEES":[{"S":"0","E":'+json.dumps(xlen)+',"M":'+json.dumps(g.mid)+'}]}','EMTVER':'4'}
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
-                        cl.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
+                        dz.sendMessage(msg)
 
             elif msg.text in ["/blank"]:
                 blank = "'"
