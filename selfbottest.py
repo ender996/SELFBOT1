@@ -733,8 +733,6 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"Time")
                     elif '/ginfo' in text.lower():
                         dz.sendMessage(msg.to,"Ginfo")
-                    elif '@dl. bot' in text.lower():
-                        dz.sendMessage(msg.to,"Help")
                     else:
                         pass
                 else:
