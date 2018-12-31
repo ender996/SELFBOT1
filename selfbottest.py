@@ -517,12 +517,12 @@ def dhenzaBot(op):
                             dz.sendMessage(msg.to,str(mention['M']))
                         except Exception as e:
                             pass
-            elif "info @" in msg.text:
+            elif "info @" in text.lower():
                 key = eval(msg.contentMetadata["MENTION"])
                 key1 = key["MENTIONEES"][0]["M"]                
                 mmid = dz.getContact(key1)
-                #vcx = mmid.mid
-                #dz.sendContact(msg.to,vcx)
+                vcx = mmid.mid
+                dz.sendContact(msg.to,vcx)
 #==================[ REBOOT ]===================
             elif msg.text in ["Reboot"]:
                     try:
