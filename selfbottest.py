@@ -715,7 +715,7 @@ def dhenzaBot(op):
                 if wait["mimic"] == True:
                     if 'tagall' in text.lower():
                         dz.sendMessage(msg.to,"Tag")
-                    elif 'spmatag' in text.lower():
+                    elif 'spamtag' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/help' in text.lower():
                         dz.sendMessage(msg.to,"Help")
@@ -728,7 +728,8 @@ def dhenzaBot(op):
                     elif '/kick' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/info' in text.lower():
-                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+			newmsg = text.replace("/","")
+                        dz.sendMessage(msg.to,newmsg.text,msg.contentMetadata)
                     elif '/time' in text.lower():
                         dz.sendMessage(msg.to,"Time")
                     elif '/ginfo' in text.lower():
