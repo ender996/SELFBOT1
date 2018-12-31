@@ -37,68 +37,6 @@ myProfile = {
 helpMessage ="""╔════════════════════ 
 ║┈✇✇  sɪʟᴇɴᴛ ᴛᴇᴀᴍ ʙᴏᴛ V'selfbot✇ ✇┈
 ╠════════════════════
-╠⍟➣  ᴍʏ ɪᴅ
-╠⍟➣  ᴍᴇ
-╠⍟➣  ɢɪɴғᴏ
-╠⍟➣  ɢɴᴀᴍᴇ:「ᴛᴇᴋs」
-╠⍟➣  ʜᴀɪɪ[ᴛᴀɢ]
-╠⍟➣  Kick @
-╠⍟➣  ᴄᴇᴋ
-╠⍟➣  sɪᴅᴇʀ
-╠⍟➣  sɪᴅᴇʀ ᴏɴ
-╠⍟➣  sɪᴅᴇʀ ᴏғғ
-╠⍟➣  ɢɪғᴛ
-╠⍟➣  Hapuschat
-╠⍟➣  ɢᴍɪᴅ [Tᴀɢ]
-╠⍟➣  ɢᴇᴛ ᴍɪᴅ 「sᴄ」
-╠⍟➣  ɢᴇᴛ [ᴛᴀɢ]
-╠⍟➣  ᴅᴘ[ᴛᴀɢ]
-╠⍟➣  ɪɴғᴏ[ᴛᴀɢ]
-╠⍟➣  ʙɪᴏ[ᴛᴀɢ]
-╠⍟➣  ᴄᴏᴠᴇʀ[ᴛᴀɢ]
-╠⍟➣  ᴄʟᴏɴᴇ [ᴛᴀɢ]
-╠⍟➣  ʀᴇᴄʟᴏɴᴇ
-╠⍟➣  ɪɴᴠɪᴛᴇ: 「sᴄ」
-╠⍟➣  Lɪᴋᴇ ᴏɴ/ᴏғғ
-╠⍟➣  Gᴇᴛ ᴘᴏsᴛ ᴏɴ/ᴏғғ
-╠⍟➣  ᴍʏ ɢʀᴜᴘ
-╠⍟➣  ᴅᴇᴛᴇᴄᴛ ᴛɪᴋᴇʟʟ
-╠⍟➣  ᴜɴᴅᴇᴛᴇᴄᴛ ᴛɪᴋᴇʟʟ
-╠⍟➣  ᴍʏ ɢʀᴜᴘ
-╠⍟➣  sᴀʟᴀᴍ1
-╠⍟➣  sᴀʟᴀᴍ2
-╠⍟➣  ᴡᴇʟʟᴄᴏᴍᴇ
-╠════════════════════
-╠⍟➣  ʙᴄᴍᴇᴍʙᴇʀ:「ᴛᴇᴋs」
-╠⍟➣  ʙᴄɢʀᴜᴘ:「ᴛᴇᴋs」
-╠⍟➣  ɢʀᴜᴘ ᴘɪᴄᴛ
-╠⍟➣  Wɪᴋɪ: 「ᴛᴇᴋs」
-╠⍟➣  ᴠɴ: 「ᴛᴇᴋs」
-╠⍟➣  ᴠɴ-ᴇɴ: 「ᴛᴇᴋs」
-╠⍟➣  /Tᴀɢ [ᴛᴀɢ]
-╠⍟➣  /Sᴘᴀᴍ[ᴊᴜᴍʟᴀʜ][ᴛᴇᴋs]
-╠⍟➣  /Sᴘᴀᴍᴄᴏɴᴛᴀᴄᴛ
-╠⍟➣  /Bʟᴀɴᴋ
-╠⍟➣  sᴘ
-╠⍟➣  ʀᴜɴᴛɪᴍᴇ
-╠⍟➣  ᴋᴀʟᴇɴᴅᴇʀ
-╠════════════════════
-╠⍟➣  ᴀʟʟ ᴍɪᴍɪᴄ ᴍᴇ[ᴛᴀɢ]
-╠⍟➣  ᴜɴᴍɪᴍɪᴄ[ᴛᴀɢ]
-╠⍟➣  ᴍɪᴍɪᴄ  /ᴏɴ/ᴏғғ
-╠⍟➣  ᴍɪᴍɪᴄ Lɪsᴛ
-╠⍟➣  ʙᴀɴɴᴇᴅ[ᴛᴀɢ]
-╠⍟➣  ᴜɴʙᴀɴɴᴇᴅ[ᴛᴀɢ]
-╠⍟➣  ᴄʟᴇᴀʀ ʙᴀɴ
-╠⍟➣  ᴋɪʟʟ ʙᴀɴ
-╠⍟➣  ᴀᴅᴅ ʙᴀɴɴᴇᴅ
-╠⍟➣  ᴅᴇʟ ʙᴀɴɴᴇᴅ
-╠⍟➣  ʙᴀɴ ʟɪsᴛ
-╠⍟➣  ᴀᴅᴅ ғʀɪᴇɴᴅ
-╠⍟➣  ᴅᴇʟ ғʀɪᴇɴᴅ
-╠⍟➣  ғʀɪᴇɴᴅ ʟɪsᴛ
-╠⍟➣  ᴍᴇᴍʙᴇʀ Lɪsᴛ
-╠════════════════════
 ╠⍟➣  ʟᴏᴄᴋ ᴊᴏɪɴ「ɪɴ」
 ╠⍟➣  ᴜɴʟᴏᴄᴋ ᴊᴏɪɴ「ɪɴ」
 ╠⍟➣  ʟᴏᴄᴋ ᴊᴏɪɴ ɢʀᴜᴘ:「ɢɴ」
@@ -333,7 +271,7 @@ def dhenzaBot(op):
                             dz.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             dz.sendMessage(op.param1,"limit")
-#==============[ WELLCOME] ===============
+#==============[ WELCOME] ===============
         if op.type == 17:
             if pro["wellcome"] == True:
                 if op.param1 in pro["Protectjoin"]:
@@ -684,19 +622,6 @@ def dhenzaBot(op):
                     dz.sendImageWithURL(msg.to,image)
                 except:
                     pass
-            elif "bio @" in msg.text:
-                key = eval(msg.contentMetadata["MENTION"])
-                key1 = key["MENTIONEES"][0]["M"]
-                contact = yd.getContact(key1)
-                try:
-                    dz.sendMessage(msg.to,contact.statusMessage)
-                except:
-                    dz.sendMessage(msg.to,"⟦ʙɪᴏ ᴇᴍᴘᴛʏ⟧")
-
-            elif "Grup pict" in msg.text:
-                    group = dz.getGroup(msg.to)
-                    path = "http://dl.profile.line-cdn.net/" + group.pictureStatus
-                    dz.sendImageWithURL(msg.to,path)
                     
             elif "Kedipin: " in msg.text:
                 txt = msg.text.replace("Kedipin: ", "")
@@ -759,20 +684,7 @@ def dhenzaBot(op):
                     for k in range(0, len(bulan)):
                         if bln == str(k): bln = bulan[k-1]
                     readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
-                    dz.sendMessage(msg.to, readTime)  
-
-            elif "/spam " in msg.text:
-                txt = msg.text.split(" ")
-                jmlh = int(txt[1])
-                teks = msg.text.replace("/spam "+str(jmlh),"")
-                for i in range(jmlh):
-                    if str(txt[2])==None:
-                        dz.sendMessage(msg.to, "typo tu bos")
-                    else:
-                        try:
-                            dz.sendMessage(msg.to, teks)
-                        except:
-                            dz.sendMessage(msg.to, "cek lagi deh bos")
+                    dz.sendMessage(msg.to, readTime)
 
             elif "Spamtag @" in msg.text:
                 _name = msg.text.replace("Spamtag @","")
