@@ -39,12 +39,11 @@ helpMessage ="""╔════════════════════
 ╠════════════════════
 ╠⍟➣  /Help
 ╠⍟➣  Tagall
-╠⍟➣  Member list
+╠⍟➣  /Member list
 ╠⍟➣  Spamtag @[User]
-╠════════════════════
-╠⍟➣  ᴡᴇʟᴄᴏᴍᴇ ᴏɴ/ᴏғғ
-╠⍟➣  Bye ᴏɴ/ᴏғғ 
-╠⍟➣  Kick @[User] 
+╠⍟➣  /Info @[User]
+╠⍟➣  /Ginfo 
+╠⍟➣  /Time
 ╠════════════════════
 """
 
@@ -491,13 +490,7 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"╔══════════════\n╠═༼≝₷₭  ɢʀᴜᴘ ɴᴀᴍᴇ ≝₷₭༽\n╠ ➽ " + str(ginfo.name) + "\n╠══════════════\n╠═༼≝₷₭  ɢʀᴜᴘ ᴄʀᴇᴀᴛᴏʀ ≝₷₭༽\n╠ ➽ " + gCreator + "\n╚══════════════")
                         dz.sendMessage(msg.to,"「ɢɪᴅ:」 \n➽ " + msg.to)
                         dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
-                    
-            elif "Gname: " in msg.text:
-                if msg.toType == 2:
-                    X = dz.getGroup(msg.to)
-                    X.name = msg.text.replace("Gname: ","")
-                    dz.updateGroup(X)
-                    dz.sendMessage(msg.to,"sᴜᴄᴄᴇs ᴄʜᴀɴɢᴇ ᴛᴏ:\n\n"+X.name)
+
                     
             elif msg.text in ["Reject"]:
               if msg.toType == 2:
@@ -512,9 +505,7 @@ def dhenzaBot(op):
                 for i in gid:
                     dz.sendMessage(i,bc+"\n\nSILENT TΣΔM βΩT")
                 dz.sendMessage(msg.to,"⟦ʙʀᴏᴀᴅᴄᴀsᴛ sᴜᴄᴄᴇs⟧")
-            elif msg.text in ["mid"]:
-                wait["getmid"]=True
-                dz.sendMessage(msg.to,"sᴇɴᴅ ᴄᴏɴᴛᴀᴄᴛ")
+
             elif "Gmid @" in msg.text:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
                     names = re.findall(r'@(\w+)', msg.text)
@@ -564,7 +555,7 @@ def dhenzaBot(op):
                     if hr == day[i]: hasil = day[i]
                 for k in range(0, len(bulan)):
                     if bln == str(k): bln = bulan[k-1]
-                rst = hasil + ", " + inihari.strftime('%d') + " - " + bln + " - " + inihari.strftime('%Y') + "\nJam : [ " + inihari.strftime('%H:%M:%S') + " ]"
+                rst = hasil + ", " + inihari.strftime('%d') + " - " + bln + " - " + inihari.strftime('%Y') + "\nTime : [ " + inihari.strftime('%H:%M:%S') + " ]"
                 dz.sendMessage(msg.to, rst)
                 
             elif msg.text in ["Runtime"]:
@@ -631,18 +622,6 @@ def dhenzaBot(op):
                     json.dump(pro, fp, sort_keys=True, indent=4)
                 dz.sendMessage(msg.to, "ᴡᴇʟʟᴄᴏᴍᴇ ᴍsɢ ɴᴏᴛ ᴀᴄᴛɪᴠᴇ")
 #=============================================
-#=============================================
-            elif msg.text in ["Tag1 on"]:
-                    resp["Tag1"]=True
-                    resp["Tag2"]=True
-                    with open('resp.json', 'w') as fp:
-                        json.dump(resp, fp, sort_keys=True, indent=4)
-                    dz.sendMessage(msg.to, "ᴀᴜᴛᴏ ʀᴇsᴘᴏɴsᴇ ᴀᴄᴛɪᴠᴇ")
-            elif msg.text in ["Tag1 off"]:
-                    resp["Tag1"]=False
-                    with open('resp.json', 'w') as fp:
-                        json.dump(resp, fp, sort_keys=True, indent=4)
-                    dz.sendMessage(msg.to, "ᴀᴜᴛᴏ ʀᴇsᴘᴏɴsᴇ ɴᴏᴛ ᴀᴄᴛɪᴠᴇ")
 
             elif msg.text in ["Status"]:
                 md = "╔════════════════════\n╠SILENT TΣΔM βΩT\n╠════════════════════\n"
@@ -727,58 +706,6 @@ def dhenzaBot(op):
                     msgs+="\n╠ ➽ %s" % (ids.displayName)
                 msgs+="\n╚══════════════\n╠⟦ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀs : %i ⟧\n" % len(group)+"╚══════════════"
                 dz.sendMessage(msg.to, msgs)
-
-            elif "Cteks comment: " in msg.text:
-                Dhenza["comment"] = msg.text.replace("Cteks comment: ","")
-                with open('teks.json', 'w') as fp:
-                    json.dump(Dhenza, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄʜᴀɴɢᴇ sᴜᴄᴄᴇs")   
-            elif msg.text in ["Comment teks"]:
-                dz.sendMessage(msg.to,"ᴍsɢ ᴛᴇxᴛ: \n\n" + Dhenza["comment"])
-#=============================================
-            elif "Cteks cctv: " in msg.text:
-                Dhenza["cctvteks"] = msg.text.replace("Cteks cctv: ","")
-                with open('teks.json', 'w') as fp:
-                    json.dump(Dhenza, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄʜᴀɴɢᴇ sᴜᴄᴄᴇs")   
-            elif msg.text in ["Cctv teks"]:
-                dz.sendMessage(msg.to,"ᴍsɢ ᴛᴇxᴛ: \n\n" + Dhenza["cctvteks"])
-#=============================================
-            elif "Cteks tag1: " in msg.text:
-                Dhenza["tagteks1"] = msg.text.replace("Cteks tag1: ","")
-                with open('teks.json', 'w') as fp:
-                    json.dump(Dhenza, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄʜᴀɴɢᴇ sᴜᴄᴄᴇs")
-#=============================================
-            elif "Cteks tag2: " in msg.text:
-                Dhenza["tagteks2"] = msg.text.replace("Cteks tag2: ","")
-                with open('teks.json', 'w') as fp:
-                    json.dump(Dhenza, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄʜᴀɴɢᴇ sᴜᴄᴄᴇs")
-#=============================================
-            elif "Cteks left: " in msg.text:
-                Dhenza["leftmsg"] = msg.text.replace("Cteks left: ","")
-                with open('teks.json', 'w') as fp:
-                    json.dump(Dhenza, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄʜᴀɴɢᴇ sᴜᴄᴄᴇs")   
-            elif msg.text in ["Left teks"]:
-                dz.sendMessage(msg.to,"ᴍsɢ ᴛᴇxᴛ: \n\n" + Dhenza["leftmsg"])
-#=============================================
-            elif "Cteks wellcome: " in msg.text:
-                Dhenza["welmsg"] = msg.text.replace("Cteks wellcome: ","")
-                with open('teks.json', 'w') as fp:
-                    json.dump(Dhenza, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄʜᴀɴɢᴇ sᴜᴄᴄᴇs")   
-            elif msg.text in ["Wellcome teks"]:
-                dz.sendMessage(msg.to,"ᴍsɢ ᴛᴇxᴛ: \n\n" + Dhenza["welmsg"])   
-#=============================================
-            elif "Cteks add: " in msg.text:
-                Dhenza["message"] = msg.text.replace("Cteks add: ","")
-                with open('teks.json', 'w') as fp:
-                    json.dump(Dhenza, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄʜᴀɴɢᴇ sᴜᴄᴄᴇs")   
-            elif msg.text in ["Add teks"]:
-                dz.sendMessage(msg.to,"ᴍsɢ ᴛᴇxᴛ: \n\n" + Dhenza["message"])
 #=============================================
         if op.type == 26:
             msg = op.message
@@ -787,52 +714,30 @@ def dhenzaBot(op):
                 if wait["mimic"] == True:
                     if text.lower() in 'tagall':
                         dz.sendMessage(msg.to,"Tag")
-                    elif 'Spamtag' in msg.text:
+                    elif text.lower() in 'spamtag':
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
-                    elif '/Help' in msg.text:
+                    elif text.lower() in '/help':
                         dz.sendMessage(msg.to,"Help")
-                    elif '/Reboot' in msg.text:
+                    elif text.lower() in '/reboot':
                         dz.sendMessage(msg.to,"Reboot")
+                    elif text.lower() in '/member list':
+                        dz.sendMessage(msg.to,"Member list")
+                    elif text.lower() in '/cancel all':
+                        dz.sendMessage(msg.to,"Cancel all")
+                    elif text.lower() in '/kick':
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+                    elif text.lower() in '/info':
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+                    elif text.lower() in '/time':
+                        dz.sendMessage(msg.to,"Time")
+                    elif text.lower() in '/ginfo':
+                        dz.sendMessage(msg.to,"Ginfo")
                     else:
                         pass
                 else:
                     pass
             else:
                 pass
-
-            if msg.toType == 2:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    if resp["Tag1"] == True:    
-                        contact = dz.getContact(msg._from)
-                        cName = contact.displayName
-                        name = re.findall(r'@(\w+)', msg.text)
-                        mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                        mentionees = mention['MENTIONEES']
-                        for mention in mentionees:
-                            if mention['M'] in dzMID:
-                                dz.sendMessage(msg.to,"ᴴᴬᵞ @!"+cName+"\n"+Dhenza["tagteks1"])
-                                dz.sendImageWithURL(msg.to,"http://dl.profile.line.naver.jp/"+contact.pictureStatus)
-                                rnd = ["Jangan tag tar syang"]
-                                p = random.choice(rnd)
-                                lang = 'id'
-                                tts = gTTS(text=p, lang=lang)
-                                tts.save("hasil.mp3")
-                                dz.sendAudio(msg.to,"hasil.mp3")
-                                break
-                    else:
-                        pass
-                    if resp["Tag2"] == True:          
-                        contact = dz.getContact(msg._from)
-                        cName = contact.displayName
-                        name = re.findall(r'@(\w+)', msg.text)
-                        mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                        mentionees = mention['MENTIONEES']
-                        for mention in mentionees:
-                            if mention['M'] in dzMID:
-                                dz.sendMessage(msg.to,cName+"\n"+Dhenza["tagteks2"])   
-                                break
-                    else:
-                        pass
     except Exception as error:
         logError(error)
 #==============================================================================#
