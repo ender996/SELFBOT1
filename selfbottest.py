@@ -40,10 +40,6 @@ helpMessage ="""╔════════════════════
 ╠⍟➣  ᴍʏ ɪᴅ
 ╠⍟➣  ᴍᴇ
 ╠⍟➣  ɢɪɴғᴏ
-╠⍟➣  ɢᴄʀᴇᴀᴛᴏʀ
-╠⍟➣  ɢᴜʀʟ
-╠⍟➣  ᴏᴜʀʟ
-╠⍟➣  ᴄᴜʀʟ
 ╠⍟➣  ɢɴᴀᴍᴇ:「ᴛᴇᴋs」
 ╠⍟➣  ʜᴀɪɪ[ᴛᴀɢ]
 ╠⍟➣  Kick @
@@ -75,14 +71,10 @@ helpMessage ="""╔════════════════════
 ╠════════════════════
 ╠⍟➣  ʙᴄᴍᴇᴍʙᴇʀ:「ᴛᴇᴋs」
 ╠⍟➣  ʙᴄɢʀᴜᴘ:「ᴛᴇᴋs」
-╠⍟➣  ʏᴛ: 「ᴛᴇᴋs」
 ╠⍟➣  ɢʀᴜᴘ ᴘɪᴄᴛ
-╠⍟➣  ᴍᴜsɪk 「ᴛᴇᴋs」
-╠⍟➣  ᴢᴏᴅɪᴀᴋ:
 ╠⍟➣  Wɪᴋɪ: 「ᴛᴇᴋs」
 ╠⍟➣  ᴠɴ: 「ᴛᴇᴋs」
 ╠⍟➣  ᴠɴ-ᴇɴ: 「ᴛᴇᴋs」
-╠⍟➣  ʏᴏᴜᴛᴜʙᴇ: 「ᴛᴇᴋs」
 ╠⍟➣  /Tᴀɢ [ᴛᴀɢ]
 ╠⍟➣  /Sᴘᴀᴍ[ᴊᴜᴍʟᴀʜ][ᴛᴇᴋs]
 ╠⍟➣  /Sᴘᴀᴍᴄᴏɴᴛᴀᴄᴛ
@@ -342,54 +334,6 @@ def dhenzaBot(op):
     try:
         if op.type == 0:
             return
-#================[ NOTIFIED_READ_MESSAGE ]================
-        if op.type == 55:
-            try:
-                if op.param1 in wait2['readPoint']:
-                    Name = dz.getContact(op.param2).displayName
-                    if Name in wait2['readMember'][op.param1]:
-                        pass
-                    else:
-                        wait2['readMember'][op.param1] += "\n╠ " + Name
-                        wait2['ROM'][op.param1][op.param2] = "╠ " + Name
-                else:
-                    pass
-            except:
-                pass
-        if op.type == 5:
-            dz.findAndAddContactsByMid(op.param1)
-            if(Dhenza["message"]in[""," ","\n",None]):
-                pass
-            else:
-                dz.sendMessage(op.param1,str(Dhenza["message"]))
-#=====================[ CIDUK SIDER ]=======================
-        if op.type == 55:
-            msg = op.message
-            if op.param1 in pro["prosider"]:
-                if op.param1 in ciduk['ceadPoint']:
-                    x = dz.getContact(op.param2)
-                    x_name = x.displayName
-                    if x_name not in ciduk['ceadMember'][op.param1]:
-                        ciduk['ceadMember'][op.param1] += x_name
-                        ciduk['cOM'][op.param1][op.param2] = x_name
-                        try:
-                            dz.sendMessage(op.param1,""+str(x_name)+"\n"+Dhenza["cctvteks"])
-                            dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/" + x.pictureStatus)
-                        except:
-                            print ("error")
-            else:
-                pass
-#======================[ PROTECT CANCLE ]=================
-        if op.type == 32:
-            if op.param1 in pro["Protectcancl"]:
-                if op.param2 in org["Friend"]:
-                    pass
-                else:
-                    try:
-                        dz.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        dz.sendMessage(op.param1,"limit")
-                        
 #=================[ NOTIFIED_INVITE_INTO_GROUP ]==============        
         if op.type == 13:
             if wait["Autojoin"] == True:
@@ -426,13 +370,6 @@ def dhenzaBot(op):
                             dz.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             dz.sendMessage(op.param1,"limit")
-#=========== [ LEFT MESSAGE ] ==============
-        if op.type == 15:
-            if pro["bymsg"]==True:
-                dzx = dz.getContact(op.param2)
-                dz.sendMessage(op.param1,""+ str(dzx.displayName)+"\n"+Dhenza["leftmsg"])
-            else:
-                pass
 #==============[ WELLCOME] ===============
         if op.type == 17:
             if pro["wellcome"] == True:
@@ -450,19 +387,6 @@ def dhenzaBot(op):
                     dz.sendMessage(op.param1, "Ehhh  " + str(dzx.displayName) + "\nWellcome to " + str(ginfo.name) +"\n"+ Dhenza["welmsg"])
                     dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/" + dzx.pictureStatus)                    
                     
-#==============[ PROTECT JOIN ]==============
-        if op.type == 17:
-            if op.param1 in pro["Protectjoin"]:
-                if op.param2 in org["Friend"]:
-                    pass
-                elif op.param2 in org["invitan"]:
-                    del org["invitan"][op.param2]
-                    pass
-                else:
-                    try:
-                        dz.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        dz.sendMessage(op.param1,"limit")
 #=========== [ GHOST MODE ] =============
 #===========[ PROTECT QR friend ]==========           
         if op.type == 11:
@@ -721,45 +645,6 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"╔══════════════\n╠═༼≝₷₭  ɢʀᴜᴘ ɴᴀᴍᴇ ≝₷₭༽\n╠ ➽ " + str(ginfo.name) + "\n╠══════════════\n╠═༼≝₷₭  ɢʀᴜᴘ ᴄʀᴇᴀᴛᴏʀ ≝₷₭༽\n╠ ➽ " + gCreator + "\n╚══════════════")
                         dz.sendMessage(msg.to,"「ɢɪᴅ:」 \n➽ " + msg.to)
                         dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
-                        
-            elif msg.text in ["Gcreator"]:
-              if msg.toType == 2:
-                group = dz.getGroup(msg.to)
-                GS = group.creator.mid
-                dz.sendContact(msg.to,GS)            
-                dz.sendMessage(msg.to,"Sijones ini ɴᴏʜ ʏɢ ʙɪᴋɪɴ ɢʀᴜᴘ....")
-                
-            elif msg.text in ["Gurl"]:
-                if msg.toType == 2:
-                    x = dz.getGroup(msg.to)
-                    if x.preventedJoinByTicket == True:
-                        dz.sendMessage(msg.to,"ǫʀ ɴʏᴀ ᴅɪ ᴀɴᴜ ᴅᴜʟᴜ ʙᴏss..")
-                    elif x.preventedJoinByTicket == False:
-                        dz.updateGroup(x)
-                        gurl = dz.reissueGroupTicket(msg.to)
-                        dz.sendMessage(msg.to,"http://line.me/R/ti/g/" + gurl)
-                    else:
-                        pass
-                        
-            elif msg.text in ["Ourl"]:
-              if msg.toType == 2:
-                X = dz.getGroup(msg.to)
-                if X.preventedJoinByTicket == False:
-                    dz.sendMessage(msg.to,"⟦Qʀ ᴡᴀs ᴏᴘᴇɴ⟧")
-                else:
-                    X.preventedJoinByTicket = False
-                    dz.updateGroup(X)
-                    dz.sendMessage(msg.to,"⟦Qʀ ᴏᴘᴇɴ⟧")
-                    
-            elif msg.text in ["Curl"]:
-              if msg.toType == 2:
-                X = dz.getGroup(msg.to)
-                if X.preventedJoinByTicket == True:
-                    dz.sendMessage(msg.to,"⟦Qʀ ᴡᴀs ᴄʟᴏsᴇ⟧")
-                else:
-                    X.preventedJoinByTicket = True
-                    dz.updateGroup(X)
-                    dz.sendMessage(msg.to,"⟦Qʀ ᴄʟᴏsᴇ⟧")
                     
             elif "Gname: " in msg.text:
                 if msg.toType == 2:
@@ -795,41 +680,6 @@ def dhenzaBot(op):
                 for i in gid:
                     dz.sendMessage(i,bc+"\n\nSILENT TΣΔM βΩT")
                 dz.sendMessage(msg.to,"⟦ʙʀᴏᴀᴅᴄᴀsᴛ sᴜᴄᴄᴇs⟧")
-            elif "Lirik: " in msg.text:
-                try:
-                    songname = msg.text.replace('Lirik: ','')
-                    params = {'songname': songname}
-                    r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
-                    data = r.text
-                    data = json.loads(data)
-                    for song in data:
-                        hasil = 'Lyric Lagu ('
-                        hasil += song[0]
-                        hasil += ')\n\n'
-                        hasil += song[5]
-                        dz.sendMessage(msg.to, hasil)
-                except Exception as wak:
-                        dz.sendMessage(msg.to, str(wak))
-            elif "Image: " in msg.text:
-                try:
-                    query = msg.text.replace("Image:", "")
-                    images = dz.image_search(query)
-                    dz.sendImageWithURL(receiver, images)
-                except Exception as e:
-                    dz.sendMessage(receiver, str(e))
-            elif "Yt: " in msg.text:
-                query = msg.text.replace("Yt: ","")
-                with requests.session() as s:
-                    s.headers['user-agent'] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"
-                    url = 'http://www.youtube.com/results'
-                    params = {'search_query': query}
-                    r = s.get(url, params=params)
-                    soup = BeautifulSoup(r.content, 'html5lib')
-                    hasil = ""
-                    for a in soup.select('.yt-lockup-title > a[title]'):
-                        if '&list=' not in a['href']:
-                            hasil += ''.join((a['title'],'\nhttp://www.youtube.com' + a['href'],'\n\n'))
-                    dz.sendMessage(msg.to,hasil)
             elif msg.text in ["mid"]:
                 wait["getmid"]=True
                 dz.sendMessage(msg.to,"sᴇɴᴅ ᴄᴏɴᴛᴀᴄᴛ")
@@ -890,62 +740,11 @@ def dhenzaBot(op):
                 t1 = "\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xa0\x81\xf4\x80\xa0\x81\xf4\x80\xa0\x81"
                 t2 = "\xf4\x80\x82\xb3\xf4\x8f\xbf\xbf"
                 dz.sendMessage(msg.to, t1 + txt + t2)
-                
-            elif "Insta: " in msg.text:
-                try:
-                    instagram = msg.text.lower().replace("Insta: ","")
-                    html = requests.get('https://www.instagram.com/' + instagram + '/?')
-                    soup = BeautifulSoup(html.text, 'html5lib')
-                    data = soup.find_all('meta', attrs={'property':'og:description'})
-                    text = data[0].get('content').split()
-                    data1 = soup.find_all('meta', attrs={'property':'og:image'})
-                    text1 = data1[0].get('content').split()
-                    user = "Name: " + text[-2] + "\n"
-                    user1 = "Username: " + text[-1] + "\n"
-                    followers = "Followers: " + text[0] + "\n"
-                    following = "Following: " + text[2] + "\n"
-                    post = "Post: " + text[4] + "\n"
-                    link = "Link: " + "https://www.instagram.com/" + instagram
-                    detail = "========INSTAGRAM INFO USER========\n"
-                    details = "\n========INSTAGRAM INFO USER========"
-                    dz.sendMessage(msg.to, detail + user + user1 + followers + following + post + link + details)
-                    dz.sendImageWithURL(msg.to, text1[0])
-                except Exception as njer:
-                	dz.sendMessage(msg.to, str(njer))
-
-            elif "Zodiak: " in msg.text:
-                tanggal = msg.text.replace("Zodiak: ","")
-                r=requests.get('https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=ervan&tanggal='+tanggal)
-                data=r.text
-                data=json.loads(data)
-                lahir = data["data"]["lahir"]
-                usia = data["data"]["usia"]
-                ultah = data["data"]["ultah"]
-                zodiak = data["data"]["zodiak"]
-                dz.sendMessage(msg.to,"Tanggal Lahir: "+lahir+"\n\nUsia: "+usia+"\n\nUltah: "+ultah+"\n\nZodiak: "+zodiak)
-            elif "Wiki: " in msg.text:
-                try:
-                    wiki = msg.text.lower().replace("Wiki: ","")
-                    wikipedia.set_lang("id")
-                    pesan="Title ("
-                    pesan+=wikipedia.page(wiki).title
-                    pesan+=")\n\n"
-                    pesan+=wikipedia.summary(wiki, sentences=1)
-                    pesan+="\n"
-                    pesan+=wikipedia.page(wiki).url
-                    dz.sendMessage(msg.to, pesan)
-                except:
-                        try:
-                            pesan="Over Text Limit! Please Click link\n"
-                            pesan+=wikipedia.page(wiki).url
-                            dz.sendMessage(msg.to, pesan)
-                        except Exception as e:
-                            dz.sendMessage(msg.to, str(e))
 
 #==================[ REBOOT ]===================
             elif msg.text in ["Reboot"]:
                     try:
-                        dz.sendMessage(msg.to,"ʀᴇsᴛᴀrᴛɪɴɢ .....")
+                        dz.sendMessage(msg.to,"Restarting .....")
                         restartBot()
                     except:
                         dz.sendMessage(msg.to,"Please wait")
@@ -954,7 +753,7 @@ def dhenzaBot(op):
                         
             elif msg.text in ["Sp"]:
                 start = time.time()
-                dz.sendMessage(msg.to, "ѕaвar вoѕѕ..")
+                dz.sendMessage(msg.to, "One sec Boss..")
                 elapsed_time = time.time() - start
                 dz.sendMessage(msg.to, "%ss" % (elapsed_time))
                 
@@ -1011,33 +810,6 @@ def dhenzaBot(op):
                             dz.sendMessage(msg.to, teks)
                         except:
                             dz.sendMessage(msg.to, "cek lagi deh bos")
-
-            elif "/tag @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    for mention in mentionees:
-                        try:
-                            coii = dz.getContact(mention['M'])
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)
-                            dz.tag(msg.to,coii.mid)                            
-                        except:
-                            print ("error")
-                        print ("spamtag Berhasil.")
 
             elif "Spamtag @" in msg.text:
                 _name = msg.text.replace("Spamtag @","")
@@ -2192,6 +1964,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/Help' in msg.text:
                         dz.sendMessage(msg.to,"Help")
+                    elif '/Reboot' in msg.text:
+                        dz.sendMessage(msg.to,"Reboot")
                     else:
                         pass
                 else:
