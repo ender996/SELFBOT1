@@ -484,11 +484,11 @@ def dhenzaBot(op):
                     else:
                         u = "open"
                     try:
-                        dz.sendMessage(msg.to,"╔══════════════\n╠═༼≝₷₭ ɢʀᴜᴘ ɴᴀᴍᴇ ≝₷₭༽\n╠ ➽ " + str(ginfo.name) + "\n╠══════════════\n╠═ ༼≝₷₭  ɢʀᴜᴘ ᴄʀᴇᴀᴛᴏʀ ⟧≝₷₭༽\n╠ ➽ " + gCreator + "\n╠══════════════\n╠ ➽ ᴍᴇᴍʙᴇʀs: " + str(len(ginfo.members)) + " ᴍᴇᴍʙᴇʀs\n╠ ➽ ᴘᴇɴᴅɪɴɢ: " + sinvitee + " ᴘᴇᴏᴘʟᴇ\n╠ ➽ ᴜʀʟ : " + u + "\n╚══════════════")
+                        dz.sendMessage(msg.to,"╔══════════════\n╠═ GROUP NAME \n╠ ➽ " + str(ginfo.name) + "\n╠══════════════\n╠═ GROUP CREATOR \n╠ ➽ " + gCreator + "\n╠══════════════\n╠ ➽ ᴍᴇᴍʙᴇʀs: " + str(len(ginfo.members)) + " ᴍᴇᴍʙᴇʀs\n╠ ➽ ᴘᴇɴᴅɪɴɢ: " + sinvitee + " ᴘᴇᴏᴘʟᴇ\n╠ ➽ ᴜʀʟ : " + u + "\n╚══════════════")
                         dz.sendMessage(msg.to,"「ɢɪᴅ:」 \n➽ " + msg.to)
                         dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
                     except:
-                        dz.sendMessage(msg.to,"╔══════════════\n╠═༼≝₷₭  ɢʀᴜᴘ ɴᴀᴍᴇ ≝₷₭༽\n╠ ➽ " + str(ginfo.name) + "\n╠══════════════\n╠═༼≝₷₭  ɢʀᴜᴘ ᴄʀᴇᴀᴛᴏʀ ≝₷₭༽\n╠ ➽ " + gCreator + "\n╚══════════════")
+                        dz.sendMessage(msg.to,"╔══════════════\n╠═ GROUP NAME \n╠ ➽ " + str(ginfo.name) + "\n╠══════════════\n╠═ GROUP CREATOR \n╠ ➽ " + gCreator + "\n╚══════════════")
                         dz.sendMessage(msg.to,"「ɢɪᴅ:」 \n➽ " + msg.to)
                         dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
 
