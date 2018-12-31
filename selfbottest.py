@@ -41,7 +41,7 @@ helpMessage ="""╔════════════════════
 ╠⍟➣  Tagall
 ╠⍟➣  /Member list
 ╠⍟➣  Spamtag @[User]
-╠⍟➣  /Info @[User]
+╠⍟➣  Info @[User]
 ╠⍟➣  /Ginfo 
 ╠⍟➣  /Time
 ╠⍟➣  /Cancel all
@@ -725,10 +725,9 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"Member list")
                     elif '/cancel all' in text.lower():
                         dz.sendMessage(msg.to,"Cancel all")
-                    elif '/kick' in text.lower():
+                    elif 'kick @' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
-                    elif '/info' in text.lower():
-                        text = text.replace("/","")
+                    elif 'info @' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/time' in text.lower():
                         dz.sendMessage(msg.to,"Time")
