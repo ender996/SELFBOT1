@@ -565,8 +565,8 @@ def dhenzaBot(op):
                 runtime = format_timespan(runtime)
                 dz.sendMessage(msg.to, "ʙᴏᴛ ʀᴜɴ  {}".format(str(runtime)))
 
-            elif "spamtag @" in text.lower():
-                _name = msg.text.replace("spamtag @","")
+            elif "Spamtag @" in msg.text:
+                _name = msg.text.replace("Spamtag @","")
                 _nametarget = _name.rstrip(' ')
                 gs = dz.getGroup(msg.to)
                 for g in gs.members:
@@ -715,7 +715,7 @@ def dhenzaBot(op):
                 if wait["mimic"] == True:
                     if 'tagall' in text.lower():
                         dz.sendMessage(msg.to,"Tag")
-                    elif 'spamtag' in text.lower():
+                    elif 'Spamtag @' in msg.text:
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/help' in text.lower():
                         dz.sendMessage(msg.to,"Help")
