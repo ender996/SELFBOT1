@@ -260,35 +260,7 @@ def dhenzaBot(op):
                     dzx = dz.getContact(op.param2)
                     dz.sendMessage(op.param1, "Ehhh  " + str(dzx.displayName) + "\nWellcome to " + str(ginfo.name) +"\n"+ Dhenza["welmsg"])
                     dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/" + dzx.pictureStatus)                    
-                    
-#=========== [ GHOST MODE ] =============
-#===========[ PROTECT QR friend ]==========           
-        if op.type == 11:
-           if op.param1 in pro["Protectgr"]:
-              if op.param2 in org["Friend"]:
-                pass
-              else:
-                try:
-                  X = dz.getGroup(op.param1)
-                  X.preventedJoinByTicket = True
-                  dz.updateGroup(X)
-                  Ti = dz.reissueGroupTicket(op.param1)
-                  dz.acceptGroupInvitationByTicket(op.param1,Ti)
-                  dz.sendMessage(op.param1,dz.getContact(op.param2).displayName + "ᴊᴀɴɢᴀɴ ᴍᴀɪɴᴀɴ ᴋᴏᴅᴇ Qʀ ɢᴏʙʟᴏᴋ")
-                  dz.kickoutFromGroup(op.param1,[op.param2])
-                  dz.updateGroup(X)
-                  dz.leaveRoom(op.param1)
-                except:
-                  Z = random.choice(KAC).getGroup(op.param1)
-                  Z.preventedJoinByTicket = True
-                  yd.updateGroup(Z)
-                  Ti = dz.reissueGroupTicket(op.param1)
-                  dz.acceptGroupInvitationByTicket(op.param1,Ti)
-                  dz.sendText(op.param1,dz.getContact(op.param2).displayName + "Jangan Buka Kode QR Njiiir")
-                  dz.kickoutFromGroup(op.param1,[op.param2])
-                  dz.updateGroup(X)
-                  dz.leaveRoom(op.param1)
-                 
+
 #=============== [ NOTIFIED_KICKOUT_FROM_GROUP ]===========
         if op.type == 19:
             if op.param1 in pro["Autokick"]:
@@ -534,20 +506,6 @@ def dhenzaBot(op):
                     dz.rejectGroupInvitation(i)
                 dz.sendMessage(msg.to,"done reject")
 
-            elif "Bcmember: " in msg.text:
-                xres = msg.text.replace("Bcmember: ","")
-                group = dz.getGroup(msg.to)
-                mem = [contact.mid for contact in group.members]
-                cmem = dz.getContacts(mem)
-                nc = ""
-                for x in range(len(cmem)):
-                    try:
-                        dz.sendMessage(cmem[x].mid,xres)
-                        nc += "\n" + cmem[x].displayName
-                    except:
-                        pass
-                dz.sendMessage(msg.to,"sᴜᴄᴄᴇs ʙᴄ ᴛᴏ :\n%s\n\nᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀs: %s"%(nc,str(len(cmem))))
-            #    print "done bc"
             elif "Bcgrup: " in msg.text:
                 bc = msg.text.replace("Bcgrup: ","")
                 gid = dz.getGroupIdsJoined()
@@ -567,41 +525,12 @@ def dhenzaBot(op):
                             dz.sendMessage(msg.to,str(mention['M']))
                         except Exception as e:
                             pass
-            elif "Get @" in msg.text:
+            elif "info @" in msg.text:
                 key = eval(msg.contentMetadata["MENTION"])
                 key1 = key["MENTIONEES"][0]["M"]                
                 mmid = dz.getContact(key1)
-                vcx = mmid.mid
-                dz.sendContact(msg.to,vcx)
-            elif "dp @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    for mention in mentionees:
-                        try:
-                            profile = dz.getContact(mention['M'])
-                            dz.sendImageWithURL(msg.to,"http://dl.profile.line.naver.jp/"+profile.pictureStatus)
-                        except Exception as e:
-                            pass
-            elif "info @" in msg.text:
-                key = eval(msg.contentMetadata["MENTION"])
-                key1 = key["MENTIONEES"][0]["M"]
-                contact = dz.getContact(key1)
-                image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
-                try:
-                    dz.sendMessage(msg.to,"Nama:\n" + contact.displayName)
-                    dz.sendMessage(msg.to,"Bio:\n" + contact.statusMessage)
-                    dz.sendImageWithURL(msg.to,image)
-                except:
-                    pass
-                    
-            elif "Kedipin: " in msg.text:
-                txt = msg.text.replace("Kedipin: ", "")
-                t1 = "\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xa0\x81\xf4\x80\xa0\x81\xf4\x80\xa0\x81"
-                t2 = "\xf4\x80\x82\xb3\xf4\x8f\xbf\xbf"
-                dz.sendMessage(msg.to, t1 + txt + t2)
-
+                #vcx = mmid.mid
+                #dz.sendContact(msg.to,vcx)
 #==================[ REBOOT ]===================
             elif msg.text in ["Reboot"]:
                     try:
@@ -627,12 +556,12 @@ def dhenzaBot(op):
                 timeHours = datetime.strftime(timeNow,"(%H:%M)")
                 day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
                 hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
-                bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+                bulan = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
                 inihari = datetime.today()
                 hr = inihari.strftime('%A')
                 bln = inihari.strftime('%m')
                 for i in range(len(day)):
-                    if hr == day[i]: hasil = hari[i]
+                    if hr == day[i]: hasil = day[i]
                 for k in range(0, len(bulan)):
                     if bln == str(k): bln = bulan[k-1]
                 rst = hasil + ", " + inihari.strftime('%d') + " - " + bln + " - " + inihari.strftime('%Y') + "\nJam : [ " + inihari.strftime('%H:%M:%S') + " ]"
@@ -643,21 +572,6 @@ def dhenzaBot(op):
                 runtime = timeNow - botStart
                 runtime = format_timespan(runtime)
                 dz.sendMessage(msg.to, "ʙᴏᴛ ʀᴜɴ  {}".format(str(runtime)))
-                
-            elif msg.text in ["Tanggal"]:
-                    tz = pytz.timezone("Asia/Hong_Kong")
-                    timeNow = datetime.now(tz=tz)
-                    day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
-                    hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
-                    bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
-                    hr = timeNow.strftime("%A")
-                    bln = timeNow.strftime("%m")
-                    for i in range(len(day)):
-                        if hr == day[i]: hasil = hari[i]
-                    for k in range(0, len(bulan)):
-                        if bln == str(k): bln = bulan[k-1]
-                    readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
-                    dz.sendMessage(msg.to, readTime)
 
             elif "Spamtag @" in msg.text:
                 _name = msg.text.replace("Spamtag @","")
@@ -684,60 +598,6 @@ def dhenzaBot(op):
                 dz.sendContact(msg.to, blank)	
 
 #=================================================
-            elif msg.text in ["bubar"]:
-                if msg.toType == 2:
-                    group = dz.getGroup(msg.to)
-                    nama = [contact.mid for contact in group.members]
-                    for x in nama:
-                            if x not in org["Friend"]:
-                                try:
-                                    dz.kickoutFromGroup(msg.to,[x])
-                                except:
-                                    print ("imit")
-#==================[ CLONE MODE ]====================
-            elif "santet grup: " in msg.text:
-                ng = msg.text.replace("santet grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            grup = dz.getGroup(i)
-                            M.to = grup.id
-                            M.contentType = 13
-                            M.contentMetadata = {'mid': "ub1c5a71f27b863896e9d44bea857d35b"}
-                dz.sendMessage(M)
-                dz.sendMessage(msg.to,"「sᴀɴntᴇᴛ ᴛᴇʀᴋɪʀɪᴍ ʙᴏss」")
-            elif msg.text in ["Santet"]:
-                wait["santet"]=True
-                dz.sendMessage(msg.to,"target")
-#=================================================
-            elif "Clone @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    for mention in mentionees:
-                        try:
-                            profile = yd.getProfile()
-                            backup.displayName = profile.displayName
-                            backup.statusMessage = profile.statusMessage
-                            backup.pictureStatus = profile.pictureStatus
-                            dz.cloneContactProfile(mention['M'])
-                            dz.sendMessage(msg.to,"ᴄʟᴏɴᴇ sᴜᴄᴄᴇs ..")
-                        except Exception as error:
-                            print (error)
-#=================================================
-            elif msg.text in ["Reclone"]:
-                try:
-                    dzProfile.displayName = str(myProfile["displayName"])
-                    dzProfile.statusMessage = str(myProfile["statusMessage"])
-                    dzProfile.pictureStatus = str(myProfile["pictureStatus"])
-                    dz.updateProfileAttribute(8, ydProfile.pictureStatus)
-                    dz.updateProfile(ydProfile)
-                    dz.sendMessage(msg.to,"reᴄʟᴏɴᴇ sᴜᴄᴄᴇs ..")
-                except Exception as e:
-                    dz.sendMessage(msg.to, str (e))
-#=================================================
             elif "Kick @" in msg.text:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
                     names = re.findall(r'@(\w+)', msg.text)
@@ -748,251 +608,6 @@ def dhenzaBot(op):
                             dz.kickoutFromGroup(msg.to, [mention['M']])							
                         except:
                             dz.sendMessage(msg.to, "ʟɪᴍɪᴛ ʙᴏss..")
-#=================================================
-            elif msg.text in ["Salam"]:
-                dz.sendMessage(msg.to,"السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ")
-            elif msg.text in ["Salam2"]:
-                dz.sendMessage(msg.to,"وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِوَبَرَكَاتُهُ")
-#=================================================
-            elif "Reset tikell grup: " in msg.text:
-                ng = msg.text.replace("Reset tikell grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            del resp["grupsticker"][i]
-                            dz.sendMessage(msg.to,"sᴜᴄᴄᴇs ʀᴇsᴇᴛ ["+ h +"] ɢʀᴏᴜᴘ")
-                        else:
-                            pass
-#=================================================
-            elif msg.text in ["All protect on"]:
-                    pro["Protectgr"][msg.to] = True
-                    pro["Protectjoin"][msg.to] = True
-                    pro["Protectcancl"][msg.to] = True
-                    pro["Protectinvite"][msg.to] = True
-                    pro["Autokick"][msg.to] = True
-                    with open('pro.json', 'w') as fp:
-                        json.dump(pro, fp, sort_keys=True, indent=4)
-                    dz.sendMessage(msg.to,"ᴀʟʟ ᴘʀᴏᴛᴇᴄᴛɪᴏɴ ᴏɴ")
-            elif msg.text in ["All protect off"]:
-                if msg.to in pro["Protectgr"]:
-                    try:
-                        del pro["Protectgr"][msg.to]
-                    except:
-                        pass
-                if msg.to in pro["Protectcancl"]:
-                    try:
-                        del pro["Protectcancl"][msg.to]
-                    except:
-                        pass
-                if msg.to in pro["Protectinvite"]:
-                    try:
-                        del pro["Protectinvite"][msg.to]
-                    except:
-                        pass
-                if msg.to in pro["Protectjoin"]:
-                    try:
-                        del pro["Protectjoin"][msg.to]
-                    except:
-                        pass
-                if msg.to in pro["Autokick"]:
-                    try:
-                        del pro["Autokick"][msg.to]
-                    except:
-                        pass
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴀʟʟ ᴘʀᴏᴛᴇᴄᴛɪᴏɴ ᴏғғ")
-            elif "All protect on grup: " in msg.text:
-                ng = msg.text.replace("All protect on grup: ","")
-                gid = yd.getGroupIdsJoined()
-                for i in gid:
-                        h = yd.getGroup(i).name
-                        if h == ng:
-                            pro["Protectgr"][i]=True
-                            pro["Protectjoin"][msg.to] = True
-                            pro["Protectcancl"][msg.to] = True
-                            pro["Protectinvite"][msg.to] = True
-                            pro["Autokick"][msg.to] = True
-                            with open('pro.json', 'w') as fp:
-                                json.dump(pro, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"ᴀʟʟ ᴘʀᴏᴛᴇᴄᴛɪᴏɴ ᴏɴ ["+ h +"] ɢʀᴏᴜᴘ")
-                        else:
-                            pass
-            elif "All protect off grup: " in msg.text:
-                ng = msg.text.replace("All protect off grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            if i in pro["Protectgr"]:
-                                try:
-                                    del pro["Protectgr"][i]
-                                except:
-                                    pass
-                            if i in pro["Protectcancl"]:
-                                try:
-                                    del pro["Protectcancl"][i]
-                                except:
-                                    pass
-                            if i in pro["Protectinvite"]:
-                                try:
-                                    del pro["Protectinvite"][i]
-                                except:
-                                    pass
-                            if i in pro["Protectjoin"]:
-                                try:
-                                    del pro["Protectjoin"][i]
-                                except:
-                                    pass
-                            if i in pro["Autokick"]:
-                                try:
-                                    del pro["Autokick"][i]
-                                except:
-                                    pass
-                            with open('pro.json', 'w') as fp:
-                                json.dump(pro, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"sᴜᴄᴄᴇs ʀᴇsᴇᴛ ["+ h +"] ɢʀᴏᴜᴘ")
-#=================================================
-            elif msg.text in ["Lock invite"]:
-                pro["Protectinvite"][msg.to]=True
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ɪɴᴠɪᴛᴇ ᴏɴ ᴘʀᴏᴛᴇᴄᴛ")
-            elif msg.text in ["Unlock invite"]:
-                del pro["Protectinvite"][msg.to]
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ɪɴᴠɪᴛᴇ ᴜɴᴘʀᴏᴛᴇᴄᴛ")
-            elif "Unlock invite grup: " in msg.text:
-                ng = msg.text.replace("Unlock invite grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            del pro["Protectinvite"][i]
-                            with open('pro.json', 'w') as fp:
-                                json.dump(pro, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"sᴜᴄᴄᴇs ʀᴇsᴇᴛ ["+ h +"] ɢʀᴏᴜᴘ")
-                        else:
-                            pass
-            elif "Lock invite grup: " in msg.text:
-                ng = msg.text.replace("Lock invite grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            pro["Protectinvite"][i]=True
-                            with open('pro.json', 'w') as fp:
-                                json.dump(pro, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"sᴜᴄᴄᴇs sᴇᴛ ᴛᴏ ["+ h +"] ɢʀᴏᴜᴘ")
-                        else:
-                            pass
-            elif msg.text in ["Clear all invite"]:
-                pro["Protectinvite"] = {}
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄʟᴇᴀʀ")
-#=================================================
-            elif msg.text in ["Lock cancel"]:
-                pro["Protectcancl"][msg.to]=True
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄᴀɴᴄᴇʟ ᴏɴ ᴘʀᴏᴛᴇᴄᴛ")
-            elif msg.text in ["Unlock cancel"]:
-                del pro["Protectcancl"][msg.to]
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄᴀɴᴄᴇʟ ᴜɴᴘʀᴏᴛᴇᴄᴛ")
-            elif "Unlock cancel grup: " in msg.text:
-                ng = msg.text.replace("Unlock cancel grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            del pro["Protectcancl"][i]
-                            with open('pro.json', 'w') as fp:
-                                json.dump(pro, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"sᴜᴄᴄᴇs ʀᴇsᴇᴛ ["+ h +"] ɢʀᴏᴜᴘ")
-                        else:
-                            pass
-            elif "Lock cancel grup: " in msg.text:
-                ng = msg.text.replace("Lock cancel grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            pro["Protectcancl"][i]=True
-                            with open('pro.json', 'w') as fp:
-                                json.dump(pro, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"sᴜᴄᴄᴇs sᴇᴛ ᴛᴏ ["+ h +"] ɢʀᴏᴜᴘ")
-                        else:
-                            pass
-            elif msg.text in ["Clear all cancel"]:
-                pro["Protectcancl"] = {}
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄʟᴇᴀʀ")
-#=================================================                
-            elif text.lower().startswith("musik"):
-                            try:
-                                search = text.lower().replace("musik ","")
-                                params = {"search": search}
-                                r = requests.get("https://farzain.xyz/api/premium/joox.php?apikey=al11241519&id={}".format(urllib.parse.quote(search)))
-                                data = r.text
-                                data = json.loads(data)
-                                info = data["info"]
-                                audio = data["audio"]
-                                hasil = "「 Hasil Musik 」\n"
-                                hasil += "\nPenyanyi : {}".format(str(info["penyanyi"]))
-                                hasil += "\nJudul : {}".format(str(info["judul"]))                    
-                                dz.sendImageWithURL(msg.to, str(data["gambar"]))
-                                dz.sendMessage(msg.to, str(hasil))
-                                dz.sendMessage(msg.to, "Sabar boaku")
-                                dz.sendAudioWithURL(msg.to, str(audio["mp3"]))                    
-                                dz.sendMessage(msg.to, str(data["lirik"]))
-                            except Exception as error:
-                            	pass                         
-#=================================================
-            elif msg.text in ["Lock join"]:
-                pro["Protectjoin"][msg.to]=True
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴊᴏɪɴ ᴏɴ ᴘʀᴏᴛᴇᴄᴛ")
-            elif msg.text in ["Unlock join"]:
-                del pro["Protectjoin"][msg.to]
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴊᴏɪɴ ᴜɴᴘʀᴏᴛᴇᴄᴛ")
-            elif "Unlock join grup: " in msg.text:
-                ng = msg.text.replace("Unlock join grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            del pro["Protectjoin"][i]
-                            with open('pro.json', 'w') as fp:
-                                json.dump(pro, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"sᴜᴄᴄᴇs ʀᴇsᴇᴛ ["+ h +"] ɢʀᴏᴜᴘ")
-                        else:
-                            pass
-            elif "Lock join grup: " in msg.text:
-                ng = msg.text.replace("Lock join grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            pro["Protectjoin"][i]=True
-                            with open('pro.json', 'w') as fp:
-                                json.dump(pro, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"sᴜᴄᴄᴇs sᴇᴛ ᴛᴏ ["+ h +"] ɢʀᴏᴜᴘ")
-                        else:
-                            pass
-            elif msg.text in ["Clear all join"]:
-                pro["Protectjoin"] = {}
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄʟᴇᴀʀ")
 #=================================================
             elif msg.text in ["Left on"]:
                 pro["bymsg"]=True
@@ -1015,108 +630,7 @@ def dhenzaBot(op):
                 with open('pro.json', 'w') as fp:
                     json.dump(pro, fp, sort_keys=True, indent=4)
                 dz.sendMessage(msg.to, "ᴡᴇʟʟᴄᴏᴍᴇ ᴍsɢ ɴᴏᴛ ᴀᴄᴛɪᴠᴇ")
-#=================================================
-            elif msg.text in ["Autokick on"]:
-                pro["Autokick"][msg.to]=True
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to, "ᴀᴜᴛᴏ ᴋɪᴄᴋ ᴀᴄᴛɪᴠᴇ")
-            elif msg.text in ["Autokick off"]:
-                pro["Autokick"][msg.to]=False
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to, "ᴀᴜᴛᴏ ᴋɪᴄᴋ ɴᴏᴛ ᴀᴄᴛɪᴠᴇ")
-            elif "Unlock autokick grup: " in msg.text:
-                ng = msg.text.replace("Unlock autokick grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            del pro["Autokick"][i]
-                            with open('pro.json', 'w') as fp:
-                                json.dump(pro, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"sᴜᴄᴄᴇs ʀᴇsᴇᴛ ["+ h +"] ɢʀᴏᴜᴘ")
-                        else:
-                            pass
-            elif "Lock autokick grup: " in msg.text:
-                ng = msg.text.replace("Lock autokick grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            pro["Autokick"][i]=True
-                            with open('pro.json', 'w') as fp:
-                                json.dump(pro, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"sᴜᴄᴄᴇs sᴇᴛ ᴛᴏ ["+ h +"] ɢʀᴏᴜᴘ")
-                        else:
-                            pass
-            elif msg.text in ["Clear all autokick"]:
-                pro["Autokick"] = {}
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴄʟᴇᴀʀ")
-#=================================================                
-            elif "Sider on grup: " in msg.text:
-                ng = msg.text.replace("Sider on grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                  h = dz.getGroup(i).name
-                  if h == ng:
-                    dz.sendMessage(i,"ɢᴇᴛ ɢʀᴏᴜᴘ ᴅᴏɴᴇ")
-                    dz.sendMessage(i,"ɢᴇᴛ ᴍᴇᴍʙᴇʀ ᴅᴏɴᴇ")
-                    dz.sendMessage(i,"sɪᴅᴇʀ sᴇᴛ ᴛᴏ ᴏɴ")
-                    dz.sendMessage(i,"ᴀᴜᴛᴏ sɪᴅᴇʀ ʙʏ: dhenza")
-                    pro["prosider"][i] = True
-                    with open('pro.json', 'w') as fp:
-                        json.dump(pro, fp, sort_keys=True, indent=4)
-                    try:
-                        del ciduk['ceadPoint'][i]
-                        del ciduk['ceadMember'][i]
-                    except:
-                        pass
-                    now2 = datetime.now()
-                    ciduk['ceadPoint'][i] = msg.id
-                    ciduk['ceadMember'][i] = ""
-                    ciduk['cetTime'][i] = datetime.now().strftime('%Y-%m-%d %H:%M')
-                    ciduk['cOM'][i] = {}
-                    dz.sendMessage(msg.to,"sider on that grup")
-
-            elif "Sider off grup: " in msg.text:
-                ng = msg.text.replace("Sider off grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                  h = dz.getGroup(i).name
-                  if h == ng:
-                        dz.sendMessage(i,"ᴄʟᴇᴀʀ ᴍᴇᴍʙᴇʀ ᴅᴏɴᴇ")
-                        dz.sendMessage(i,"sɪᴅᴇʀ sᴇᴛ ᴏғғ")
-                        dz.sendMessage(i,"ᴀᴜᴛᴏ sɪᴅᴇʀ ʙʏ: dhenza")
-                        del pro["prosider"][i]
-                        with open('pro.json', 'w') as fp:
-                            json.dump(pro, fp, sort_keys=True, indent=4)
-                        try:
-                            del ciduk['ceadPoint'][i]
-                            del ciduk['ceadMember'][i]
-                            dz.sendMessage(msg.to,"sider off")
-                        except:
-                            pass
 #=============================================
-            elif "Reset all set grup: " in msg.text:
-                ng = msg.text.replace("Reset all set grup: ","")
-                gid = dz.getGroupIdsJoined()
-                for i in gid:
-                        h = dz.getGroup(i).name
-                        if h == ng:
-                            del pro["Protectgr"][i]
-                            del pro["Protectcancl"][i]
-                            del pro["Protectinvite"][i]
-                            del pro["Protectjoin"][i]
-                            del pro["Autokick"][i]
-                            del pro["intaPoint"][i]
-                            with open('pro.json', 'w') as fp:
-                                json.dump(pro, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"sᴜᴄᴄᴇs ʀᴇsᴇᴛ ᴀʟʟ sᴇᴛ ["+ h +"] ɢʀᴏᴜᴘ")
-                        else:
-                            pass
 #=============================================
             elif msg.text in ["Tag1 on"]:
                     resp["Tag1"]=True
@@ -1129,107 +643,7 @@ def dhenzaBot(op):
                     with open('resp.json', 'w') as fp:
                         json.dump(resp, fp, sort_keys=True, indent=4)
                     dz.sendMessage(msg.to, "ᴀᴜᴛᴏ ʀᴇsᴘᴏɴsᴇ ɴᴏᴛ ᴀᴄᴛɪᴠᴇ")
-#=============================================
-            elif msg.text in ["Tag2 on"]:
-                    resp["Tag1"]=True
-                    resp["Tag2"]=True
 
-                    with open('resp.json', 'w') as fp:
-                        json.dump(resp, fp, sort_keys=True, indent=4)
-                    dz.sendMessage(msg.to, "ᴀᴜᴛᴏ ʀᴇsᴘᴏɴsᴇ ᴀᴄᴛɪᴠᴇ")
-            elif msg.text in ["Tag2 off"]:
-                    resp["Tag2"]=False
-                    with open('resp.json', 'w') as fp:
-                        json.dump(resp, fp, sort_keys=True, indent=4)
-                    dz.sendMessage(msg.to, "ᴀᴜᴛᴏ ʀᴇsᴘᴏɴsᴇ ɴᴏᴛ ᴀᴄᴛɪᴠᴇ")
-#=============================================
-            elif msg.text in ["Reset"]:
-                if msg.to in pro["Protectgr"]:
-                    try:
-                        del pro["Protectgr"][msg.to]
-                    except:
-                        pass
-                if msg.to in pro["Protectcancl"]:
-                    try:
-                        del pro["Protectcancl"][msg.to]
-                    except:
-                        pass
-                if msg.to in pro["Protectinvite"]:
-                    try:
-                        del pro["Protectinvite"][msg.to]
-                    except:
-                        pass
-                if msg.to in pro["Protectjoin"]:
-                    try:
-                        del pro["Protectjoin"][msg.to]
-                    except:
-                        pass
-                if msg.to in pro["Autokick"]:
-                    try:
-                        del pro["Autokick"][msg.to]
-                    except:
-                        pass
-                if msg.to in pro["intaPoint"]:
-                    try:
-                        del pro['intaPoint'][msg.to]
-                    except:
-                        pass
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴀʟʟ sᴇᴛ ᴄʟᴇᴀʀ")
-            elif msg.text in ["Set"]:
-                md = "╔════════════════════\n╠➣SILENT TΣΔM βΩT\n╠════════════════════\n"
-                if msg.to in pro["intaPoint"]: md+="╠➣ᴀᴜᴛᴏ ɪɴ : ✔\n"
-                else: md +="╠➣ᴀᴜᴛᴏ ɪɴ : ❌\n"
-				
-                if msg.to in pro["Protectgr"]: md+="╠➣ᴘʀᴏᴛᴇᴄᴛ ɢʀᴜᴘ : ✔\n"
-                else: md +="╠➣ᴘʀᴏᴛᴇᴄᴛ ɢʀᴜᴘ : ❌\n"
-				
-                if msg.to in pro["Protectcancl"]: md+="╠➣ᴘʀᴏᴛᴇᴄᴛ ᴄᴀɴᴄᴇʟ : ✔\n"
-                else: md+="╠➣ᴘʀᴏᴛᴇᴄᴛ ᴄᴀɴᴄᴇʟ : ❌\n"
-				
-                if msg.to in pro["Protectjoin"]: md+="╠➣ᴘʀᴛᴏᴛᴇᴄᴛ ᴊᴏɪɴ : ✔\n"
-                else: md+= "╠➣ᴘʀᴛᴏᴛᴇᴄᴛ ᴊᴏɪɴ : ❌\n"
-				
-                if msg.to in pro["Protectinvite"]: md+="╠➣ᴘʀᴏᴛᴇᴄᴛ ɪɴᴠ : ✔\n"
-                else: md+= "╠➣ᴘʀᴏᴛᴇᴄᴛ ɪɴᴠ : ❌\n"
-				
-                if msg.to in pro["Autokick"]: md+="╠➣ᴀᴜᴛᴏ ᴋɪᴄᴋ : ✔\n╠════════════════════\n╠➣line://ti/p/~dhenz415\n╠➣line://ti/p/~tambotprotect\n╚════════════════════"
-                else:md+="╠➣ᴀᴜᴛᴏ ᴋɪᴄᴋ : ❌\n╠════════════════════\n╠➣line://ti/p/~dhenz415\n╠➣line://ti/p/~teambotprotect\n╚════════════════════"
-				
-                dz.sendMessage(msg.to,md)
-            elif msg.text in ["Add off"]:
-                wait["Invi"]=False
-                wait["ainvite"]=False
-                wait["atarget"]=False
-                wait["dtarget"]=False
-                wait["afriend"]=False
-                wait["dfriend"]=False
-                wait["asilent"]=False
-                wait["dsilent"]=False
-                wait["gsilrnt"]=False
-                with open('setting.json', 'w') as fp:
-                    json.dump(wait, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴀʟʟ ᴀᴅᴅ ᴄʟᴇᴀʀ")
-            elif msg.text in ["Add status"]:
-                md = "╔════════════════════\n╠SILENT TΣΔM βΩT\n╠════════════════════\n"
-                if wait["Invite"] == True: md+="╠➣Invite : ✔\n"
-                else:md+="╠➣Invite : ❌\n"
-                if wait["atarget"] == True: md+="╠➣ᴀᴅᴅ ʙᴀɴɴᴇᴅ : ✔\n"
-                else:md+="╠➣ᴀᴅᴅ ʙᴀɴɴᴇᴅ : ❌\n"
-                if wait["dtarget"] == True: md+="╠➣ᴅᴇʟ ʙᴀɴɴᴇᴅ : ✔\n"
-                else:md+="╠➣ ᴅᴇʟ ʙᴀɴɴᴇᴅ : ❌\n"
-                if wait["atebz"] == True: md+="╠➣ᴀᴅᴅ sillent : ✔\n"
-                else:md+="╠➣ ᴀᴅᴅ sillent : ❌\n"
-                if wait["dtebz"] == True: md+="╠➣ᴅᴇʟ sillent : ✔\n"
-                else:md+="╠➣ᴅᴇʟ sillent : ❌\n"
-                if wait["afriend"] == True: md+="╠➣ᴀᴅᴅ ғʀɪᴇɴᴅ : ✔\n"
-                else:md+="╠➣add friend : ❌\n"
-                if wait["dfriend"] == True: md+="╠➣ᴅᴇʟ ғʀɪᴇɴᴅ : ✔\n"
-                else:md+="╠➣ᴅᴇʟ ғʀɪᴇɴᴅ : ❌\n"
-                if wait["getmid"] == True: md+="╠➣ɢᴇᴛ ᴍɪᴅ : ✔\n╠════════════════════\n╠➣line://ti/p/~teambotprotect\n╠➣line://ti/p/~dhenz415\n╚════════════════════"
-                else:md+="╠➣ɢᴇᴛ ᴍɪᴅ : ❌\n╠════════════════════\n╠➣line://ti/p/~dhenz415\n╠➣line://ti/p/~teambotprotect\n╚════════════════════"
-                dz.sendMessage(msg.to,md)
             elif msg.text in ["Status"]:
                 md = "╔════════════════════\n╠SILENT TΣΔM βΩT\n╠════════════════════\n"
                 if wait["Autojoin"] == True: md+="╠➣ᴀᴜᴛᴏᴊᴏɪɴ : ✔\n"
@@ -1253,266 +667,15 @@ def dhenzaBot(op):
                 if pro["bymsg"] == True: md+="╠➣ʙʏᴇ ᴍsɢ ᴛᴇᴋs : ✔\n╠════════════════════\n╠➣line://ti/p/~tambotprotect\n╠➣line://ti/p/~dhenz415\n╚════════════════════"
                 else:md+="╠➣ʙʏᴇ ᴍsɢ ᴛᴇᴋs : ❌\n╠════════════════════\n╠➣line://ti/p/~tambotprotect\n╠➣line://ti/p/~tambotprotect\n╚════════════════════"
                 dz.sendMessage(msg.to,md)
-#=============================================
-            elif msg.text in ["Cek ginfo"]:
-                if msg.toType == 2:
-                    ginfo = yd.getGroup(msg.to)
-                    gCreator = ginfo.creator.displayName
-                    if gCreator is None:
-                        gCreator = "Error"
-                    if ginfo.invitee is None:
-                        sinvitee = "0"
-                    else:
-                        sinvitee = str(len(ginfo.invitee))
-                    if ginfo.preventedJoinByTicket == True:
-                        u = "close"
-                    else:
-                        u = "open"
-                    try:
-                        dz.sendMessage(msg.to,"「ɢʀᴜᴘ ɴᴀᴍᴇ」 \n➽ " + ginfo.name)
-                        time.sleep(0.2)
-                        dz.sendMessage(msg.to,"「ɢʀᴜᴘ ᴄʀᴇᴀᴛᴏʀ」 \n➽ "+ gCreator )
-                        time.sleep(0.2)
-                        dz.sendMessage(msg.to,"「ᴍᴇᴍʙᴇʀs」 \n➽" + str(len(ginfo.members)) + " ᴍᴇᴍʙᴇʀs")
-                        time.sleep(0.2)
-                        dz.sendMessage(msg.to,"「ᴘᴇɴᴅɪɴɢ:」 " + sinvitee + " ᴘᴇᴏᴘʟᴇ")
-                        time.sleep(0.2)
-                        dz.sendMessage(msg.to,"「ᴜʀʟ:」 \n➽ " + u )
-                        dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
-                    except:
-                        dz.sendMessage(msg.to,"get info failed")
-            elif msg.text in ["Silent cek grup set"]:
-                if msg.to in pro["intaPoint"]:
-                    dz.sendMessage(msg.to,"ᴀᴜᴛᴏ ɪɴ ᴍᴏᴅᴇ 「ᴏɴ」")
-                else:
-                    dz.sendMessage(msg.to,"ᴀᴜᴛᴏ ɪɴ ᴍᴏᴅᴇ 「ᴏғғ」")
-				
-                if msg.to in pro["Protectgr"]:
-                    dz.sendMessage(msg.to,"「ǫʀ ᴋɪᴄᴋ ᴍᴏᴅᴇ 「ᴏɴ」")
-                else:
-                    dz.sendMessage(msg.to,"「ǫʀ ᴋɪᴄᴋ ᴍᴏᴅᴇ 「ᴏғғ」")
 
-                if msg.to in pro["Protectcancl"]:
-                    dz.sendMessage(msg.to,"ᴄᴀɴᴄᴇʟ ᴋɪᴄᴋ ᴍᴏᴅᴇ 「ᴏɴ」")
-                else:
-                    dz.sendMessage(msg.to,"ᴄᴀɴᴄᴇʟ ᴋɪᴄᴋ ᴍᴏᴅᴇ 「ᴏғғ」")
-				
-                if msg.to in pro["Protectjoin"]:
-                    dz.sendMessage(msg.to,"ᴊᴏɪɴᴇᴅ ᴋɪᴄᴋ ᴍᴏᴅᴇ 「ᴏɴ」")
-                else:
-                    dz.sendMessage(msg.to,"ᴊᴏɪɴᴇᴅ ᴋɪᴄᴋ ᴍᴏᴅᴇ 「ᴏғғ」")
-				
-                if msg.to in pro["Protectinvite"]:
-                    dz.sendMessage(msg.to,"ɪɴᴠɪᴛᴇʀ ᴋɪᴄᴋ ᴍᴏᴅᴇ 「ᴏɴ」")
-                else:
-                    dz.sendMessage(msg.to,"ɪɴᴠɪᴛᴇʀ ᴋɪᴄᴋ ᴍᴏᴅᴇ 「ᴏғғ」")
-				
-                if msg.to in pro["Autokick"]: 
-                    dz.sendMessage(msg.to,"ᴀᴜᴛᴏ ᴋɪᴄᴋ ᴍᴏᴅᴇ 「ᴏɴ」")
-                else:
-                    dz.sendMessage(msg.to,"ᴀᴜᴛᴏ ᴋɪᴄᴋ ᴍᴏᴅᴇ 「ᴏғғ」")
-				
 #=============================================
-            elif msg.text in ["Mimic list"]:
-                if org["tmimic"] == {}:
-                    dz.sendMessage(msg.to,"Not have list")
-                else:
-                    mc = []
-                    for mi_d in org["tmimic"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getContacts(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].displayName)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴍɪᴍɪᴄ ʟɪsᴛ ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-            elif "Addmimic @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    G = dz.getGroupIdsJoined()
-                    cgroup = dz.getGroups(G)
-                    ngroup = ""
-                    for mention in mentionees:
-                        org['tmimic'][mention['M']] = True
-                        dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ ᴀᴅᴅᴇᴅ")
-                        with open('org.json', 'w') as fp:
-                            json.dump(org, fp, sort_keys=True, indent=4)
-            elif "Unmimic @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    G = dz.getGroupIdsJoined()
-                    cgroup = dz.getGroups(G)
-                    ngroup = ""
-                    for mention in mentionees:
-                        del org['tmimic'][mention['M']]
-                        dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ ᴅᴇʟᴇᴛᴇᴅ")
-                        with open('org.json', 'w') as fp:
-                            json.dump(org, fp, sort_keys=True, indent=4)
-            elif "Mimic " in msg.text:
-                xpesan = msg.text
-                xres = xpesan.replace("Mimic ","")
-                if xres == "off":
-                    wait['mimic'] = False
-                    dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ sᴇᴛ ᴛᴏ ᴏғғ")
-                elif xres == "on":
-                    wait['mimic'] = True
-                    dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ sᴇᴛ ᴛᴏ ᴏɴ")
-            elif "Banned @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    for mention in mentionees:
-                        if mention['M'] in org["Target"]:
-                            dz.sendMessage(msg.to,"Already save")
-                        elif mention['M']in org["Friend"]:
-                            dz.sendMessage(msg.to,"S empty")
-                        else:
-                            org["Target"][mention['M']] = True
-                            with open('setting.json', 'w') as fp:
-                                json.dump(wait, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"ᴛᴀʀɢᴇᴛ ᴀᴅᴅᴇᴅ")
-            elif "Unbanned @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    for mention in mentionees:
-                        if mention['M'] in org["Target"]:
-                            del org["Target"][mention['M']]
-                            with open('org.json', 'w') as fp:
-                                json.dump(org, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"ᴛᴀʀɢᴇᴛ ᴅᴇʟᴇᴛᴇᴅ")
-                        else:
-                            dz.sendMessage(msg.to,"ᴇᴍᴘᴛʏ ᴛᴀʀɢᴇᴛ")
-            elif msg.text in ["Clear ban"]:
-                org['Target'] = {}
-                with open('org.json', 'w') as fp:
-                    json.dump(org, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴛᴀʀɢᴇᴛ ᴄʟᴇᴀʀ")
-            elif msg.text in ["Kill ban"]:
-                if msg.toType == 2:
-                    group = yd.getGroup(msg.to)
-                    gMembMids = [contact.mid for contact in group.members]
-                    matched_list = []
-                    for tag in org["Target"]:
-                        matched_list+=filter(lambda str: str == tag, gMembMids)
-                    if matched_list == []:
-                        dz.sendMessage(msg.to,"ɴᴏ ᴛᴀʀɢᴇᴛ ᴀᴅᴅᴇᴅ")
-                        return
-                    for jj in matched_list:
-                        try:
-                            dz.kickoutFromGroup(msg.to,[jj])						
-                        except:
-                            print ("limit")
-                    dz.sendMessage(msg.to,"ᴅᴏɴᴇ")
-            elif msg.text in ["Add banned"]:
-                    wait["atarget"]=True
-                    dz.sendMessage(msg.to, "sᴇɴᴅ ᴄᴏɴᴛᴀᴄᴛ")
-            elif msg.text in ["Del banned"]:
-                    wait["dtarget"]=True
-                    dz.sendMessage(msg.to, "sᴇɴᴅ ᴄᴏɴᴛᴀᴄᴛ")
-            elif msg.text in ["Ban list"]:
-                if org["Target"] == {}:
-                    dz.sendMessage(msg.to,"ɴᴏ ᴛᴀʀɢᴇᴛ ᴀᴅᴅᴇᴅ")
-                else:
-                    mc = []
-                    for mi_d in org["Target"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getContacts(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].displayName)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴛᴀʀɢᴇᴛ ʟɪsᴛ ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-            elif msg.text in ["Add silemt"]:
-                    wait["asilent"]=True
-                    dz.sendMessage(msg.to, "sᴇɴᴅ ᴄᴏɴᴛᴀᴄᴛ")
-            elif msg.text in ["Del silent"]:
-                    wait["dsilent"]=True
-                    dz.sendMessage(msg.to, "sᴇɴᴅ ᴄᴏɴᴛᴀᴄᴛ")
-            elif msg.text in ["Clear silent"]:
-                org['Silent'] = {}
-                with open('setting.json', 'w') as fp:
-                    json.dump(wait, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"sᴜᴄᴄᴇs ᴄʟᴇᴀʀ")
-            elif msg.text in ["TBP list"]:
-                if org["Silent"] == {}:
-                    dz.sendMessage(msg.to,"ɴᴏ ᴛᴀʀɢᴇᴛ ᴀᴅᴅᴇᴅ")
-                else:
-                    mc = []
-                    for mi_d in org["Silent"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getContacts(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].displayName)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴛʙp ʟɪsᴛ ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-            elif msg.text in ["Add friend"]:
-                    wait["afriend"]=True
-                    dz.sendMessage(msg.to, "sᴇɴᴅ ᴄᴏɴᴛᴀᴄᴛ")
-            elif msg.text in ["Del friend"]:
-                    wait["dfriend"]=True
-                    dz.sendMessage(msg.to, "sᴇɴᴅ ᴄᴏɴᴛᴀᴄᴛ")
-            elif msg.text in ["Friend list"]:
-                if org["Friend"] == {}:
-                    try:
-                        dz.sendMessage(msg.to,"ɴᴏ ғʀɪᴇɴᴅ ᴀᴅᴅᴇᴅ")
-                    except:
-                        pass
-                else:
-                    mc = []
-                    for mi_d in org["Friend"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getContacts(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].displayName)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ Friend List ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-            elif msg.text in ["Clear friend"]:
-                org['Friend'] = {}
-                with open('org.json', 'w') as fp:
-                    json.dump(org, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ғʀɪᴇɴᴅ ᴄʟᴇᴀʀ")
-#=============================================
-            elif msg.text in ["My grup"]:
+            elif msg.text in ["My groups"]:
                     gid = dz.getGroupIdsJoined()
                     h = ""
                     for i in gid:
                         gn = dz.getGroup(i).name
                         h += "╠ ➽ %s\n" % (gn)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴍʏ ɢʀᴜᴘ ⟧\n╔══════════════\n"+ h +"╚══════════════")
-#=============================================
-            elif "Cname: " in msg.text:
-                x = dz.getProfile()
-                x.displayName = msg.text.replace("Cname: ","")
-                dz.updateProfile(x)
-                dz.sendMessage(msg.to, "ᴅᴏɴᴇ")
-#=============================================
-            elif msg.text in ["Autojoin on"]:
-                wait["Autojoin"]=True
-                with open('setting.json', 'w') as fp:
-                    json.dump(wait, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴀᴜᴛᴏ ᴊᴏɪɴ ᴍᴏᴅᴇ ᴏɴ")
-            elif msg.text in ["Autojoin off"]:
-                wait["Autojoin"]=False
-                with open('setting.json', 'w') as fp:
-                    json.dump(wait, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to,"ᴀᴜᴛᴏ ᴊᴏɪɴ ᴍᴏᴅᴇ ᴏғғ")
+                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ My Groups ⟧\n╔══════════════\n"+ h +"╚══════════════")
 #=============================================
             elif msg.text in ["Gift"]:
                     giftnya={'MSGTPL': '5',
@@ -1520,128 +683,6 @@ def dhenzaBot(op):
                             'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58'}           
                     dz.sendMessage(msg.to,None, contentMetadata=giftnya, contentType=9)
 #=============================================
-            elif "List grup tikell" == msg.text:
-                if resp["grupsticker"] == {}:
-                    dz.sendMessage(msg.to,"ɴᴏ ɢʀᴜᴘ ᴀᴅᴅᴇᴅ")
-                else:
-                    mc = []
-                    for mi_d in resp["grupsticker"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getGroups(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].name)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ Tikell on ɢʀᴜᴘ ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-            elif "List prosider" == msg.text:
-                if pro["prosider"] == {}:
-                    dz.sendMessage(msg.to,"ɴᴏ ɢʀᴜᴘ ᴀᴅᴅᴇᴅ")
-                else:
-                    mc = []
-                    for mi_d in pro["prosider"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getGroups(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].name)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴘ sɪᴅᴇʀ ɢʀᴜᴘ ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-            elif "List autokick" == msg.text:
-                if pro["Autokick"] == {}:
-                    dz.sendMessage(msg.to,"ɴᴏ ɢʀᴜᴘ ᴀᴅᴅᴇᴅ")
-                else:
-                    mc = []
-                    for mi_d in pro["Autokick"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getGroups(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].name)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴀᴜᴛᴏᴋɪᴄᴋ ɢʀᴜᴘ ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-            elif "List auto in" == msg.text:
-                if pro["intaPoint"] == {}:
-                    dz.sendMessage(msg.to,"ɴᴏ ɢʀᴜᴘ ᴀᴅᴅᴇᴅ")
-                else:
-                    mc = []
-                    for mi_d in pro["intaPoint"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getGroups(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].name)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔═════════════\n╠⟦ ᴘotect ᴊᴏɪɴ ɢʀᴜᴘ ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-            elif "List protect join" == msg.text:
-                if pro["Protectjoin"] == {}:
-                    dz.sendMessage(msg.to,"ɴᴏ ɢʀᴜᴘ ᴀᴅᴅᴇᴅ")
-                else:
-                    mc = []
-                    for mi_d in pro["Protectjoin"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getGroups(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].name)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴘro ᴊᴏɪɴ ɢʀᴜᴘ ⟧\n╔══════════════\n╠ ➽ %s\n╚══���═══════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-            elif "List protect qr" == msg.text:
-                if pro["Protectgr"] == {}:
-                    dz.sendMessage(msg.to,"ɴᴏ ɢʀᴜᴘ ᴀᴅᴅᴇᴅ")
-                else:
-                    mc = []
-                    for mi_d in pro["Protectgr"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getGroups(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].name)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴘro ǫʀ ɢʀᴜᴘ ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-            elif "List protect cancel" == msg.text:
-                if pro["Protectcancl"] == {}:
-                    dz.sendMessage(msg.to,"ɴᴏ ɢʀᴜᴘ ᴀᴅᴅᴇᴅ")
-                else:
-                    mc = []
-                    for mi_d in pro["Protectcancl"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getGroups(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].name)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴘro ᴄᴀɴᴄᴇʟ ɢʀᴜᴘ ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-#=============================================
-            elif "List protect invite" == msg.text:
-                if pro["Protectinvite"] == {}:
-                    dz.sendMessage(msg.to,"ɴᴏ ɢʀᴜᴘ ᴀᴅᴅᴇᴅ")
-                else:
-                    mc = []
-                    for mi_d in pro["Protectinvite"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = yd.getGroups(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].name)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴘro ɪɴᴠɪᴛᴇ ɢʀᴜᴘ ⟧\n╔═���════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-
             elif msg.text in ["Tag"]:
                 group = dz.getGroup(msg.to)
                 nama = [contact.mid for contact in group.members]
@@ -1655,56 +696,6 @@ def dhenzaBot(op):
                         s += 7
                         txt += u'@Zero \n'
                     dz.sendMessage(msg.to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
-                    
-            elif msg.text in ["Cek"]:
-                    dz.sendMessage(msg.to, ".")
-                    try:
-                        del wait2['readPoint'][msg.to]
-                        del wait2['readMember'][msg.to]
-                    except:
-                           pass
-                    now2 = datetime.now()
-                    wait2['readPoint'][msg.to] = msg.id
-                    wait2['readMember'][msg.to] = ""
-                    wait2['setTime'][msg.to] = datetime.now().strftime('%Y-%m-%d %H:%M')
-                    wait2['ROM'][msg.to] = {}
-            elif msg.text in ["Sider"]:
-                    if msg.to in wait2['readPoint']:
-                        if wait2["ROM"][msg.to].items() == []:
-                            chiya = ""
-                        else:
-                            chiya = ""
-                            for rom in wait2["ROM"][msg.to].items():
-                                chiya += rom[1] + "\n"
-                        dz.sendMessage(msg.to, "╔═══════════════%s\n╠════════════════\n%s╠═══════════════\n║ [%s]\n╚════════════════"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
-                      
-                    else:
-                        dz.sendMessage(msg.to, "ʙᴇʟᴏᴍ ᴅɪ sᴇᴛ ʙᴏsss")
-            elif msg.text in ["Sider on"]:
-                    pro["prosider"][msg.to]=True
-                    with open('pro.json', 'w') as fp:
-                        json.dump(pro, fp, sort_keys=True, indent=4)
-                    dz.sendMessage(msg.to, "sIder ᴍᴏᴅᴇ ᴏɴ ʙᴏs")
-                    try:
-                        del ciduk['ceadPoint'][msg.to]
-                        del ciduk['ceadMember'][msg.to]
-                    except:
-                        pass
-                    now2 = datetime.now()
-                    ciduk['ceadPoint'][msg.to] = msg.id
-                    ciduk['ceadMember'][msg.to] = ""
-                    ciduk['cetTime'][msg.to] = datetime.now().strftime('%Y-%m-%d %H:%M')
-                    ciduk['cOM'][msg.to] = {}
-            elif msg.text in ["Sider off"]:
-                    del pro["prosider"][msg.to]
-                    with open('pro.json', 'w') as fp:
-                        json.dump(pro, fp, sort_keys=True, indent=4)
-                    dz.sendMessage(msg.to, "sIder ᴍᴏᴅᴇ ᴏғғ ʙᴏs")
-                    try:
-                        del ciduk['ceadPoint'][msg.to]
-                        del ciduk['ceadMember'][msg.to]
-                    except:
-                        pass
 #=============================================
             elif msg.text in ["Recover"]:
                 thisgroup = dz.getGroups([msg.to])
@@ -1713,16 +704,9 @@ def dhenzaBot(op):
                 dz.createGroup("test", mi_d)
                 dz.sendMessage(msg.to,"done")
 #=============================================
-            elif msg.text in ["Hapuschat"]:
-                try:
-                    dz.removeAllMessages(op.param2)
-                    dz.sendMessage(msg.to,"ᴅᴏɴᴇ")
-                except:
-                    pass
-#=============================================
-            elif msg.text in ["Wellcome"]:
+            elif msg.text in ["Welcome"]:
                 gs = dz.getGroup(msg.to)
-                dz.sendMessage(msg.to,"ᴡᴇʟʟᴄᴏᴍᴇ ᴛᴏ "+ gs.name)
+                dz.sendMessage(msg.to,"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ "+ gs.name)
 #=============================================
             elif msg.text in ["Cancel all"]:
                 group = dz.getGroup(msg.to)
@@ -1733,13 +717,9 @@ def dhenzaBot(op):
                     for x in nama:
                         time.sleep(0.2)
                         dz.cancelGroupInvitation(msg.to, [x])
-                    dz.sendMessage(msg.to, "Berhasil sikat smua pendingan")
+                    dz.sendMessage(msg.to, "Deleted all pending invites")
 #=============================================
-            elif msg.text in ["Invite"]:
-                    wait["Invi"] = True
-                    dz.sendMessage(msg.to,"sᴇɴᴅ ᴄᴏɴᴛᴀᴄᴛ")
-#=============================================
-            elif msg.text in ["Member list"]:   
+            elif text.lower() in ["member list"]:   
                 kontak = dz.getGroup(msg.to)
                 group = kontak.members
                 msgs="╔══════════════\n╠⟦ ᴍᴇᴍʙᴇʀ ʟɪsᴛ ⟧\n╔══════════════"
