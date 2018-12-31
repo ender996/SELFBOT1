@@ -691,7 +691,7 @@ def dhenzaBot(op):
             elif msg.text in ["Cancel all"]:
                 group = dz.getGroup(msg.to)
                 if group.invitee is None:
-                    dz.sendMessage(op.message.to, "limit")
+                    dz.sendMessage(op.message.to, "No pending invites to cancel")
                 else:
                     nama = [contact.mid for contact in group.invitee]
                     for x in nama:
