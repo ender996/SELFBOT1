@@ -44,6 +44,7 @@ helpMessage ="""╔════════════════════
 ╠⍟➣  /Info @[User]
 ╠⍟➣  /Ginfo 
 ╠⍟➣  /Time
+╠⍟➣  /Cancel all
 ╠════════════════════
 """
 
