@@ -728,7 +728,7 @@ def dhenzaBot(op):
                     elif '/kick' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/info' in text.lower():
-			newmsg = text.replace("/","")
+			newmsg = text.replace("/",""):
                         dz.sendMessage(msg.to,newmsg.text,msg.contentMetadata)
                     elif '/time' in text.lower():
                         dz.sendMessage(msg.to,"Time")
