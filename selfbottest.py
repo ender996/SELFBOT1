@@ -784,9 +784,7 @@ def dhenzaBot(op):
             msg = op.message
             if msg.toType == 2:
                 if wait["mimic"] == True:
-                    if 'tagall' in msg.text:
-                        dz.sendMessage(msg.to,"Tag")
-                    elif 'Tagall' in msg.text:
+                    if text.lower() in 'tagall':
                         dz.sendMessage(msg.to,"Tag")
                     elif 'Spamtag' in msg.text:
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
