@@ -565,8 +565,8 @@ def dhenzaBot(op):
                 runtime = format_timespan(runtime)
                 dz.sendMessage(msg.to, "ʙᴏᴛ ʀᴜɴ  {}".format(str(runtime)))
 
-            elif "Spamtag @" in msg.text:
-                _name = msg.text.replace("Spamtag @","")
+            elif "spamtag @" in text.lower():
+                _name = msg.text.replace("spamtag @","")
                 _nametarget = _name.rstrip(' ')
                 gs = dz.getGroup(msg.to)
                 for g in gs.members:
@@ -733,7 +733,7 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"Time")
                     elif '/ginfo' in text.lower():
                         dz.sendMessage(msg.to,"Ginfo")
-                    elif '@DL. Bot' in text.lower():
+                    elif '@dl. bot' in text.lower():
                         dz.sendMessage(msg.to,"Help")
                     else:
                         pass
