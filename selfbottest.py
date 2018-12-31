@@ -782,6 +782,7 @@ def dhenzaBot(op):
 #=============================================
         if op.type == 26:
             msg = op.message
+            text = msg.text
             if msg.toType == 2:
                 if wait["mimic"] == True:
                     if text.lower() in 'tagall':
