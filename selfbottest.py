@@ -715,23 +715,23 @@ def dhenzaBot(op):
                 if wait["mimic"] == True:
                     if 'tagall' in text.lower():
                         dz.sendMessage(msg.to,"Tag")
-                    elif text.lower() in 'spamtag':
+                    elif 'spmatag' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
-                    elif text.lower() in '/help':
+                    elif '/help' in text.lower():
                         dz.sendMessage(msg.to,"Help")
-                    elif text.lower() in '/reboot':
+                    elif '/reboot' in text.lower():
                         dz.sendMessage(msg.to,"Reboot")
-                    elif text.lower() in '/member list':
+                    elif '/member list' in text.lower():
                         dz.sendMessage(msg.to,"Member list")
-                    elif text.lower() in '/cancel all':
+                    elif '/cancel all' in text.lower():
                         dz.sendMessage(msg.to,"Cancel all")
-                    elif text.lower() in '/kick':
+                    elif '/kick' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
-                    elif text.lower() in '/info':
+                    elif '/info' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
-                    elif text.lower() in '/time':
+                    elif '/time' in text.lower():
                         dz.sendMessage(msg.to,"Time")
-                    elif text.lower() in '/ginfo':
+                    elif '/ginfo' in text.lower():
                         dz.sendMessage(msg.to,"Ginfo")
                     else:
                         pass
