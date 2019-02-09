@@ -46,6 +46,7 @@ helpMessage ="""╔════════════════════
 ╠⍟➣  /Time
 ╠⍟➣  /Cancel all
 ╠⍟➣  /Calendar
+╠⍟➣  /DLCalendar
 ╠════════════════════
 """
 
@@ -736,6 +737,7 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"Ginfo")
                     elif '/calendar' in text.lower():
                         dz.sendImageWithURL(msg.to,"https://i.imgur.com/3VjIftv.jpg")
+                    elif '/dlcalendar' in text.lower():
                         dz.sendImageWithURL(msg.to,"https://i.imgur.com/FVOhisA.jpg")
                     else:
                         pass
