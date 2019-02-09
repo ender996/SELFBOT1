@@ -733,6 +733,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"Time")
                     elif '/ginfo' in text.lower():
                         dz.sendMessage(msg.to,"Ginfo")
+                    elif '/calendar' in text.lower():
+                        dz.sendImageWithURL(msg.to,"https://imgur.com/a/UfoNPFd?s=sms")
                     else:
                         pass
                 else:
