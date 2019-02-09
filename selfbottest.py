@@ -45,6 +45,7 @@ helpMessage ="""╔════════════════════
 ╠⍟➣  /Ginfo 
 ╠⍟➣  /Time
 ╠⍟➣  /Cancel all
+╠⍟➣  /Calendar
 ╠════════════════════
 """
 
