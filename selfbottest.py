@@ -734,7 +734,7 @@ def dhenzaBot(op):
                     elif '/ginfo' in text.lower():
                         dz.sendMessage(msg.to,"Ginfo")
                     elif '/calendar' in text.lower():
-                        dz.sendImageWithURL(msg.to,"https://imgur.com/gallery/UfoNPFd")
+                        dz.sendImageWithURL(msg.to,"https://i.imgur.com/3VjIftv.jpg")
                     else:
                         pass
                 else:
