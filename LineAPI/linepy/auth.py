@@ -8,7 +8,7 @@ import rsa, os
 
 class Auth(object):
     isLogin     = False
-    authToken   = ""
+    authToken   = "ECOwZzQI8vGjK3MNgmM8.AlUwBuOESO9tzvoy4jATca.W0aUhH2M5D1wtF2rT85wu88YJkIpzzs2pnyicKGHdjs="
     certificate = ""
 
     def __init__(self):
