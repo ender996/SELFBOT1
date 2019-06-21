@@ -52,7 +52,7 @@ helpMessage ="""╔════════════════════
 ╠════════════════════
 """
 
-family ="""✇✇  DL. FAMILY  ✇✇
+family =""" ✇✇  DL. FAMILY  ✇✇
 ════════════
 ══  MAIN GUILDS  ══
 ══  DL.  ═  K480 ══ 
