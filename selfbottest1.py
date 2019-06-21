@@ -52,6 +52,26 @@ helpMessage ="""╔════════════════════
 ╠════════════════════
 """
 
+family ="""════ ┈✇✇  DL. FAMILY  ✇✇┈ ════
+════════  MAIN GUILDS  ═════════
+══    DL.    ══════    K480   ══ 
+══    DL#    ══════    K104   ══
+══    dla    ══════    K197   ══
+══    dl8    ══════    K262   ══
+══    DxL    ══════    K275   ══
+══    D4L    ══════    K275   ══
+══    DLE    ══════    K275   ══
+══    DML    ══════    K275   ══
+════════  SUB  GUILDS  ═════════
+══    Dlx    ══════    K197   ══
+══    DLc    ══════    K480   ══
+══    pdl    ══════    K480   ══
+══    wDL    ══════    K480   ══
+══    DlL    ══════    K488   ══
+══    D@L    ══════    K529   ══
+════════════════════════════════
+"""
+
 sid = []
 wait = {
     "spamr":True,
@@ -753,6 +773,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"fekhole.teamspeak3.com:3171")
                     elif '/discord' in text.lower():
                         dz.sendMessage(msg.to,"https://discord.gg/3pe7qFx")
+                    elif '/family' in text.lower():
+                        dz.sendMessage(msg.to,family)
                     else:
                         pass
                 else:
