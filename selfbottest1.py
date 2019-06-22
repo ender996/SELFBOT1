@@ -94,6 +94,9 @@ tech =""" DL. Tech Team
 [Dxl/DML/DLE] Chris
 ➣ Website/Teamspeak/Youtube
 ════════════
+[DLE] JonSnow5025
+➣ Youtube
+════════════
 """
 
 sid = []
