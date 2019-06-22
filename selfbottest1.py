@@ -55,10 +55,10 @@ helpMessage ="""╔════════════════════
 family =""" ✇✇  DL. FAMILY  ✇✇
 ════════════
 ══  MAIN GUILDS  ══
-══  DL.  ═  K480 ══ 
+══  DL.   ═  K480 ══ 
 ══  DL#  ═  K104 ══
-══  dla  ═  K197 ══
-══  dl8  ═  K262 ══
+══  dla   ═  K197 ══
+══  dl8   ═  K262 ══
 ══  DxL  ═  K275 ══
 ══  D4L  ═  K275 ══
 ══  DLE  ═  K275 ══
