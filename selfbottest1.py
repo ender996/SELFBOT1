@@ -70,6 +70,17 @@ family =""" ✇✇  DL. FAMILY  ✇✇
 ══  wDL   ═  K480 ══
 ══  DlL     ═  K488 ══
 ══  D@L  ═  K529 ══
+══  Dl^     ═  K262 ══
+════════════
+"""
+
+tech =""" DL. Tech Team
+════════════
+[DL#] Fekhole        ➣ Teamspeak
+[dla] TJ/I Am Rocket ➣ Spreadsheets
+[DL.] Dex            ➣ Discord/Website
+[DL.] xParzivalx     ➣ Website/Bot/Youtube
+[Dxl/DML/DLE] Chris  ➣ Website/Teamspeak/Youtube
 ════════════
 """
 
@@ -776,6 +787,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"https://discord.gg/3pe7qFx")
                     elif '/family' in text.lower():
                         dz.sendMessage(msg.to,family)
+                    elif '/tech' in text.lower():
+                        dz.sendMessage(msg.to,tech)			
                     else:
                         pass
                 else:
