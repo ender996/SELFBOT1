@@ -57,18 +57,18 @@ family =""" ✇✇  DL. FAMILY  ✇✇
 ══  MAIN GUILDS  ══
 ══  DL.   ═  K480 ══ 
 ══  DL#  ═  K104 ══
-══  dla   ═  K197 ══
+══  dla    ═  K197 ══
 ══  dl8   ═  K262 ══
 ══  DxL  ═  K275 ══
 ══  D4L  ═  K275 ══
-══  DLE  ═  K275 ══
+══  DLE   ═  K275 ══
 ══  DML  ═  K275 ══
 ════════════
 ══  SUB  GUILDS  ══
-══  Dlx   ═  K197 ══
-══  pdl   ═  K480 ══
-══  wDL  ═  K480 ══
-══  DlL   ═  K488 ══
+══  Dlx    ═  K197 ══
+══  pdl     ═  K480 ══
+══  wDL   ═  K480 ══
+══  DlL     ═  K488 ══
 ══  D@L   ═  K529 ══
 ════════════
 """
