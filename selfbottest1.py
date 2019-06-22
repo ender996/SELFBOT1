@@ -66,7 +66,6 @@ family =""" ✇✇  DL. FAMILY  ✇✇
 ════════════
 ══  SUB  GUILDS  ══
 ══  Dlx  ═  K197 ══
-══  DLc  ═  K480 ══
 ══  pdl  ═  K480 ══
 ══  wDL  ═  K480 ══
 ══  DlL  ═  K488 ══
