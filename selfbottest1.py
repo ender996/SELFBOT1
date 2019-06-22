@@ -76,11 +76,20 @@ family =""" ✇✇  DL. FAMILY  ✇✇
 
 tech =""" DL. Tech Team
 ════════════
-[DL#] Fekhole        ➣ Teamspeak
-[dla] TJ/I Am Rocket ➣ Spreadsheets
-[DL.] Dex            ➣ Discord/Website
-[DL.] xParzivalx     ➣ Website/Bot/Youtube
-[Dxl/DML/DLE] Chris  ➣ Website/Teamspeak/Youtube
+[DL#] Fekhole
+➣ Teamspeak
+════════════
+[dla] TJ/I Am Rocket
+➣ Spreadsheets
+════════════
+[DL.] Dex
+➣ Discord/Website
+════════════
+[DL.] xParzivalx
+➣ Website/Bot/Youtube
+════════════
+[Dxl/DML/DLE] Chris
+➣ Website/Teamspeak/Youtube
 ════════════
 """
 
