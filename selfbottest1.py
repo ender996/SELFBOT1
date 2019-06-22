@@ -49,6 +49,8 @@ helpMessage ="""╔════════════════════
 ╠⍟➣  /website
 ╠⍟➣  /youtube
 ╠⍟➣  /teamspeak
+╠⍟➣  /family
+╠⍟➣  /tech
 ╠════════════════════
 """
 
