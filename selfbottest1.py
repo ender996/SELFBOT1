@@ -32,7 +32,7 @@ myProfile = {
 }
 
 helpMessage ="""╔═══════════ 
-║✇✇  DLG ᴛᴇᴀᴍ ʙᴏᴛ  ✇✇
+║ ✇✇  DLG BOT  ✇✇
 ╠═══════════
 ╠⍟➣  /Help
 ╠⍟➣  Tagall
@@ -40,10 +40,7 @@ helpMessage ="""╔═══════════
 ╠⍟➣  Spamtag @[User]
 ╠⍟➣  Info @[User]
 ╠⍟➣  /Ginfo 
-╠⍟➣  /Time
-╠⍟➣  /Cancel all
 ╠⍟➣  /Calendar
-╠⍟➣  /DLCalendar
 ╠⍟➣  /discord
 ╠⍟➣  /facebook
 ╠⍟➣  /website
