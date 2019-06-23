@@ -51,6 +51,7 @@ helpMessage ="""╔═══════════
 ╠⍟➣  /teamspeak
 ╠⍟➣  /family
 ╠⍟➣  /tech
+╠⍟➣  /games
 ╠═══════════
 """
 
