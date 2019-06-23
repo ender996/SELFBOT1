@@ -798,7 +798,7 @@ def dhenzaBot(op):
                     elif 'Spamtag @' in msg.text:
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/help' in text.lower():
-                        dz.sendMessage(msg.to,"/Help")
+                        dz.sendMessage(msg.to,helpMessage)
                     elif '/reboot' in text.lower():
                         dz.sendMessage(msg.to,"Reboot")
                     elif '/member list' in text.lower():
