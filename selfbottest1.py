@@ -32,7 +32,7 @@ myProfile = {
 }
 
 helpMessage ="""╔═══════════ 
-║┈✇✇  DL. ᴛᴇᴀᴍ ʙᴏᴛ  ✇✇┈
+║✇✇  DL. ᴛᴇᴀᴍ ʙᴏᴛ  ✇✇
 ╠═══════════
 ╠⍟➣  /Help
 ╠⍟➣  Tagall
@@ -831,7 +831,9 @@ def dhenzaBot(op):
                     elif '/family' in text.lower():
                         dz.sendMessage(msg.to,family)
                     elif '/tech' in text.lower():
-                        dz.sendMessage(msg.to,tech)			
+                        dz.sendMessage(msg.to,tech)
+                    elif '/games' in text.lower():
+                        dz.sendMessage(msg.to,games)
                     else:
                         pass
                 else:
