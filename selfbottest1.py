@@ -92,7 +92,7 @@ tech =""" DL. Tech Team
 [DL.] xParzivalx
 ➣ Website/Bot/Youtube
 ════════════
-[Dxl/DML/DLE] Chris
+[DxL/DML/DLE] Chris
 ➣ Website/Teamspeak/Youtube
 ════════════
 [DLE] JonSnow5025
@@ -109,7 +109,7 @@ Lords Mobile
 ➣ [DL.] HBO
 ════════════
 Clash of Clans
-➣ [Dxl/DML/DLE] Chris
+➣ [DxL/DML/DLE] Chris
 ════════════
 World of Warcraft
 ➣ Vyndroe
@@ -121,7 +121,7 @@ Pirates of the Caribbean
 ➣ [DLE] JonSnow5025
 ════════════
 Diablo
-➣ [Dxl/DML] Rahvin
+➣ [DxL/DML] Rahvin
 ════════════
 """
 
