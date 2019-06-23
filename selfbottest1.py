@@ -31,9 +31,9 @@ myProfile = {
 	"pictureStatus": ""
 }
 
-helpMessage ="""╔════════════════════ 
+helpMessage ="""╔═══════════ 
 ║┈✇✇  DL. ᴛᴇᴀᴍ ʙᴏᴛ  ✇✇┈
-╠════════════════════
+╠═══════════
 ╠⍟➣  /Help
 ╠⍟➣  Tagall
 ╠⍟➣  /Member list
@@ -51,7 +51,7 @@ helpMessage ="""╔════════════════════
 ╠⍟➣  /teamspeak
 ╠⍟➣  /family
 ╠⍟➣  /tech
-╠════════════════════
+╠═══════════
 """
 
 family =""" ✇✇  DL. FAMILY  ✇✇
@@ -83,10 +83,10 @@ tech =""" DL. Tech Team
 ➣ Teamspeak
 ════════════
 [dla] TJ/I Am Rocket
-➣ Spreadsheets
+➣ Spreadsheets/Design
 ════════════
 [DL.] Dex
-➣ Discord/Website
+➣ Discord/Website/Design
 ════════════
 [DL.] xParzivalx
 ➣ Website/Bot/Youtube
@@ -96,6 +96,34 @@ tech =""" DL. Tech Team
 ════════════
 [DLE] JonSnow5025
 ➣ Youtube
+════════════
+[TUE] ShirleysTemple
+➣ Graphic Design
+════════════
+[Dxl/DML/DLE] Chris
+➣ Website/Teamspeak/Youtube
+════════════
+"""
+
+games =""" DL. Family Games
+════════════
+Lords Mobile
+➣ [DL.] HBO
+════════════
+Clash of Clans
+➣ [DxL/DML/DLE] Chris
+════════════
+World of Warcraft
+➣ Vyndroe
+════════════
+Rise of Civilizations
+➣ [DLE] ToiletWater
+════════════
+Pirates of the Caribbean
+➣ [DLE] JonSnow5025
+════════════
+Diablo
+➣ [Dxl/DML/D4L] Rahvin
 ════════════
 """
 
