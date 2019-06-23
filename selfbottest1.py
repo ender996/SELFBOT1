@@ -83,10 +83,10 @@ tech =""" DL. Tech Team
 ➣ Teamspeak
 ════════════
 [dla] TJ/I Am Rocket
-➣ Spreadsheets/Design
+➣ Spreadsheets/Graphic Design
 ════════════
 [DL.] Dex
-➣ Discord/Website/Design
+➣ Discord/Website/Graphic Design
 ════════════
 [DL.] xParzivalx
 ➣ Website/Bot/Youtube
