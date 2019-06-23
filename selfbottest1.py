@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from humanfriendly import format_timespan, format_size, format_number, format_length
 import time, random, multiprocessing, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib3, urllib.parse, html5lib, wikipedia, atexit, timeit, pafy, youtube_dl, traceback
 
-dz = LINE("EFCzYYVH19rwm0sCTif8.AlUwBuOESO9tzvoy4jATca.20up8gjAR+eMVoZKMxeyO3OmooLxYw/5dx8r4elVbkI=")
+dz = LINE("EGrmwnkMKnBZhuFtMwE8.AlUwBuOESO9tzvoy4jATca.wYN6Aszstkp0Kng5tFqOt3fH7M3dJtUS2DnDXU8Km/Y=")
 dz.log("Auth Token : " + str(dz.authToken))
 dz.log("Timeline Token : " + str(dz.tl.channelAccessToken))
 
