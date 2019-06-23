@@ -101,9 +101,6 @@ tech =""" DL. Tech Team
 [TUE] ShirleysTemple
 ➣ Graphic Design
 ════════════
-[Dxl/DML/DLE] Chris
-➣ Website/Teamspeak/Youtube
-════════════
 """
 
 games =""" DL. Family Games
@@ -112,7 +109,7 @@ Lords Mobile
 ➣ [DL.] HBO
 ════════════
 Clash of Clans
-➣ [DxL/DML/DLE] Chris
+➣ [Dxl/DML/DLE] Chris
 ════════════
 World of Warcraft
 ➣ Vyndroe
@@ -124,7 +121,7 @@ Pirates of the Caribbean
 ➣ [DLE] JonSnow5025
 ════════════
 Diablo
-➣ [Dxl/DML/D4L] Rahvin
+➣ [Dxl/DML] Rahvin
 ════════════
 """
 
