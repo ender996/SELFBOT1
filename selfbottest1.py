@@ -32,7 +32,7 @@ myProfile = {
 }
 
 helpMessage ="""╔═══════════ 
-║✇✇  DL. ᴛᴇᴀᴍ ʙᴏᴛ  ✇✇
+║✇✇  DLG ᴛᴇᴀᴍ ʙᴏᴛ  ✇✇
 ╠═══════════
 ╠⍟➣  /Help
 ╠⍟➣  Tagall
@@ -55,7 +55,7 @@ helpMessage ="""╔═══════════
 ╠═══════════
 """
 
-family =""" ✇✇  DL. FAMILY  ✇✇
+family =""" ✇✇  DLG FAMILY  ✇✇
 ════════════
 ══  MAIN GUILDS  ══
 ══  DL.    ═  K480 ══ 
@@ -78,7 +78,7 @@ family =""" ✇✇  DL. FAMILY  ✇✇
 ════════════
 """
 
-tech =""" DL. Tech Team
+tech =""" DLG Tech Team
 ════════════
 [DL#] Fekhole
 ➣ Teamspeak
@@ -103,7 +103,7 @@ tech =""" DL. Tech Team
 ════════════
 """
 
-games =""" DL. Family Games
+games =""" DLG Family Games
 ════════════
 Lords Mobile
 ➣ [DL.] HBO
