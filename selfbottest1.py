@@ -569,7 +569,59 @@ def dhenzaBot(op):
                         dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
 
                     
-            elif msg.text in ["Reject"]:
+            elif msg.text in ["Mimic list"]:
+                if org["tmimic"] == {}:
+                    dz.sendMessage(msg.to,"Not have list")
+                else:
+                    mc = []
+                    for mi_d in org["tmimic"]:
+                        mc.append(mi_d)
+                    pass
+                    cban = dz.getContacts(mc)
+                    nban = []
+                    for x in range(len(cban)):
+                        nban.append(cban[x].displayName)
+                    pass
+                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
+                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴍɪᴍɪᴄ ʟɪsᴛ ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
+            elif "Addmimic @" in msg.text:
+                if 'MENTION' in msg.contentMetadata.keys() != None:
+                    names = re.findall(r'@(\w+)', msg.text)
+                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                    mentionees = mention['MENTIONEES']
+                    G = dz.getGroupIdsJoined()
+                    cgroup = dz.getGroups(G)
+                    ngroup = ""
+                    for mention in mentionees:
+                        org['tmimic'][mention['M']] = True
+                        dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ ᴀᴅᴅᴇᴅ")
+                        with open('org.json', 'w') as fp:
+                            json.dump(org, fp, sort_keys=True, indent=4)
+
+	    elif "Unmimic @" in msg.text:
+                if 'MENTION' in msg.contentMetadata.keys() != None:
+                    names = re.findall(r'@(\w+)', msg.text)
+                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                    mentionees = mention['MENTIONEES']
+                    G = dz.getGroupIdsJoined()
+                    cgroup = dz.getGroups(G)
+                    ngroup = ""
+                    for mention in mentionees:
+                        del org['tmimic'][mention['M']]
+                        dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ ᴅᴇʟᴇᴛᴇᴅ")
+                        with open('org.json', 'w') as fp:
+                            json.dump(org, fp, sort_keys=True, indent=4)
+            elif "Mimic " in msg.text:
+                xpesan = msg.text
+                xres = xpesan.replace("Mimic ","")
+                if xres == "off":
+                    wait['mimic'] = False
+                    dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ sᴇᴛ ᴛᴏ ᴏғғ")
+                elif xres == "on":
+                    wait['mimic'] = True
+                    dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ sᴇᴛ ᴛᴏ ᴏɴ")
+
+	    elif msg.text in ["Reject"]:
               if msg.toType == 2:
                 gid = dz.getGroupIdsInvited()
                 for i in gid:
