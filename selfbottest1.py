@@ -598,7 +598,7 @@ def dhenzaBot(op):
                         with open('org.json', 'w') as fp:
                             json.dump(org, fp, sort_keys=True, indent=4)
 
-	    elif "Unmimic @" in msg.text:
+            elif "Unmimic @" in msg.text:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
                     names = re.findall(r'@(\w+)', msg.text)
                     mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -621,7 +621,7 @@ def dhenzaBot(op):
                     wait['mimic'] = True
                     dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ sᴇᴛ ᴛᴏ ᴏɴ")
 
-	    elif msg.text in ["Reject"]:
+            elif msg.text in ["Reject"]:
               if msg.toType == 2:
                 gid = dz.getGroupIdsInvited()
                 for i in gid:
@@ -887,7 +887,7 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"https://www.instagram.com/dark_legends_gaming")
                     elif '/twitter' in text.lower():
                         dz.sendMessage(msg.to,"https://www.twitter.com/darklegendgam1n")
-		    else:
+                    else:
                         pass
                 else:
                     pass
