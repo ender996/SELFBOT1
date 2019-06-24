@@ -832,7 +832,7 @@ def dhenzaBot(op):
                     elif '/instagram' in text.lower():
                         dz.sendMessage(msg.to,"https://www.instagram.com/dark_legends_gaming")
                     elif '/twitter' in text.lower():
-                        dz.sendMessage(msg.to,"https://www.twitter.com/darklegendgam1n?s=17")
+                        dz.sendMessage(msg.to,"https://www.twitter.com/darklegendgam1n")
 		    else:
                         pass
                 else:
