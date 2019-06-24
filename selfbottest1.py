@@ -80,7 +80,7 @@ family =""" ✇✇  DLG FAMILY  ✇✇
 tech =""" DLG Tech Team
 ════════════
 [DL#] Fekhole
-➣ Teamspeak
+➣ Teamspeak/Youtube
 ════════════
 [dla] TJ/I Am Rocket
 ➣ Spreadsheets/Graphic Design
