@@ -126,6 +126,7 @@ Diablo
 """
 
 donate =""" paypal.me/darklegendsgaming
+
 All donations go to DLG family, tech support, and Youtube staff.
 Owned by HBO/Richard Owen
 """
