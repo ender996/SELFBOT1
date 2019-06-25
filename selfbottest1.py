@@ -51,6 +51,7 @@ helpMessage ="""╔═══════════
 ╠⍟➣  /family
 ╠⍟➣  /tech
 ╠⍟➣  /games
+╠⍟➣  /donate
 ╠═══════════
 """
 
@@ -122,6 +123,11 @@ Pirates of the Caribbean
 Diablo
 ➣ [DxL/DML] Rahvin
 ════════════
+"""
+
+donate =""" paypal.me/darklegendsgaming
+All donations go to DLG family, tech support, and Youtube staff.
+Owned by HBO/Richard Owen
 """
 
 sid = []
