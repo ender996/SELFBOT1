@@ -92,7 +92,7 @@ tech =""" DLG Tech Team
 [DL.] xParzivalx
 ➣ Website/Bot/Youtube
 ════════════
-[DxL/DML/DLE] Chris
+[DL.] Lulou 
 ➣ Website/Teamspeak/Youtube
 ════════════
 [DLE] JonSnow5025
