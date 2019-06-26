@@ -93,7 +93,7 @@ tech =""" DLG Tech Team
 ➣ Website/Bot/Youtube
 ════════════
 [DL.] Lulou 
-➣ Website/Teamspeak/Youtube
+➣ Website/Youtube/Twitter/Instagram
 ════════════
 [DLE] JonSnow5025
 ➣ Youtube
