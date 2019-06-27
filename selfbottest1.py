@@ -84,7 +84,7 @@ tech =""" DLG Tech Team
 ➣ Teamspeak/Youtube
 ════════════
 [dla] TJ/I Am Rocket
-➣ Spreadsheets/Graphic Design
+➣ Spreadsheets/Graphic Design/Youtube
 ════════════
 [DL.] Dex
 ➣ Discord/Website/Graphic Design/Youtube
