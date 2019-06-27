@@ -875,7 +875,7 @@ def dhenzaBot(op):
                     elif '/runtime' in text.lower():
                         dz.sendMessage(msg.to,"Runtime")
                     elif '/website' in text.lower():
-                        dz.sendMessage(msg.to,"https://darklegendsgaming.com")
+                        dz.sendMessage(msg.to,"http://darklegendsgaming.com")
                     elif '/youtube' in text.lower():
                         dz.sendMessage(msg.to,"https://www.youtube.com/channel/UCPW1tTAU9hLqKIl-yzhnqYw")
                     elif '/facebook' in text.lower():
