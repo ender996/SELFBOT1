@@ -87,7 +87,7 @@ tech =""" DLG Tech Team
 ➣ Spreadsheets/Graphic Design
 ════════════
 [DL.] Dex
-➣ Discord/Website/Graphic Design
+➣ Discord/Website/Graphic Design/Youtube
 ════════════
 [DL.] xParzivalx
 ➣ Website/Bot/Youtube
