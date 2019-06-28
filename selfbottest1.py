@@ -859,8 +859,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"Member list")
                     elif '/cancel all' in text.lower():
                         dz.sendMessage(msg.to,"Cancel all")
-                    elif 'kick @' in text.lower():
-                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+#                    elif 'kick @' in text.lower():
+#                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif 'info @' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/time' in text.lower():
