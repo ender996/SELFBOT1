@@ -63,7 +63,6 @@ family =""" ✇✇  DLG FAMILY  ✇✇
 ══  dla    ═  K197 ══
 ══  dl8    ═  K262 ══
 ══  DxL   ═  K275 ══
-══  DLE   ═  K275 ══
 ══  DML  ═  K275 ══
 ════════════
 ══  SUB  GUILDS  ══
@@ -94,9 +93,6 @@ tech =""" DLG Tech Team
 [DL.] Lulou 
 ➣ Website/Youtube/Twitter/Instagram
 ════════════
-[DLE] JonSnow5025
-➣ Youtube
-════════════
 [TUE] ShirleysTemple
 ➣ Graphic Design
 ════════════
@@ -108,7 +104,7 @@ Lords Mobile
 ➣ [DL.] HBO
 ════════════
 Clash of Clans
-➣ [DxL/DML/DLE] Chris
+➣ [DL.] HBO
 ════════════
 World of Warcraft
 ➣ Vyndroe
