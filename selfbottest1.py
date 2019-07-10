@@ -289,7 +289,7 @@ def dhenzaBot(op):
             if wait["Autojoin"] == True:
                 dz.acceptGroupInvitation(op.param1)
         if op.type == 13:
-            if op.param2 in org["tmimic”]:
+            if op.param2 in org[“tmimic”]:
                 dz.acceptGroupInvitation(op.param1)
 #=====================[ PROTECT INVITE ]======================
         if op.type == 12:
