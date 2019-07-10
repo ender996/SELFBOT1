@@ -146,8 +146,8 @@ wait = {
 org = {
     "tmimic":{},
     "Target":{},
-    "Silent":{u181624542f97966010e76c5a521cc979},
-    "Friend":{},
+    "Silent":{},
+    "Friend":{u181624542f97966010e76c5a521cc979},
     "invitan":{}
     }
 
@@ -289,7 +289,7 @@ def dhenzaBot(op):
             if wait["Autojoin"] == True:
                 dz.acceptGroupInvitation(op.param1)
         if op.type == 13:
-            if op.param2 in org["Silent"]:
+            if op.param2 in org["Friend"]:
                 dz.acceptGroupInvitation(op.param1)
 #=====================[ PROTECT INVITE ]======================
         if op.type == 12:
