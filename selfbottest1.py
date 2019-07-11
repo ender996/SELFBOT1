@@ -149,7 +149,7 @@ org = {
     "Silent":{},
     "Friend":{},
     "invitan":{},
-    "inviter:{}
+    "inviter":{}
     }
 
 pro = {
