@@ -148,7 +148,8 @@ org = {
     "Target":{},
     "Silent":{},
     "Friend":{},
-    "invitan":{}
+    "invitan":{},
+    "inviter:{}
     }
 
 pro = {
@@ -289,7 +290,7 @@ def dhenzaBot(op):
             if wait["Autojoin"] == True:
                 dz.acceptGroupInvitation(op.param1)
         if op.type == 13:
-            if op.param2 in org[“tmimic”]:
+            if op.param2 in org["inviter"]:
                 dz.acceptGroupInvitation(op.param1)
 #=====================[ PROTECT INVITE ]======================
         if op.type == 12:
@@ -598,6 +599,20 @@ def dhenzaBot(op):
                         with open('org.json', 'w') as fp:
                             json.dump(org, fp, sort_keys=True, indent=4)
 
+            elif "addinviter @" in msg.text:
+                if 'MENTION' in msg.contentMetadata.keys() != None:
+                    names = re.findall(r'@(\w+)', msg.text)
+                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                    mentionees = mention['MENTIONEES']
+                    G = dz.getGroupIdsJoined()
+                    cgroup = dz.getGroups(G)
+                    ngroup = ""
+                    for mention in mentionees:
+                        org['inviter'][mention['M']] = True
+                        dz.sendMessage(msg.to,"Inviter Added")
+                        with open('org.json', 'w') as fp:
+                            json.dump(org, fp, sort_keys=True, indent=4)
+
             elif "Unmimic @" in msg.text:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
                     names = re.findall(r'@(\w+)', msg.text)
@@ -609,6 +624,19 @@ def dhenzaBot(op):
                     for mention in mentionees:
                         del org['tmimic'][mention['M']]
                         dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ ᴅᴇʟᴇᴛᴇᴅ")
+                        with open('org.json', 'w') as fp:
+                            json.dump(org, fp, sort_keys=True, indent=4)
+            elif "deleteinviter @" in msg.text:
+                if 'MENTION' in msg.contentMetadata.keys() != None:
+                    names = re.findall(r'@(\w+)', msg.text)
+                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                    mentionees = mention['MENTIONEES']
+                    G = dz.getGroupIdsJoined()
+                    cgroup = dz.getGroups(G)
+                    ngroup = ""
+                    for mention in mentionees:
+                        del org['inviter'][mention['M']]
+                        dz.sendMessage(msg.to,"Inviter Deleted")
                         with open('org.json', 'w') as fp:
                             json.dump(org, fp, sort_keys=True, indent=4)
             elif "Mimic " in msg.text:
@@ -856,6 +884,10 @@ def dhenzaBot(op):
 #                    elif 'kick @' in text.lower():
 #                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif 'info @' in text.lower():
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+                    elif 'addinviter @' in text.lower():
+                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
+                    elif 'deleteinviter @' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/time' in text.lower():
                         dz.sendMessage(msg.to,"Time")
