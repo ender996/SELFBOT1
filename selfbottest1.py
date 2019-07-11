@@ -149,7 +149,9 @@ org = {
     "Silent":{},
     "Friend":{},
     "invitan":{},
-    "inviter":{}
+    "inviter":{
+        "u181624542f97966010e76c5a521cc979": true,
+        "u6fd63b2d8788d09692f671ef0bc3201d": true}
     }
 
 pro = {
