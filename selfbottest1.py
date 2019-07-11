@@ -59,12 +59,12 @@ family =""" ✇✇  DLG FAMILY  ✇✇
 ════════════
 ══  MAIN GUILDS  ══
 ══  DL.    ═  K480 ══ 
-══  DL#  ═  K104 ══
-══  dla    ═  K197 ══
+══  DL#  ═  K269 ══
+══  dla    ═  K480 ══
 ══  dl8    ═  K262 ══
 ════════════
 ══  SUB  GUILDS  ══
-══  Dlx     ═  K197 ══
+══  Dlx     ═  K480 ══
 ══  DLD   ═  K480 ══
 ══  pdl     ═  K480 ══
 ══  wDL   ═  K480 ══
