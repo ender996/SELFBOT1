@@ -879,6 +879,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"Reboot")
                     elif '/member list' in text.lower():
                         dz.sendMessage(msg.to,"Member list")
+                    elif '/mygroups' in text.lower():
+                        dz.sendMessage(msg.to,"My groups")
                     elif '/cancel all' in text.lower():
                         dz.sendMessage(msg.to,"Cancel all")
 #                    elif 'kick @' in text.lower():
