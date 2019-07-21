@@ -52,6 +52,7 @@ helpMessage ="""╔═══════════
 ╠⍟➣  /tech
 ╠⍟➣  /games
 ╠⍟➣  /donate
+╠⍟➣  /shop
 ╠═══════════
 """
 
@@ -907,7 +908,7 @@ def dhenzaBot(op):
                     elif '/youtube' in text.lower():
                         dz.sendMessage(msg.to,"https://www.youtube.com/channel/UCPW1tTAU9hLqKIl-yzhnqYw")
                     elif '/facebook' in text.lower():
-                        dz.sendMessage(msg.to,"https://www.facebook.com/groups/2129293013963485")
+                        dz.sendMessage(msg.to,"https://www.facebook.com/Dark-Legends-Gaming-347046466196913")
                     elif '/teamspeak' in text.lower():
                         dz.sendMessage(msg.to,"fekhole.teamspeak3.com:3171")
                     elif '/discord' in text.lower():
@@ -924,6 +925,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"https://www.twitter.com/DLG_Online")
                     elif '/donate' in text.lower():
                         dz.sendMessage(msg.to,donate)
+                    elif '/shop' in text.lower():
+                        dz.sendMessage(msg.to,"https://shop.spreadshirt.com/dark-legends-gaming")
                     else:
                         pass
                 else:
