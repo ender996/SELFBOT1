@@ -52,7 +52,7 @@ helpMessage ="""╔═══════════
 ╠⍟➣  /tech
 ╠⍟➣  /games
 ╠⍟➣  /donate
-╠⍟➣  /shop
+╠⍟➣  /merch
 ╠═══════════
 """
 
@@ -925,7 +925,7 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"https://www.twitter.com/DLG_Online")
                     elif '/donate' in text.lower():
                         dz.sendMessage(msg.to,donate)
-                    elif '/shop' in text.lower():
+                    elif '/merch' in text.lower():
                         dz.sendMessage(msg.to,"https://shop.spreadshirt.com/dark-legends-gaming")
                     else:
                         pass
