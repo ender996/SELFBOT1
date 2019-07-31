@@ -63,8 +63,10 @@ family =""" ✇✇  DLG FAMILY  ✇✇
 ══  DL#  ═  K269 ══
 ══  dla    ═  K480 ══
 ══  D@L  ═  K480 ══
+══  DlW     ═  K480 ══
 ══  dl8    ═  K262 ══
 ══  dDL   ═  K458 ══
+══  DL^    ═  K262 ══
 ════════════
 ══  SUB  GUILDS  ══
 ══  Dlx     ═  K480 ══
@@ -72,7 +74,6 @@ family =""" ✇✇  DLG FAMILY  ✇✇
 ══  pdl     ═  K480 ══
 ══  wDL   ═  K480 ══
 ══  DlL     ═  K488 ══
-══  DL^    ═  K262 ══
 ════════════
 """
 
