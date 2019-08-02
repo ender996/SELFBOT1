@@ -60,10 +60,10 @@ family =""" ✇✇  DLG FAMILY  ✇✇
 ════════════
 ══  MAIN GUILDS  ══
 ══  DL.    ═  K480 ══ 
-══  DL#  ═  K269 ══
+══  DL#  ═  K480 ══
 ══  dla    ═  K480 ══
 ══  D@L  ═  K480 ══
-══  DlW     ═  K480 ══
+══  DlW   ═  K480 ══
 ══  dl8    ═  K262 ══
 ══  dDL   ═  K458 ══
 ══  DL^    ═  K262 ══
