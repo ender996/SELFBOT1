@@ -659,12 +659,11 @@ def dhenzaBot(op):
                     dz.rejectGroupInvitation(i)
                 dz.sendMessage(msg.to,"done reject")
 
-            elif "Bcgrup: " in msg.text:
+            elif "Bcgroup: " in msg.text:
                 bc = msg.text.replace("Bcgrup: ","")
                 gid = dz.getGroupIdsJoined()
                 for i in gid:
-                    dz.sendMessage(i,bc+"\n\nSILENT TΣΔM βΩT")
-                dz.sendMessage(msg.to,"⟦ʙʀᴏᴀᴅᴄᴀsᴛ sᴜᴄᴄᴇs⟧")
+                    dz.sendMessage(i,bc+"\n\nDLG TEAM")
 
             elif "Gmid @" in msg.text:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
