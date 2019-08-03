@@ -60,7 +60,6 @@ family =""" ✇✇  DLG FAMILY  ✇✇
 ════════════
 ══  MAIN GUILDS  ══
 ══  DL.    ═  K480 ══ 
-══  DL#  ═  K480 ══
 ══  dla    ═  K480 ══
 ══  D@L  ═  K480 ══
 ══  DlW   ═  K480 ══
@@ -71,6 +70,7 @@ family =""" ✇✇  DLG FAMILY  ✇✇
 ══  SUB  GUILDS  ══
 ══  Dlx     ═  K480 ══
 ══  DLD   ═  K480 ══
+══  DL#  ═  K480 ══
 ══  pdl     ═  K480 ══
 ══  wDL   ═  K480 ══
 ══  DlL     ═  K488 ══
