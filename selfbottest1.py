@@ -660,7 +660,7 @@ def dhenzaBot(op):
                 dz.sendMessage(msg.to,"done reject")
 
             elif "Bcgroup: " in msg.text:
-                bc = msg.text.replace("Bcgrup: ","")
+                bc = msg.text.replace("Bcgroup: ","")
                 gid = dz.getGroupIdsJoined()
                 for i in gid:
                     dz.sendMessage(i,bc+"\n\nDLG TEAM")
