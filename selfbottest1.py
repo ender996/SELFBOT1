@@ -659,8 +659,8 @@ def dhenzaBot(op):
                     dz.rejectGroupInvitation(i)
                 dz.sendMessage(msg.to,"done reject")
 
-            elif "Bcgroup: " in msg.text:
-                bc = msg.text.replace("Bcgroup: ","")
+            elif "bcgroup: " in msg.text:
+                bc = msg.text.replace("bcgroup: ","")
                 gid = dz.getGroupIdsJoined()
                 for i in gid:
                     dz.sendMessage(i,bc+"\n\nDLG TEAM")
