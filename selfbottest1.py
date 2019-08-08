@@ -99,7 +99,7 @@ tech =""" DLG Tech Team
 ════════════
 """
 
-dlmadmins =""" DLG Tech Team
+dlmadmins =""" DLm Bus Admins
 ════════════
 [DLm/dla] Veruca Salt
 ➣ Saltyv
