@@ -937,7 +937,7 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,msg.text)
                     elif "/bus" in text.lower():
                         dz.sendImageWithURL(msg.to,"https://darklegendsgaming.com/buspic")
-                    elif "/busadmins" in text.lower():
+                    elif "/dlmadmins" in text.lower():
                         dz.sendImage(msg.to,"/home/pi/Downloads/busadmins.png")
                     elif "/groupid" in text.lower():
                         dz.sendMessage(msg.to,msg.to)
