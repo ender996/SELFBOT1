@@ -99,6 +99,43 @@ tech =""" DLG Tech Team
 ════════════
 """
 
+dlmadmins =""" DLG Tech Team
+════════════
+[DLm/dla] Veruca Salt
+➣ Saltyv
+════════════
+[dla] Phleth
+➣ Phleth
+════════════
+[dla] xAstraea
+➣ xcalliope
+════════════
+[dla] Zambuki
+➣ zambuki
+════════════
+[dla] Lady 
+➣ bb2387 
+════════════
+[DL.] |6| SIX |6|
+➣ 6sixxx6
+════════════
+[DWL] Morgool
+➣ wargool
+════════════
+[dla] Sarge Pepper
+➣ wtwhitloc
+════════════
+[dla/Dlx] Ms2Pac
+➣ msjsoconfident 
+════════════
+[dla] Gold Factory
+➣ jdhalf2727
+════════════
+[dla] I Am Rocket
+➣ tjnocar
+════════════
+"""
+
 games =""" DLG Family Games
 ════════════
 Lords Mobile
@@ -938,7 +975,7 @@ def dhenzaBot(op):
                     elif "/bus" in text.lower():
                         dz.sendImageWithURL(msg.to,"https://darklegendsgaming.com/buspic")
                     elif "/dlmadmins" in text.lower():
-                        dz.sendImage(msg.to,"/home/pi/Downloads/busadmins.png")
+                        dz.sendImage(msg.to,dlmadmins)
                     elif "/groupid" in text.lower():
                         dz.sendMessage(msg.to,msg.to)
                     else:
