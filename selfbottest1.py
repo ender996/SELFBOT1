@@ -765,8 +765,9 @@ def dhenzaBot(op):
                 dz.sendMessage(msg.to, "ʙᴏᴛ ʀᴜɴ  {}".format(str(runtime)))
 		
             elif msg.text in ["/boarding"]:
-                diff = time.time()
-                dz.sendMessage(msg.to, diff)
+                timeNow = time.time()
+                runtime = format_timespan(timeNow) 
+                dz.sendMessage(msg.to, format(str(runtime)))
 
             elif msg.text in ["/boarding2"]:
                 diff2 = datetime.now()
