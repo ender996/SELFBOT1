@@ -665,9 +665,9 @@ def dhenzaBot(op):
                 for i in gid:
                     dz.sendMessage(i,bc+"\n\nDLG TEAM")
 
-#            elif "testgroup: " in msg.text:
-#                bc = msg.text.replace("bcgroup: ","")
-#                dz.sendMessage((Test3),bc+"\n\nDLG TEAM")
+            elif "testgroup: " in msg.text:
+                bc = msg.text.replace("testgroup: ","")
+                dz.sendMessage((cd6ef278e18b895a1dbfc371c230201d4),bc+"\n\nDLG TEAM")
 
             elif "Gmid @" in msg.text:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
@@ -933,8 +933,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"https://shop.spreadshirt.com/dark-legends-gaming")
                     elif "bcgroup: " in text.lower():
                         dz.sendMessage(msg.to,msg.text)
-                    elif "testgroup" in text.lower():
-                        dz.sendMessage(msg.to,msg.to)
+                    elif "testgroup: " in text.lower():
+                        dz.sendMessage(msg.to,msg.text)
                     else:
                         pass
                 else:
