@@ -766,7 +766,7 @@ def dhenzaBot(op):
 		
             elif msg.text in ["/boarding"]:
                 diff = datetime(2019, 8, 9, 10) - datetime.now()
-                dz.sendMessage(msg.to, diff))
+                dz.sendMessage(msg.to, diff)
 
             elif "Spamtag @" in msg.text:
                 _name = msg.text.replace("Spamtag @","")
