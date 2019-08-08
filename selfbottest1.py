@@ -667,7 +667,7 @@ def dhenzaBot(op):
 
             elif "testgroup: " in msg.text:
                 bc = msg.text.replace("bcgroup: ","")
-                dz.sendMessage('Test3',bc+"\n\nDLG TEAM")
+                dz.sendMessage("Test3",bc+"\n\nDLG TEAM")
 
             elif "Gmid @" in msg.text:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
