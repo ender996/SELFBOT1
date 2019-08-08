@@ -933,8 +933,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"https://shop.spreadshirt.com/dark-legends-gaming")
                     elif "bcgroup: " in text.lower():
                         dz.sendMessage(msg.to,msg.text)
-                    elif "testgroup: " in text.lower():
-                        dz.sendMessage(msg.to,msg.text)
+                    elif "testgroup" in text.lower():
+                        dz.sendMessage(msg.to,msg.to)
                     else:
                         pass
                 else:
