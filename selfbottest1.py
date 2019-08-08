@@ -763,6 +763,11 @@ def dhenzaBot(op):
                 runtime = timeNow - botStart
                 runtime = format_timespan(runtime)
                 dz.sendMessage(msg.to, "ʙᴏᴛ ʀᴜɴ  {}".format(str(runtime)))
+		
+            elif msg.text in ["/boarding"]:
+                diff = datetime.datetime(2019, 8, 9, 10) - datetime.datetime.today()
+                diff = format_timespan(diff)
+                dz.sendMessage(msg.to, "Bus boarding in  {}".format(str(diff)))
 
             elif "Spamtag @" in msg.text:
                 _name = msg.text.replace("Spamtag @","")
@@ -936,6 +941,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/time' in text.lower():
                         dz.sendMessage(msg.to,"Time")
+                    elif '/boarding' in text.lower():
+                        dz.sendMessage(msg.to,"/boarding")
                     elif '/ginfo' in text.lower():
                         dz.sendMessage(msg.to,"Ginfo")
                     elif '/calendar' in text.lower():
