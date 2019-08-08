@@ -950,9 +950,9 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"Time")
                     elif '/boarding' in text.lower():
                         dz.sendMessage(msg.to,"/boarding")
-                    elif '/boarding2' in text.lower():
+                    elif '/bmnt' in text.lower():
                         dz.sendMessage(msg.to,"/boarding2")
-                    elif '/boarding3' in text.lower():
+                    elif '/bnnt' in text.lower():
                         dz.sendMessage(msg.to,"/boarding3")
                     elif '/ginfo' in text.lower():
                         dz.sendMessage(msg.to,"Ginfo")
