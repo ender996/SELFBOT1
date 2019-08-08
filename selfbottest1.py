@@ -62,7 +62,7 @@ family =""" ✇✇  DLG FAMILY  ✇✇
 ══  DL.    ═  K480 ══ 
 ══  dla    ═  K480 ══
 ══  D@L  ═  K480 ══
-══  DlW   ═  K480 ══
+══  DWL  ═  K480 ══
 ══  dl8    ═  K262 ══
 ══  dDL   ═  K458 ══
 ══  DL^    ═  K262 ══
