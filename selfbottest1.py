@@ -765,17 +765,9 @@ def dhenzaBot(op):
                 dz.sendMessage(msg.to, "ʙᴏᴛ ʀᴜɴ  {}".format(str(runtime)))
 		
             elif msg.text in ["/boarding"]:
-                timeNow = time.time()
+                timeNow = datetime.now()
                 runtime = format_timespan(timeNow) 
                 dz.sendMessage(msg.to, format(str(runtime)))
-
-            elif msg.text in ["/boarding2"]:
-                diff2 = datetime.now()
-                dz.sendMessage(msg.to, diff2)
-                
-            elif msg.text in ["/boarding3"]:
-                diff3 = datetime.today()
-                dz.sendMessage(msg.to, diff3)
             
             elif "Spamtag @" in msg.text:
                 _name = msg.text.replace("Spamtag @","")
