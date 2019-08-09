@@ -769,7 +769,7 @@ def dhenzaBot(op):
                 timediff = timeBus - datetime.now()
                 tdh = (timediff.seconds//3600) + (timediff.days*24)
                 tdm = (timediff.seconds//60)%60
-                tdn = "Bus boarding in " + tdh + " hours and " + tdm + " minutes"
+                tdn = "Bus boarding in " + str(tdh) + " hours and " + str(tdm) + " minutes"
                 dz.sendMessage(msg.to, tdn)
             
             elif "Spamtag @" in msg.text:
