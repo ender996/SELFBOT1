@@ -105,7 +105,7 @@ dlmadmins =""" DLm Bus Admins
 ➣ Saltyv
 ════════════
 [dla] Phleth
-➣ Phleth
+➣ phleth
 ════════════
 [dla] xAstraea
 ➣ xcalliope
