@@ -767,7 +767,10 @@ def dhenzaBot(op):
             elif msg.text in ["/boarding"]:
                 timeBus = datetime(2019, 8 ,9, 14)
                 timediff = timeBus - datetime.now()
-                dz.sendMessage(msg.to, str(timediff).split(".")[0])
+                tdh = (timediff.seconds//3600) + (timediff.days*24)
+                tdm = (timediff.seconds//60)%60
+                tdn = "Bus boarding in " + tdh + " hours and " + tdm + " minutes"
+                dz.sendMessage(msg.to, tdn)
             
             elif "Spamtag @" in msg.text:
                 _name = msg.text.replace("Spamtag @","")
