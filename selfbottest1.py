@@ -766,7 +766,7 @@ def dhenzaBot(op):
 		
             elif msg.text in ["/boarding"]:
                 timeBus = datetime(2019, 8 ,9, 10)
-                timediff = timeBus - datetime.now(pytz.timezone('US/Eastern'))
+                timediff = timeBus - datetime.now(timezone.utc)
                 dz.sendMessage(msg.to, (str(timediff)))
             
             elif "Spamtag @" in msg.text:
