@@ -768,7 +768,7 @@ def dhenzaBot(op):
                 timeBus = datetime(2019, 8 ,9, 14)
                 timediff = timeBus - datetime.now()
                 tdh = (timediff.seconds//3600) + (timediff.days*24)
-                tdm = (timediff.seconds//60)%60
+                tdm = ((timediff.seconds+60)//60)%60
                 tdn = "Bus boarding in " + str(tdh) + " hours and " + str(tdm) + " minutes"
                 dz.sendMessage(msg.to, tdn)
             
