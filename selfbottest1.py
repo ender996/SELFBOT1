@@ -5,7 +5,7 @@ from LineAPI.akad.ttypes import Message
 from LineAPI.akad.ttypes import ContentType as Type
 from LineAPI.akad.ttypes import ChatRoomAnnouncementContents
 from LineAPI.akad.ttypes import ChatRoomAnnouncement
-from datetime import datetime, timedelta, date
+from datetime import datetime, timedelta, date, timezone
 from time import sleep
 from bs4 import BeautifulSoup
 from humanfriendly import format_timespan, format_size, format_number, format_length
