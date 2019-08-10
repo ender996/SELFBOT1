@@ -765,7 +765,7 @@ def dhenzaBot(op):
                 dz.sendMessage(msg.to, "ʙᴏᴛ ʀᴜɴ  {}".format(str(runtime)))
 		
             elif msg.text in ["/boarding"]:
-                timeBus = datetime(2019, 8 ,9, 14)
+                timeBus = datetime(2019, 8 ,11, 19)
                 timediff = timeBus - datetime.now()
                 tdh = (timediff.seconds//3600) + (timediff.days*24)
                 tdm = ((timediff.seconds+60)//60)%60
