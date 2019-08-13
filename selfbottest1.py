@@ -945,7 +945,8 @@ def dhenzaBot(op):
                     elif '/time' in text.lower():
                         dz.sendMessage(msg.to,"Time")
                     elif '/boarding' in text.lower():
-                        dz.sendMessage(msg.to,"/boarding")
+                        dz.sendMessage(msg.to,"No bus scheduled due to guild fest")
+#                        dz.sendMessage(msg.to,"/boarding")
                     elif '/ginfo' in text.lower():
                         dz.sendMessage(msg.to,"Ginfo")
                     elif '/calendar' in text.lower():
@@ -983,8 +984,9 @@ def dhenzaBot(op):
                     elif "testgroup: " in text.lower():
                         dz.sendMessage(msg.to,msg.text)
                     elif "/bus" in text.lower():
-                        dz.sendMessage(msg.to,dlmadmins)
-                        dz.sendImageWithURL(msg.to,"https://darklegendsgaming.com/buspic")
+#                        dz.sendMessage(msg.to,dlmadmins)
+#                        dz.sendImageWithURL(msg.to,"https://darklegendsgaming.com/buspic")
+                        dz.sendMessage(msg.to,"No bus scheduled due to guild fest")
                     elif "/dlmadmins" in text.lower():
                         dz.sendMessage(msg.to,dlmadmins)
                     elif "/groupid" in text.lower():
