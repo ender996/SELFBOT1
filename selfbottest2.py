@@ -331,35 +331,6 @@ def dhenzaBot(op):
         if op.type == 13:
             if op.param2 in org["inviter"]:
                 dz.acceptGroupInvitation(op.param1)
-#=====================[ PROTECT INVITE ]======================
-        if op.type == 12:
-            if op.param1 in pro["Protectinvite"]:
-                X = dz.getGroup(op.param1)
-                orang = [contact.mid for contact in X.invitee]
-                for m in orang:
-                    org["invitan"][m]=True
-                    with open('setting.json', 'w') as fp:
-                        json.dump(org, fp, sort_keys=True, indent=4)
-        if op.type == 13:
-            if op.param1 in pro["Protectinvite"]:
-                if op.param2 in org["Friend"]:
-                    if op.param3 in org["Friend"]:
-                        pass
-                    else:
-                        X = dz.getGroup(op.param1)
-                        orang = [contact.mid for contact in X.invitee]
-                        for m in orang:
-                            org["invitan"][m]=True
-                            with open('org.json', 'w') as fp:
-                                json.dump(org, fp, sort_keys=True, indent=4)
-                else:
-                    if op.param3 in org["Friend"]:
-                        pass
-                    else:
-                        try:
-                            dz.kickoutFromGroup(op.param1,[op.param2])
-                        except:
-                            dz.sendMessage(op.param1,"limit")
 #==============[ WELCOME] ===============
         if op.type == 17:
             if pro["wellcome"] == True:
@@ -375,43 +346,7 @@ def dhenzaBot(op):
                     ginfo = dz.getGroup(op.param1)
                     dzx = dz.getContact(op.param2)
                     dz.sendMessage(op.param1, "Ehhh  " + str(dzx.displayName) + "\nWellcome to " + str(ginfo.name) +"\n"+ Dhenza["welmsg"])
-                    dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/" + dzx.pictureStatus)                    
-
-#=============== [ NOTIFIED_KICKOUT_FROM_GROUP ]===========
-        if op.type == 19:
-            if op.param1 in pro["Autokick"]:
-                if op.param2 in org["Friend"]:
-                    pass
-                else:
-                    try:
-                        dz.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        dz.sendMessage(op.param1,"limit")
-                   
-						
-            if op.param3 in org["Friend"]:
-                if op.param2 in org["Friend"]:
-                    pass
-                else:                   
-                    try:
-                        dz.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        dz.sendMessage(op.param1,"limit")
-                    try:
-                    	dz.inviteIntoGroup(op.param1,[op.param3])
-                    except:
-                        try:
-                            G = dz.getGroup(op.param1)
-                            G.preventJoinByTicket = False
-                            dz.updateGroup(G)
-                            invsend = 0
-                            Ticket = dz.reissueGroupTicket(op.param1)
-                            dz.acceptGroupInvitationByTicket(op.param1,Ticket)
-                            G = dz.getGroup(op.param1)
-                            G.preventJoinByTicket = True
-                            dz.updateGroup(G)
-                        except Exception as e:
-                            print(e)
+                    dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/" + dzx.pictureStatus)
 
         if op.type == 25:
             msg = op.message
@@ -608,36 +543,6 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"「ɢɪᴅ:」 \n➽ " + msg.to)
                         dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
 
-                    
-            elif msg.text in ["Mimic list"]:
-                if org["tmimic"] == {}:
-                    dz.sendMessage(msg.to,"Not have list")
-                else:
-                    mc = []
-                    for mi_d in org["tmimic"]:
-                        mc.append(mi_d)
-                    pass
-                    cban = dz.getContacts(mc)
-                    nban = []
-                    for x in range(len(cban)):
-                        nban.append(cban[x].displayName)
-                    pass
-                    jo = "\n╠ ➽ ".join(str(i) for i in nban)
-                    dz.sendMessage(msg.to,"╔══════════════\n╠⟦ ᴍɪᴍɪᴄ ʟɪsᴛ ⟧\n╔══════════════\n╠ ➽ %s\n╚══════════════\n╠⟦ Total: %s ⟧\n"%(jo,str(len(cban)))+"╚══════════════")
-            elif "Addmimic @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    G = dz.getGroupIdsJoined()
-                    cgroup = dz.getGroups(G)
-                    ngroup = ""
-                    for mention in mentionees:
-                        org['tmimic'][mention['M']] = True
-                        dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ ᴀᴅᴅᴇᴅ")
-                        with open('org.json', 'w') as fp:
-                            json.dump(org, fp, sort_keys=True, indent=4)
-
             elif "addinviter @" in msg.text:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
                     names = re.findall(r'@(\w+)', msg.text)
@@ -652,19 +557,6 @@ def dhenzaBot(op):
                         with open('org.json', 'w') as fp:
                             json.dump(org, fp, sort_keys=True, indent=4)
 
-            elif "Unmimic @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    G = dz.getGroupIdsJoined()
-                    cgroup = dz.getGroups(G)
-                    ngroup = ""
-                    for mention in mentionees:
-                        del org['tmimic'][mention['M']]
-                        dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ ᴅᴇʟᴇᴛᴇᴅ")
-                        with open('org.json', 'w') as fp:
-                            json.dump(org, fp, sort_keys=True, indent=4)
             elif "deleteinviter @" in msg.text:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
                     names = re.findall(r'@(\w+)', msg.text)
@@ -678,15 +570,6 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"Inviter Deleted")
                         with open('org.json', 'w') as fp:
                             json.dump(org, fp, sort_keys=True, indent=4)
-            elif "Mimic " in msg.text:
-                xpesan = msg.text
-                xres = xpesan.replace("Mimic ","")
-                if xres == "off":
-                    wait['mimic'] = False
-                    dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ sᴇᴛ ᴛᴏ ᴏғғ")
-                elif xres == "on":
-                    wait['mimic'] = True
-                    dz.sendMessage(msg.to,"ᴍɪᴍɪᴄ sᴇᴛ ᴛᴏ ᴏɴ")
 
             elif msg.text in ["Reject"]:
               if msg.toType == 2:
@@ -928,7 +811,13 @@ def dhenzaBot(op):
                     elif '/reboot' in text.lower():
                         dz.sendMessage(msg.to,"Reboot")
                     elif '/member list' in text.lower():
-                        dz.sendMessage(msg.to,"Member list")
+                        kontak = dz.getGroup(msg.to)
+                        group = kontak.members
+                        msgs="╔══════════════\n╠⟦ ᴍᴇᴍʙᴇʀ ʟɪsᴛ ⟧\n╔══════════════"
+                        for ids in group:
+                        msgs+="\n╠ ➽ %s" % (ids.displayName)
+                        msgs+="\n╚══════════════\n╠⟦ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀs : %i ⟧\n" % len(group)+"╚══════════════"
+                        dz.sendMessage(msg.to, msgs)
                     elif '/mygroups' in text.lower():
                         dz.sendMessage(msg.to,"My groups")
                     elif '/cancel all' in text.lower():
@@ -946,7 +835,27 @@ def dhenzaBot(op):
                     elif '/boarding' in text.lower():
                         dz.sendMessage(msg.to,"/boarding")
                     elif '/ginfo' in text.lower():
-                        dz.sendMessage(msg.to,"Ginfo")
+                        if msg.toType == 2:
+                            ginfo = dz.getGroup(msg.to)
+                            gCreator = ginfo.creator.displayName
+                            if gCreator is None:
+                                gCreator = "Error"
+                            if ginfo.invitee is None:
+                                sinvitee = "0"
+                            else:
+                                sinvitee = str(len(ginfo.invitee))
+                            if ginfo.preventedJoinByTicket == True:
+                                u = "close"
+                            else:
+                                u = "open"
+                            try:
+                                dz.sendMessage(msg.to,"╔══════════════\n╠═ GROUP NAME \n╠ ➽ " + str(ginfo.name) + "\n╠══════════════\n╠═ GROUP CREATOR \n╠ ➽ " + gCreator + "\n╠══════════════\n╠ ➽ ᴍᴇᴍʙᴇʀs: " + str(len(ginfo.members)) + " ᴍᴇᴍʙᴇʀs\n╠ ➽ ᴘᴇɴᴅɪɴɢ: " + sinvitee + " ᴘᴇᴏᴘʟᴇ\n╠ ➽ ᴜʀʟ : " + u + "\n╚══════════════")
+                                dz.sendMessage(msg.to,"「ɢɪᴅ:」 \n➽ " + msg.to)
+                                dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
+                            except:
+                                dz.sendMessage(msg.to,"╔══════════════\n╠═ GROUP NAME \n╠ ➽ " + str(ginfo.name) + "\n╠══════════════\n╠═ GROUP CREATOR \n╠ ➽ " + gCreator + "\n╚══════════════")
+                                dz.sendMessage(msg.to,"「ɢɪᴅ:」 \n➽ " + msg.to)
+                                dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
                     elif '/calendar' in text.lower():
                         dz.sendImage(msg.to,"/home/pi/Downloads/calendar.jpg")
                     elif '/dlcalendar' in text.lower():
