@@ -886,7 +886,7 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,msg.text)
                     elif "/bus" in text.lower():
                         dz.sendImageWithURL(msg.to,"https://darklegendsgaming.com/buspic")
-                        timeBus = datetime(2019, 8 ,11, 19)
+                        timeBus = datetime(2019, 8 ,22, 22)
                         timediff = timeBus - datetime.now()
                         tdh = (timediff.seconds//3600) + (timediff.days*24)
                         tdm = ((timediff.seconds+60)//60)%60
