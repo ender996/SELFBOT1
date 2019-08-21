@@ -53,6 +53,8 @@ helpMessage ="""╔═══════════
 ╠⍟➣  /games
 ╠⍟➣  /donate
 ╠⍟➣  /merch
+╠⍟➣  /bus
+╠⍟➣  /boarding
 ╠═══════════
 """
 
@@ -645,14 +647,6 @@ def dhenzaBot(op):
                 runtime = timeNow - botStart
                 runtime = format_timespan(runtime)
                 dz.sendMessage(msg.to, "ʙᴏᴛ ʀᴜɴ  {}".format(str(runtime)))
-		
-            elif msg.text in ["/boarding"]:
-                timeBus = datetime(2019, 8 ,11, 19)
-                timediff = timeBus - datetime.now()
-                tdh = (timediff.seconds//3600) + (timediff.days*24)
-                tdm = ((timediff.seconds+60)//60)%60
-                tdn = "Bus boarding in " + str(tdh) + " hours and " + str(tdm) + " minutes"
-                dz.sendMessage(msg.to, tdn)
             
             elif "Spamtag @" in msg.text:
                 _name = msg.text.replace("Spamtag @","")
@@ -903,6 +897,13 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,dlmadmins)
                     elif "/groupid" in text.lower():
                         dz.sendMessage(msg.to,msg.to)
+                    elif "/boarding" in text.lower():
+                        timeBus = datetime(2019, 8 ,11, 19)
+                        timediff = timeBus - datetime.now()
+                        tdh = (timediff.seconds//3600) + (timediff.days*24)
+                        tdm = ((timediff.seconds+60)//60)%60
+                        tdn = "Bus boarding in " + str(tdh) + " hours and " + str(tdm) + " minutes"
+                        dz.sendMessage(msg.to, tdn)
                     else:
                         pass
                 else:
