@@ -809,7 +809,7 @@ def dhenzaBot(op):
                         group = kontak.members
                         msgs="╔══════════════\n╠⟦ ᴍᴇᴍʙᴇʀ ʟɪsᴛ ⟧\n╔══════════════"
                         for ids in group:
-                        msgs+="\n╠ ➽ %s" % (ids.displayName)
+                            msgs+="\n╠ ➽ %s" % (ids.displayName)
                         msgs+="\n╚══════════════\n╠⟦ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀs : %i ⟧\n" % len(group)+"╚══════════════"
                         dz.sendMessage(msg.to, msgs)
                     elif '/mygroups' in text.lower():
