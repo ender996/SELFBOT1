@@ -826,8 +826,6 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/time' in text.lower():
                         dz.sendMessage(msg.to,"Time")
-                    elif '/boarding' in text.lower():
-                        dz.sendMessage(msg.to,"/boarding")
                     elif '/ginfo' in text.lower():
                         if msg.toType == 2:
                             ginfo = dz.getGroup(msg.to)
@@ -895,7 +893,7 @@ def dhenzaBot(op):
                     elif "/groupid" in text.lower():
                         dz.sendMessage(msg.to,msg.to)
                     elif "/boarding" in text.lower():
-                        timeBus = datetime(2019, 8 ,11, 19)
+                        timeBus = datetime(2019, 8 ,22, 22)
                         timediff = timeBus - datetime.now()
                         tdh = (timediff.seconds//3600) + (timediff.days*24)
                         tdm = ((timediff.seconds+60)//60)%60
