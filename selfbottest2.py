@@ -885,7 +885,6 @@ def dhenzaBot(op):
                     elif "testgroup: " in text.lower():
                         dz.sendMessage(msg.to,msg.text)
                     elif "/bus" in text.lower():
-                        dz.sendMessage(msg.to,dlmadmins)
                         dz.sendImageWithURL(msg.to,"https://darklegendsgaming.com/buspic")
                         timeBus = datetime(2019, 8 ,11, 19)
                         timediff = timeBus - datetime.now()
@@ -893,8 +892,6 @@ def dhenzaBot(op):
                         tdm = ((timediff.seconds+60)//60)%60
                         tdn = "Bus boarding in " + str(tdh) + " hours and " + str(tdm) + " minutes"
                         dz.sendMessage(msg.to, tdn)
-                    elif "/dlmadmins" in text.lower():
-                        dz.sendMessage(msg.to,dlmadmins)
                     elif "/groupid" in text.lower():
                         dz.sendMessage(msg.to,msg.to)
                     elif "/boarding" in text.lower():
