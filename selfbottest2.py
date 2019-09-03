@@ -883,22 +883,24 @@ def dhenzaBot(op):
                     elif "testgroup: " in text.lower():
                         dz.sendMessage(msg.to,msg.text)
                     elif "/bus" in text.lower():
-                        dz.sendImageWithURL(msg.to,"https://darklegendsgaming.com/buspic")
-                        timeBus = datetime(2019, 8 ,22, 22)
-                        timediff = timeBus - datetime.now()
-                        tdh = (timediff.seconds//3600) + (timediff.days*24)
-                        tdm = ((timediff.seconds+60)//60)%60
-                        tdn = "Bus boarding in " + str(tdh) + " hours and " + str(tdm) + " minutes"
-                        dz.sendMessage(msg.to, tdn)
+                         dz.sendMessage(msg.to,"No bus scheduled due to guild fest")
+#                        dz.sendImageWithURL(msg.to,"https://darklegendsgaming.com/buspic")
+#                        timeBus = datetime(2019, 8 ,22, 22)
+#                        timediff = timeBus - datetime.now()
+#                        tdh = (timediff.seconds//3600) + (timediff.days*24)
+#                        tdm = ((timediff.seconds+60)//60)%60
+#                        tdn = "Bus boarding in " + str(tdh) + " hours and " + str(tdm) + " minutes"
+#                        dz.sendMessage(msg.to, tdn)
                     elif "/groupid" in text.lower():
                         dz.sendMessage(msg.to,msg.to)
                     elif "/boarding" in text.lower():
-                        timeBus = datetime(2019, 8 ,22, 22)
-                        timediff = timeBus - datetime.now()
-                        tdh = (timediff.seconds//3600) + (timediff.days*24)
-                        tdm = ((timediff.seconds+60)//60)%60
-                        tdn = "Bus boarding in " + str(tdh) + " hours and " + str(tdm) + " minutes"
-                        dz.sendMessage(msg.to, tdn)
+                         dz.sendMessage(msg.to,"No bus scheduled due to guild fest")
+#                        timeBus = datetime(2019, 8 ,22, 22)
+#                        timediff = timeBus - datetime.now()
+#                        tdh = (timediff.seconds//3600) + (timediff.days*24)
+#                        tdm = ((timediff.seconds+60)//60)%60
+#                        tdn = "Bus boarding in " + str(tdh) + " hours and " + str(tdm) + " minutes"
+#                        dz.sendMessage(msg.to, tdn)
                     else:
                         pass
                 else:
