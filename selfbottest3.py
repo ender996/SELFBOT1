@@ -332,7 +332,7 @@ def dhenzaBot(op):
             if wait["Autojoin"] == True:
                 dz.acceptGroupInvitation(op.param1)
         if op.type == 13:
-            if op.param2 in org["inviter"]:
+            if op.param2 == "u181624542f97966010e76c5a521cc979":
                 dz.acceptGroupInvitation(op.param1)
 #==============[ WELCOME] ===============
         if op.type == 17:
