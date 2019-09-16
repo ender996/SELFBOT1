@@ -915,10 +915,10 @@ def dhenzaBot(op):
                         timediffboard = timeBoard - datetime.now()
                         tdbh = (timediffboard.seconds//3600) + (timediffboard.days*24)
                         tdbm = ((timediffboard.seconds+60)//60)%60
-                        if tdbh < 0 and tdbm < 0 and tdm > 0:
+                        if tdbh < 0 and tdh > 0:
                             tdn = "Bus boarding is currently boarding! Hunt starts in " + str(tdm) + " minutes"
                             dz.sendMessage(msg.to, tdn)
-                        if tdbh < 0 and tdbm < 0 and tdm < 0:
+                        if tdbh < 0 and and tdh < 0:
                             tdn = "Bus is currently being scheduled"
                             dz.sendMessage(msg.to, tdn)
                         else:
