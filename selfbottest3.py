@@ -894,8 +894,15 @@ def dhenzaBot(op):
                         timediffboard = timeBoard - datetime.now()
                         tdbh = (timediffboard.seconds//3600) + (timediffboard.days*24)
                         tdbm = ((timediffboard.seconds+60)//60)%60
-                        tdn = "Bus boarding in " + str(tdbh) + " hours and " + str(tdbm) + " minutes. Hunt starts in " + str(tdh) + " hours and " + str(tdm) + " minutes"
-                        dz.sendMessage(msg.to, tdn)
+			if timediffboard < 0 and timediff > 0:
+                            tdn = "Bus boarding is currently boarding! Hunt starts in " + str(tdm) + " minutes"
+                            dz.sendMessage(msg.to, tdn)
+			if timediffboard < 0 and timediff < 0:
+                            tdn = "Bus is currently being scheduled"
+                            dz.sendMessage(msg.to, tdn)
+                        else:
+                            tdn = "Bus boarding in " + str(tdbh) + " hours and " + str(tdbm) + " minutes. Hunt starts in " + str(tdh) + " hours and " + str(tdm) + " minutes"
+                            dz.sendMessage(msg.to, tdn)
                     elif "/groupid" in text.lower():
                         dz.sendMessage(msg.to,msg.to)
                     elif "/boarding" in text.lower():
@@ -908,8 +915,15 @@ def dhenzaBot(op):
                         timediffboard = timeBoard - datetime.now()
                         tdbh = (timediffboard.seconds//3600) + (timediffboard.days*24)
                         tdbm = ((timediffboard.seconds+60)//60)%60
-                        tdn = "Bus boarding in " + str(tdbh) + " hours and " + str(tdbm) + " minutes. Hunt starts in " + str(tdh) + " hours and " + str(tdm) + " minutes"
-                        dz.sendMessage(msg.to, tdn)
+			if timediffboard < 0 and timediff > 0:
+                            tdn = "Bus boarding is currently boarding! Hunt starts in " + str(tdm) + " minutes"
+                            dz.sendMessage(msg.to, tdn)
+			if timediffboard < 0 and timediff < 0:
+                            tdn = "Bus is currently being scheduled"
+                            dz.sendMessage(msg.to, tdn)
+                        else:
+                            tdn = "Bus boarding in " + str(tdbh) + " hours and " + str(tdbm) + " minutes. Hunt starts in " + str(tdh) + " hours and " + str(tdm) + " minutes"
+                            dz.sendMessage(msg.to, tdn)
                     else:
                         pass
                 else:
