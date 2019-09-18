@@ -522,57 +522,6 @@ def dhenzaBot(op):
                     
             elif msg.text in ["Me"]:
             	dz.sendMessage(receiver, None, contentMetadata={'mid': dzMID}, contentType=13)
-            
-            elif msg.text in ["Ginfo"]:
-                if msg.toType == 2:
-                    ginfo = dz.getGroup(msg.to)
-                    gCreator = ginfo.creator.displayName
-                    if gCreator is None:
-                        gCreator = "Error"
-                    if ginfo.invitee is None:
-                        sinvitee = "0"
-                    else:
-                        sinvitee = str(len(ginfo.invitee))
-                    if ginfo.preventedJoinByTicket == True:
-                        u = "close"
-                    else:
-                        u = "open"
-                    try:
-                        dz.sendMessage(msg.to,"╔══════════════\n╠═ GROUP NAME \n╠ ➽ " + str(ginfo.name) + "\n╠══════════════\n╠═ GROUP CREATOR \n╠ ➽ " + gCreator + "\n╠══════════════\n╠ ➽ ᴍᴇᴍʙᴇʀs: " + str(len(ginfo.members)) + " ᴍᴇᴍʙᴇʀs\n╠ ➽ ᴘᴇɴᴅɪɴɢ: " + sinvitee + " ᴘᴇᴏᴘʟᴇ\n╠ ➽ ᴜʀʟ : " + u + "\n╚══════════════")
-                        dz.sendMessage(msg.to,"「ɢɪᴅ:」 \n➽ " + msg.to)
-                        dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
-                    except:
-                        dz.sendMessage(msg.to,"╔══════════════\n╠═ GROUP NAME \n╠ ➽ " + str(ginfo.name) + "\n╠══════════════\n╠═ GROUP CREATOR \n╠ ➽ " + gCreator + "\n╚══════════════")
-                        dz.sendMessage(msg.to,"「ɢɪᴅ:」 \n➽ " + msg.to)
-                        dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
-
-            elif "addinviter @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    G = dz.getGroupIdsJoined()
-                    cgroup = dz.getGroups(G)
-                    ngroup = ""
-                    for mention in mentionees:
-                        org['inviter'][mention['M']] = True
-                        dz.sendMessage(msg.to,"Inviter Added")
-                        with open('org.json', 'w') as fp:
-                            json.dump(org, fp, sort_keys=True, indent=4)
-
-            elif "deleteinviter @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    G = dz.getGroupIdsJoined()
-                    cgroup = dz.getGroups(G)
-                    ngroup = ""
-                    for mention in mentionees:
-                        del org['inviter'][mention['M']]
-                        dz.sendMessage(msg.to,"Inviter Deleted")
-                        with open('org.json', 'w') as fp:
-                            json.dump(org, fp, sort_keys=True, indent=4)
 
             elif msg.text in ["Reject"]:
               if msg.toType == 2:
@@ -674,17 +623,6 @@ def dhenzaBot(op):
                 dz.sendContact(msg.to, blank)	
 
 #=================================================
-            elif "Kick @" in msg.text:
-                if 'MENTION' in msg.contentMetadata.keys() != None:
-                    names = re.findall(r'@(\w+)', msg.text)
-                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                    mentionees = mention['MENTIONEES']
-                    for mention in mentionees:
-                        try:
-                            dz.kickoutFromGroup(msg.to, [mention['M']])							
-                        except:
-                            dz.sendMessage(msg.to, "ʟɪᴍɪᴛ ʙᴏss..")
-#=================================================
             elif msg.text in ["Left on"]:
                 pro["bymsg"]=True
                 with open('pro.json', 'w') as fp:
@@ -706,31 +644,6 @@ def dhenzaBot(op):
                 with open('pro.json', 'w') as fp:
                     json.dump(pro, fp, sort_keys=True, indent=4)
                 dz.sendMessage(msg.to, "ᴡᴇʟʟᴄᴏᴍᴇ ᴍsɢ ɴᴏᴛ ᴀᴄᴛɪᴠᴇ")
-#=============================================
-
-            elif msg.text in ["Status"]:
-                md = "╔════════════════════\n╠SILENT TΣΔM βΩT\n╠════════════════════\n"
-                if wait["Autojoin"] == True: md+="╠➣ᴀᴜᴛᴏᴊᴏɪɴ : ✔\n"
-                else:md+="╠➣ᴀᴜᴛᴏᴊᴏɪɴ : ❌\n"
-                if resp["Tag1"] == True: md+="╠➣ ᴍᴇɴᴛɪᴏɴ1 : ✔\n"
-                else:md+="╠➣ᴍᴇɴᴛɪᴏɴ1 : ❌\n"
-                if resp["Tag2"] == True: md+="╠➣ᴍᴇɴᴛɪᴏɴ2 : ✔\n"
-                else:md+="╠➣ᴍᴇɴᴛɪᴏɴ2 : ❌\n"
-                if resp["Tag3"] == True: md+="╠➣ᴍᴇɴᴛɪᴏɴ3 : ✔\n"
-                else:md+="╠➣ᴍᴇɴᴛɪᴏɴ3 : ❌\n"
-                if wait["Invite"] == True: md+="╠➣ɪɴᴠɪᴛᴇ : ✔\n"
-                else:md+="╠➣ɪɴᴠɪᴛᴇ : ❌\n"
-                if wait["LikeOn"] == True: md+="╠➣ᴀᴜᴛᴏʟɪᴋᴇ : ✔\n"
-                else:md+="╠➣ᴀᴜᴛᴏʟɪᴋᴇ : ❌\n"
-                if wait["getmid"] == True: md+="╠➣ɢᴇᴛ ᴍɪᴅ : ✔\n"
-                else:md+="╠➣ɢᴇᴛ ᴍɪᴅ : ❌\n"
-                if wait["Timeline"] == True: md+="╠➣ɢᴇᴛ ᴘᴏsᴛ : ✔\n"
-                else:md+="╠➣ɢᴇᴛ ᴘᴏsᴛ : ❌\n"
-                if pro["wellcome"] == True: md+="╠➣ᴡeʟʟᴄᴏᴍᴇ ᴛᴇᴋs : ✔\n"
-                else:md+="╠➣ᴡᴇʟʟᴄᴏᴍᴇ ᴛᴇᴋs : ❌\n"
-                if pro["bymsg"] == True: md+="╠➣ʙʏᴇ ᴍsɢ ᴛᴇᴋs : ✔\n╠════════════════════\n╠➣line://ti/p/~tambotprotect\n╠➣line://ti/p/~dhenz415\n╚════════════════════"
-                else:md+="╠➣ʙʏᴇ ᴍsɢ ᴛᴇᴋs : ❌\n╠════════════════════\n╠➣line://ti/p/~tambotprotect\n╠➣line://ti/p/~tambotprotect\n╚════════════════════"
-                dz.sendMessage(msg.to,md)
 
 #=============================================
             elif msg.text in ["My groups"]:
@@ -740,12 +653,6 @@ def dhenzaBot(op):
                         gn = dz.getGroup(i).name
                         h += "╠ ➽ %s\n" % (gn)
                     dz.sendMessage(msg.to,"╔══════════════\n╠⟦ My Groups ⟧\n╔══════════════\n"+ h +"╚══════════════")
-#=============================================
-            elif msg.text in ["Gift"]:
-                    giftnya={'MSGTPL': '5',
-                            'PRDTYPE': 'THEME',
-                            'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58'}           
-                    dz.sendMessage(msg.to,None, contentMetadata=giftnya, contentType=9)
 #=============================================
             elif msg.text in ["Tag"]:
                 group = dz.getGroup(msg.to)
@@ -817,8 +724,6 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"My groups")
                     elif '/cancel all' in text.lower():
                         dz.sendMessage(msg.to,"Cancel all")
-#                    elif 'kick @' in text.lower():
-#                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif 'info @' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif 'addinviter @' in text.lower():
