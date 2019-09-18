@@ -886,42 +886,42 @@ def dhenzaBot(op):
                     elif "/bus" in text.lower():
 #                        dz.sendMessage(msg.to,"No bus scheduled due to guild fest")
                         dz.sendImageWithURL(msg.to,"https://darklegendsgaming.com/buspic")
-                        timeBus = datetime(2019, 9 , 13, 23)
+                        timeBus = datetime(2019, 9 , 19, 0)
                         timediff = timeBus - datetime.now()
                         tdh = (timediff.seconds//3600) + (timediff.days*24)
                         tdm = ((timediff.seconds+60)//60)%60
-                        timeBoard = datetime(2019, 9 , 13, 22, 30)
+                        timeBoard = datetime(2019, 9 , 18, 23, 30)
                         timediffboard = timeBoard - datetime.now()
                         tdbh = (timediffboard.seconds//3600) + (timediffboard.days*24)
                         tdbm = ((timediffboard.seconds+60)//60)%60
-                        if timediffboard < 0 and timediff > 0:
+                        if tdbh < 0 and tdh == 0:
                             tdn = "Bus boarding is currently boarding! Hunt starts in " + str(tdm) + " minutes"
                             dz.sendMessage(msg.to, tdn)
-                        if timediffboard < 0 and timediff < 0:
-                            tdn = "Bus is currently being scheduled"
+                        if tdbh < 0 and tdh < 0:
+                            tdn = "Next bus is currently being scheduled"
                             dz.sendMessage(msg.to, tdn)
-                        else:
+                        if tdbh > 0 and tdh > 0:
                             tdn = "Bus boarding in " + str(tdbh) + " hours and " + str(tdbm) + " minutes. Hunt starts in " + str(tdh) + " hours and " + str(tdm) + " minutes"
                             dz.sendMessage(msg.to, tdn)
                     elif "/groupid" in text.lower():
                         dz.sendMessage(msg.to,msg.to)
                     elif "/boarding" in text.lower():
 #                        dz.sendMessage(msg.to,"No bus scheduled due to guild fest")
-                        timeBus = datetime(2019, 9 ,13, 23)
+                        timeBus = datetime(2019, 9 ,19, 0)
                         timediff = timeBus - datetime.now()
                         tdh = (timediff.seconds//3600) + (timediff.days*24)
                         tdm = ((timediff.seconds+60)//60)%60
-                        timeBoard = datetime(2019, 9 , 13, 22, 30)
+                        timeBoard = datetime(2019, 9 , 18, 23, 30)
                         timediffboard = timeBoard - datetime.now()
                         tdbh = (timediffboard.seconds//3600) + (timediffboard.days*24)
                         tdbm = ((timediffboard.seconds+60)//60)%60
-                        if tdbh < 0 and tdh > 0:
+                        if tdbh < 0 and tdh == 0:
                             tdn = "Bus boarding is currently boarding! Hunt starts in " + str(tdm) + " minutes"
                             dz.sendMessage(msg.to, tdn)
-                        if tdbh < 0 and and tdh < 0:
-                            tdn = "Bus is currently being scheduled"
+                        if tdbh < 0 and tdh < 0:
+                            tdn = "Next bus is currently being scheduled"
                             dz.sendMessage(msg.to, tdn)
-                        else:
+                        if tdbh > 0 and tdh > 0:
                             tdn = "Bus boarding in " + str(tdbh) + " hours and " + str(tdbm) + " minutes. Hunt starts in " + str(tdh) + " hours and " + str(tdm) + " minutes"
                             dz.sendMessage(msg.to, tdn)
                     else:
