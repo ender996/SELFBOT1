@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from humanfriendly import format_timespan, format_size, format_number, format_length
 import time, random, multiprocessing, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib3, urllib.parse, html5lib, wikipedia, atexit, timeit, pafy, youtube_dl, traceback
 
-dz = LINE("EIUE27MPFoyfuCCSDY38.AlUwBuOESO9tzvoy4jATca.eZQ0kdPdOsnviGTxIzZEbqV2MtyWkmozk7yMp5/2cUA=")
+dz = LINE("EJM6D5uSwEYRrEQn0y08.AlUwBuOESO9tzvoy4jATca.F9VaewnAThhXovR2JBV1B/rp/yfFZKLgQWu4rXQ9+O4=")
 dz.log("Auth Token : " + str(dz.authToken))
 dz.log("Timeline Token : " + str(dz.tl.channelAccessToken))
 
@@ -60,20 +60,17 @@ helpMessage ="""╔═══════════
 
 family =""" ✇✇  DLG FAMILY  ✇✇
 ════════════
-══  MAIN GUILDS  ══
-══  DL.    ═  K480 ══ 
+══  DL.    ═  K518 ══ 
 ══  dla    ═  K480 ══
 ══  D@L  ═  K480 ══
 ══  DWL  ═  K241 ══
-══  dl8    ═  K262 ══
+══  dl8    ═  K41 ══
 ══  dDL   ═  K458 ══
 ══  DL^    ═  K262 ══
 ══  dlc    ═  K480 ══
-════════════
-══  SUB  GUILDS  ══
 ══  Dlx     ═  K480 ══
 ══  DLD   ═  K480 ══
-══  DL#  ═  K480 ══
+══  DLP   ═  K277 ══
 ══  pdl     ═  K480 ══
 ══  wDL   ═  K480 ══
 ══  DlL     ═  K488 ══
@@ -329,10 +326,7 @@ def dhenzaBot(op):
             return
 #=================[ NOTIFIED_INVITE_INTO_GROUP ]==============        
         if op.type == 13:
-            if wait["Autojoin"] == True:
-                dz.acceptGroupInvitation(op.param1)
-        if op.type == 13:
-            if op.param2 == "u6fd63b2d8788d09692f671ef0bc3201d" or "u181624542f97966010e76c5a521cc979":
+            if op.param2 == "u6fd63b2d8788d09692f671ef0bc3201d":
                 dz.acceptGroupInvitation(op.param1)
 #==============[ WELCOME] ===============
         if op.type == 17:
@@ -598,7 +592,7 @@ def dhenzaBot(op):
                 runtime = format_timespan(runtime)
                 dz.sendMessage(msg.to, "ʙᴏᴛ ʀᴜɴ  {}".format(str(runtime)))
             
-            elif "Spamtag @" in msg.text:
+            elif "Spamtag @" in msg.text: 
                 _name = msg.text.replace("Spamtag @","")
                 _nametarget = _name.rstrip(' ')
                 gs = dz.getGroup(msg.to)
@@ -706,7 +700,7 @@ def dhenzaBot(op):
                 if wait["mimic"] == True:
                     if 'tagall' in text.lower():
                         dz.sendMessage(msg.to,"Tag")
-                    elif 'Spamtag @' in msg.text:
+                    elif 'Spamtag @' in msg.text: 
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/help' in text.lower():
                         dz.sendMessage(msg.to,helpMessage)
@@ -826,7 +820,7 @@ def dhenzaBot(op):
                         if tdbh < 0 and tdh < 0:
                             tdn = "Next bus is currently being scheduled"
                             dz.sendMessage(msg.to, tdn)
-                        if tdbh > 0 and tdh > 0:
+                        if tdbh >= 0 and tdh > 0:
                             tdn = "Bus boarding in " + str(tdbh) + " hours and " + str(tdbm) + " minutes. Hunt starts in " + str(tdh) + " hours and " + str(tdm) + " minutes"
                             dz.sendMessage(msg.to, tdn)
                     else:
