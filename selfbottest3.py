@@ -327,10 +327,10 @@ def dhenzaBot(op):
 #==============[ WELCOME] ===============
         if op.type == 17:
             ginfo = dz.getGroup(op.param1)
-                if op.param1 == "cd6ef278e18b895a1dbfc371c230201d4":
-                    dzx = dz.getContact(op.param2)
-                    dz.sendMessage(op.param1, "Hello " + str(dzx.displayName) + "\nWelcome to " + str(ginfo.name))
-                    dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/" + dzx.pictureStatus)
+            if op.param1 == "cd6ef278e18b895a1dbfc371c230201d4":
+                dzx = dz.getContact(op.param2)
+                dz.sendMessage(op.param1, "Hello " + str(dzx.displayName) + "\nWelcome to " + str(ginfo.name))
+                dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/" + dzx.pictureStatus)
 
         if op.type == 25:
             msg = op.message
