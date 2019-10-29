@@ -326,19 +326,10 @@ def dhenzaBot(op):
                 dz.acceptGroupInvitation(op.param1)
 #==============[ WELCOME] ===============
         if op.type == 17:
-            if pro["wellcome"] == True:
-                if op.param1 in pro["Protectjoin"]:
-                    if op.param2 not in org["invitan"]:
-                        pass
-                    else:
-                        ginfo = dz.getGroup(op.param1)
-                        dzx = dz.getContact(op.param2)
-                        dz.sendMessage(op.param1, "Ehhh  " + str(dzx.displayName) + "\nWellcome to " + str(ginfo.name) +"\n"+ Dhenza["welmsg"])
-                        dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/" + ydx.pictureStatus)
-                else:
-                    ginfo = dz.getGroup(op.param1)
+            ginfo = dz.getGroup(op.param1)
+                if op.param1 == "cd6ef278e18b895a1dbfc371c230201d4":
                     dzx = dz.getContact(op.param2)
-                    dz.sendMessage(op.param1, "Ehhh  " + str(dzx.displayName) + "\nWellcome to " + str(ginfo.name) +"\n"+ Dhenza["welmsg"])
+                    dz.sendMessage(op.param1, "Hello " + str(dzx.displayName) + "\nWelcome to " + str(ginfo.name))
                     dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/" + dzx.pictureStatus)
 
         if op.type == 25:
