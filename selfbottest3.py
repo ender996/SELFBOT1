@@ -330,7 +330,7 @@ def dhenzaBot(op):
             if op.param1 == "cd6ef278e18b895a1dbfc371c230201d4":
                 dzx = dz.getContact(op.param2)
                 dz.sendMessage(op.param1, "Hello " + str(dzx.displayName) + "!\n\nWelcome to " + str(ginfo.name) + ".")
-                dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/" + ginfo.pictureStatus)
+                dz.sendImage(msg.to,"/home/pi/Downloads/welcome.png")
 
         if op.type == 25:
             msg = op.message
