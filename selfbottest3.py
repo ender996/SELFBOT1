@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from humanfriendly import format_timespan, format_size, format_number, format_length
 import time, random, multiprocessing, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib3, urllib.parse, html5lib, wikipedia, atexit, timeit, pafy, youtube_dl, traceback
 
-dz = LINE("EJM6D5uSwEYRrEQn0y08.AlUwBuOESO9tzvoy4jATca.F9VaewnAThhXovR2JBV1B/rp/yfFZKLgQWu4rXQ9+O4=")
+dz = LINE("EKv4DxRG9K99SbmN0Ns8.AlUwBuOESO9tzvoy4jATca.DCWRyQT3qUX9tSQYHsc/sARyi+pVnnIGRf9F8XK67/c=")
 dz.log("Auth Token : " + str(dz.authToken))
 dz.log("Timeline Token : " + str(dz.tl.channelAccessToken))
 
@@ -61,18 +61,14 @@ helpMessage ="""╔═══════════
 family =""" ✇✇  DLG FAMILY  ✇✇
 ════════════
 ══  DL.    ═  K518 ══ 
-══  dla    ═  K480 ══
 ══  D@L  ═  K480 ══
-══  DWL  ═  K241 ══
 ══  dl8    ═  K41 ══
 ══  dDL   ═  K458 ══
-══  DL^    ═  K262 ══
-══  dlc    ═  K480 ══
-══  Dlx     ═  K480 ══
-══  DLD   ═  K480 ══
+══  DL^    ═  K583 ══
+══  DLD   ═  K518 ══
 ══  DLP   ═  K277 ══
 ══  pdl     ═  K480 ══
-══  wDL   ═  K480 ══
+══  wDL   ═  K518 ══
 ══  DlL     ═  K488 ══
 ════════════
 """
