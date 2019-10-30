@@ -67,8 +67,8 @@ family =""" ✇✇  DLG FAMILY  ✇✇
 ══  DL^    ═  K583 ══
 ══  DLD   ═  K518 ══
 ══  DLP   ═  K277 ══
-══  pdl     ═  K480 ══
-══  wDL   ═  K518 ══
+══  pdl     ═  K517 ══
+══  wDL   ═  K517 ══
 ══  DlL     ═  K488 ══
 ════════════
 """
