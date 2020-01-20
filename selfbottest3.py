@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from humanfriendly import format_timespan, format_size, format_number, format_length
 import time, random, multiprocessing, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib3, urllib.parse, html5lib, wikipedia, atexit, timeit, pafy, youtube_dl, traceback
 
-dz = LINE("EKv4DxRG9K99SbmN0Ns8.AlUwBuOESO9tzvoy4jATca.DCWRyQT3qUX9tSQYHsc/sARyi+pVnnIGRf9F8XK67/c=")
+dz = LINE("EMohmFMeyUB3a003kkC8.AlUwBuOESO9tzvoy4jATca.c0BAzNbPwxQwPwF0BEqhh5Viy+Waxgr9KinVrGsiIPY=")
 dz.log("Auth Token : " + str(dz.authToken))
 dz.log("Timeline Token : " + str(dz.tl.channelAccessToken))
 
@@ -60,13 +60,12 @@ helpMessage ="""╔═══════════
 
 family =""" ✇✇  DLG FAMILY  ✇✇
 ════════════
-══  DL.    ═  K518 ══ 
+══  DL.    ═  K565 ══ 
 ══  D@L  ═  K480 ══
 ══  dl8    ═  K41 ══
 ══  dDL   ═  K458 ══
-══  DL^    ═  K583 ══
-══  DLD   ═  K518 ══
-══  DLP   ═  K277 ══
+══  DL^    ═  K240 ══
+══  DLD   ═  K565 ═
 ══  pdl     ═  K517 ══
 ══  wDL   ═  K517 ══
 ══  DlL     ═  K488 ══
@@ -744,8 +743,6 @@ def dhenzaBot(op):
                                 dz.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
                     elif '/calendar' in text.lower():
                         dz.sendImage(msg.to,"/home/pi/Downloads/calendar.jpg")
-                    elif '/dlcalendar' in text.lower():
-                        dz.sendImage(msg.to,"/home/pi/Downloads/dlcalendar.jpg")
                     elif '/runtime' in text.lower():
                         dz.sendMessage(msg.to,"Runtime")
                     elif '/website' in text.lower():
