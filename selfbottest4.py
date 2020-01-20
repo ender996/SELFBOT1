@@ -161,17 +161,6 @@ pro = {
     "Autokick":{}
     }
 
-Dhenza = {
-    "comment":"╔═════════════════════\nAuto like by:TBP\n╚══════════════════════",
-    "cctvteks":"Masuk sayang\nUdah keciduk juga",
-    "message":"╔═════════════════════\nThanks for adding me!\n╚══════════════════════",
-    "welmsg":"╔═════════════════════\nSILENT TΣΔM βΩT\n╚══════════════════════",
-    "leftmsg":"╔═════════════════════\nSILENT TΣΔM βΩT\n╚══════════════════════",
-    "tagteks1":"Tag mau minta jajan ya",
-    "tagteks2":"iya syang",
-    "tagteks3":"kangen ya//-.."
-	}
-
 resp = {
     "csticker1":False,
     "csticker2":False,
@@ -297,61 +286,6 @@ def dhenzaBot(op):
                 dz.sendMessage(op.param1, "Hello " + str(dzx.displayName) + "!\n\nWelcome to " + str(ginfo.name) + ".")
                 dz.sendImage(op.param1,"/home/pi/Downloads/welcome.png")
 
-        if op.type == 25:
-            msg = op.message
-            text = msg.text
-            msg_id = msg.id
-            receiver = msg.to
-            sender = msg._from
-            if msg.toType == 2:
-                if msg.contentType == 7:
-                    if resp["csticker1"] == True:
-                        msg.contentType = 0
-                        stk_id = msg.contentMetadata['STKID']
-                        stk_ver = msg.contentMetadata['STKVER']
-                        pkg_id = msg.contentMetadata['STKPKGID']
-                        tikell = "STKID1: %s STKPKGID: %s STKVER: %s" % (stk_id,pkg_id,stk_ver)
-                        dz.sendMessage(msg.to, tikell)
-
-                    elif resp["csticker2"] == True:
-                        msg.contentType = 0
-                        stk_id = msg.contentMetadata['STKID']
-                        stk_ver = msg.contentMetadata['STKVER']
-                        pkg_id = msg.contentMetadata['STKPKGID']
-                        tikell = "STKID2: %s STKPKGID: %s STKVER: %s" % (stk_id,pkg_id,stk_ver)
-                        dz.sendMessage(msg.to, tikell)
-
-                    elif resp["csticker3"] == True:
-                        msg.contentType = 0
-                        stk_id = msg.contentMetadata['STKID']
-                        stk_ver = msg.contentMetadata['STKVER']
-                        pkg_id = msg.contentMetadata['STKPKGID']
-                        tikell = "STKID3: %s STKPKGID: %s STKVER: %s" % (stk_id,pkg_id,stk_ver)
-                        dz.sendMessage(msg.to, tikell)
-                    else:
-                        pass
-                        
-                if msg.contentType == 13:
-                    if wait["atarget"]==True:
-                        if msg.contentMetadata["mid"] in org["Target"]:
-                            dz.sendMessage(msg.to, "was save")
-                            wait["atarget"]=False
-                        else:
-                            org["Target"][msg.contentMetadata["mid"]] = True
-                            with open('org.json', 'w') as fp:
-                                json.dump(org, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to, "save succes")
-                            wait["atarget"]=False
-
-                    elif wait["dtarget"]==True:
-                        if msg.contentMetadata["mid"] in org["Target"]:
-                            del org["Target"][msg.contentMetadata["mid"]]
-                            with open('org.json', 'w') as fp:
-                                json.dump(org, fp, sort_keys=True, indent=4)
-                            wait["dtarget"]=False
-                            dz.sendMessage(msg.to,"Target deleted")
-                        else:
-                            dz.sendMessage(msg.to,"Target not found")
 #==================[ RECEIVE_MESSAGE ]===============
         if op.type == 25:
                 msg = op.message
