@@ -53,8 +53,6 @@ helpMessage ="""╔═══════════
 ╠⍟➣  /games
 ╠⍟➣  /donate
 ╠⍟➣  /merch
-╠⍟➣  /bus
-╠⍟➣  /boarding
 ╠═══════════
 """
 
@@ -91,43 +89,6 @@ tech =""" DLG Tech Team
 ════════════
 [TUE] ShirleysTemple
 ➣ Graphic Design
-════════════
-"""
-
-dlmadmins =""" DLm Bus Admins
-════════════
-[DLm/dla] Veruca Salt
-➣ Saltyv
-════════════
-[dla] Phleth
-➣ phleth
-════════════
-[dla] xAstraea
-➣ xcalliope
-════════════
-[dla] Zambuki
-➣ zambuki
-════════════
-[dla] Lady 
-➣ bb2387 
-════════════
-[DL.] |6| SIX |6|
-➣ 6sixxx6
-════════════
-[DWL] Morgool
-➣ wargool
-════════════
-[dla] Sarge Pepper
-➣ wtwhitloc
-════════════
-[dla/Dlx] Ms2Pac
-➣ msjsoconfident 
-════════════
-[dla] Gold Factory
-➣ jdhalf2727
-════════════
-[dla] I Am Rocket
-➣ tjnocar
 ════════════
 """
 
@@ -330,13 +291,11 @@ def dhenzaBot(op):
                 dzx = dz.getContact(op.param2)
                 dz.sendMessage(op.param1, "Hello " + str(dzx.displayName) + "!\n\nWelcome to " + str(ginfo.name) + ".")
                 dz.sendImage(op.param1,"/home/pi/Downloads/welcome.png")
-                dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
 
             if op.param1 == "c172a26b3b8f25ace97aa892c14832039":
                 dzx = dz.getContact(op.param2)
                 dz.sendMessage(op.param1, "Hello " + str(dzx.displayName) + "!\n\nWelcome to " + str(ginfo.name) + ".")
                 dz.sendImage(op.param1,"/home/pi/Downloads/welcome.png")
-                dz.sendImageWithURL(op.param1,"http://dl.profile.line-cdn.net/"+ ginfo.pictureStatus)
 
         if op.type == 25:
             msg = op.message
@@ -393,102 +352,6 @@ def dhenzaBot(op):
                             dz.sendMessage(msg.to,"Target deleted")
                         else:
                             dz.sendMessage(msg.to,"Target not found")
-#=====================[ MODE SILENT ]=================--======
-                if msg.contentType == 13:
-                    if wait["asilent"]==True:
-                        if msg.contentMetadata["mid"] in org["Silent"]:
-                            dz.sendMessage(msg.to, "siap on bos")
-                            wait["asilent"]=False
-                        else:
-                            org["Silent"][msg.contentMetadata["mid"]] = True
-                            with open('org.json', 'w') as fp:
-                                json.dump(org, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to, "TBP succes")
-                            wait["asilent"]=False
-
-                    elif wait["dsilent"]==True:
-                        if msg.contentMetadata["mid"] in org["Silent"]:
-                            del org["Silent"][msg.contentMetadata["mid"]]
-                            with open('org.json', 'w') as fp:
-                                json.dump(org, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"Silent deleted")
-                            wait["dsilent"]=False
-                        else:
-                            dz.sendMessage(msg.to,"Silent not found")
-                            wait["dsilent"]=False
-                    else:
-                        pass
-#=====================[ SEPAM ]========================
-                if msg.contentType == 13:
-                    if wait["getmid"]==True:
-                        x = msg.contentMetadata["mid"]
-                        dz.sendMessage(msg.to,x)
-                        wait["getmid"]=False
-
-                if msg.contentType == 13:
-                    if wait["santet"]==True:
-                        x = msg.contentMetadata["mid"]
-                        dz.findAndAddContactsByMid(x)
-                        try:
-                            M = Message()
-                            M.to = x
-                            M.contentType = 13
-                            M.contentMetadata = {'mid': "'"}
-                            dz.sendMessage(M)
-                            dz.sendMessage(M)
-                            wait["santet"]=False
-                        except:
-                            pass
-#========================[ INVITE ]===================
-                if msg.contentType == 13:
-                    if wait["afriend"]==True:
-                        if msg.contentMetadata["mid"] in org["Friend"]:
-                            dz.sendMessage(msg.to, "Team done")
-                            wait["afriend"]=False
-                        else:
-                            org["Friend"][msg.contentMetadata["mid"]] = True
-                            with open('org.json', 'w') as fp:
-                                json.dump(org, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to, "Tem succes")
-                            wait["afriend"]=False
-
-                    elif wait["dfriend"]==True:
-                        if msg.contentMetadata["mid"] in org["Friend"]:
-                            del org["Friend"][msg.contentMetadata["mid"]]
-                            with open('org.json', 'w') as fp:
-                                json.dump(org, fp, sort_keys=True, indent=4)
-                            dz.sendMessage(msg.to,"Hapus teman")
-                            wait["dfriend"]=False
-                        else:
-                            dz.sendMessage(msg.to,"Teman tidak di temukan")
-                            wait["dfriend"]=False
-
-#=====================[ MODE INVITE ]==================
-                if msg.contentType == 13:
-                    if wait["Invite"] == True:
-                        _name = msg.contentMetadata["displayName"]
-                        invite = msg.contentMetadata["mid"]
-                        groups = dz.getGroup(msg.to)
-                        pending = groups.invitee
-                        targets = []
-                        for s in groups.members:
-                            if _name in s.displayName:
-                                dz.sendMessage(msg.to,"-> " + _name + " was here")
-                                wait["Invite"] = False
-                                break         
-                            else:
-                                targets.append(invite)
-                        if targets == []:
-                            pass
-                        else:
-                            for target in targets:
-                                dz.findAndAddContactsByMid(target)
-                                dz.inviteIntoGroup(msg.to,[target])
-                                dz.sendMessage(msg.to,"sᴜᴄᴄᴇs ᴍᴇɴɢɪɴᴠɪᴛᴇ ᴊᴏᴍʙʟᴏ ɪɴɪ \n➡" + _name)
-                                wait["Invite"] = False
-                                break
-                else:
-                    pass
 #==================[ RECEIVE_MESSAGE ]===============
         if op.type == 25:
                 msg = op.message
@@ -523,10 +386,6 @@ def dhenzaBot(op):
                 for i in gid:
                     dz.sendMessage(i,bc+"\n\nDLG TEAM")
 
-            elif "testgroup: " in msg.text:
-                bc = msg.text.replace("testgroup: ","")
-                dz.sendMessage("cd6ef278e18b895a1dbfc371c230201d4",bc+"\n\nDLG TEAM")
-
             elif "Gmid @" in msg.text:
                 if 'MENTION' in msg.contentMetadata.keys() != None:
                     names = re.findall(r'@(\w+)', msg.text)
@@ -552,32 +411,9 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,"Please wait")
                         restartBot()
                         pass
-                        
-            elif msg.text in ["Sp"]:
-                start = time.time()
-                dz.sendMessage(msg.to, "One sec Boss..")
-                elapsed_time = time.time() - start
-                dz.sendMessage(msg.to, "%ss" % (elapsed_time))
-                
             elif msg.text in ["Refresh"]:
                     dz.sendMessage(msg.to, "Bot has been restarted")
                     restart_program()
-                    
-            elif msg.text in ["Time"]:
-                timeNow = datetime.now()
-                timeHours = datetime.strftime(timeNow,"(%H:%M)")
-                day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
-                hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
-                bulan = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-                inihari = datetime.today()
-                hr = inihari.strftime('%A')
-                bln = inihari.strftime('%m')
-                for i in range(len(day)):
-                    if hr == day[i]: hasil = day[i]
-                for k in range(0, len(bulan)):
-                    if bln == str(k): bln = bulan[k-1]
-                rst = hasil + ", " + inihari.strftime('%d') + " - " + bln + " - " + inihari.strftime('%Y') + "\nTime : [ " + inihari.strftime('%H:%M:%S') + " ]"
-                dz.sendMessage(msg.to, rst)
                 
             elif msg.text in ["Runtime"]:
                 timeNow = time.time()
@@ -608,30 +444,6 @@ def dhenzaBot(op):
             elif msg.text in ["/blank"]:
                 blank = "'"
                 dz.sendContact(msg.to, blank)	
-
-#=================================================
-            elif msg.text in ["Left on"]:
-                pro["bymsg"]=True
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to, "ᴏᴜᴛ ᴍᴇssᴀɢᴇ ᴀᴄᴛɪᴠᴇ")
-            elif msg.text in ["Left off"]:
-                pro["bymsg"]=False
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to, "ᴏᴜᴛ ᴍᴇssᴀɢᴇ ɴᴏᴛ ᴀᴄᴛɪᴠᴇ")
-#=================================================
-            elif msg.text in ["Welcome on"]:
-                pro["wellcome"]=True
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to, "ᴡᴇʟʟᴄᴏᴍᴇ ᴍsɢ ᴀᴄᴛɪᴠᴇ")
-            elif msg.text in ["Welcome off"]:
-                pro["wellcome"]= False
-                with open('pro.json', 'w') as fp:
-                    json.dump(pro, fp, sort_keys=True, indent=4)
-                dz.sendMessage(msg.to, "ᴡᴇʟʟᴄᴏᴍᴇ ᴍsɢ ɴᴏᴛ ᴀᴄᴛɪᴠᴇ")
-
 #=============================================
             elif msg.text in ["My groups"]:
                     gid = dz.getGroupIdsJoined()
@@ -654,17 +466,6 @@ def dhenzaBot(op):
                         s += 7
                         txt += u'@Zero \n'
                     dz.sendMessage(msg.to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
-#=============================================
-            elif msg.text in ["Recover"]:
-                thisgroup = dz.getGroups([msg.to])
-                Mids = [contact.mid for contact in thisgroup[0].members]
-                mi_d = Mids[:33]
-                dz.createGroup("test", mi_d)
-                dz.sendMessage(msg.to,"done")
-#=============================================
-            elif msg.text in ["Welcome"]:
-                gs = dz.getGroup(msg.to)
-                dz.sendMessage(msg.to,"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ "+ gs.name)
 #=============================================
             elif msg.text in ["Cancel all"]:
                 group = dz.getGroup(msg.to)
@@ -712,10 +513,6 @@ def dhenzaBot(op):
                     elif '/cancel all' in text.lower():
                         dz.sendMessage(msg.to,"Cancel all")
                     elif 'info @' in text.lower():
-                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
-                    elif 'addinviter @' in text.lower():
-                        dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
-                    elif 'deleteinviter @' in text.lower():
                         dz.sendMessage(msg.to,msg.text,msg.contentMetadata)
                     elif '/time' in text.lower():
                         dz.sendMessage(msg.to,"Time")
@@ -773,47 +570,8 @@ def dhenzaBot(op):
                         dz.sendMessage(msg.to,msg.text)
                     elif "testgroup: " in text.lower():
                         dz.sendMessage(msg.to,msg.text)
-                    elif "/bus" in text.lower():
-#                        dz.sendMessage(msg.to,"No bus scheduled due to guild fest")
-                        dz.sendImageWithURL(msg.to,"https://darklegendsgaming.com/buspic")
-                        timeBus = datetime(2019, 9 , 19, 0)
-                        timediff = timeBus - datetime.now()
-                        tdh = (timediff.seconds//3600) + (timediff.days*24)
-                        tdm = ((timediff.seconds+60)//60)%60
-                        timeBoard = datetime(2019, 9 , 18, 23, 30)
-                        timediffboard = timeBoard - datetime.now()
-                        tdbh = (timediffboard.seconds//3600) + (timediffboard.days*24)
-                        tdbm = ((timediffboard.seconds+60)//60)%60
-                        if tdbh < 0 and tdh == 0:
-                            tdn = "Bus boarding is currently boarding! Hunt starts in " + str(tdm) + " minutes"
-                            dz.sendMessage(msg.to, tdn)
-                        if tdbh < 0 and tdh < 0:
-                            tdn = "Next bus is currently being scheduled"
-                            dz.sendMessage(msg.to, tdn)
-                        if tdbh > 0 and tdh > 0:
-                            tdn = "Bus boarding in " + str(tdbh) + " hours and " + str(tdbm) + " minutes. Hunt starts in " + str(tdh) + " hours and " + str(tdm) + " minutes"
-                            dz.sendMessage(msg.to, tdn)
                     elif "/groupid" in text.lower():
                         dz.sendMessage(msg.to,msg.to)
-                    elif "/boarding" in text.lower():
-#                        dz.sendMessage(msg.to,"No bus scheduled due to guild fest")
-                        timeBus = datetime(2019, 9 ,19, 0)
-                        timediff = timeBus - datetime.now()
-                        tdh = (timediff.seconds//3600) + (timediff.days*24)
-                        tdm = ((timediff.seconds+60)//60)%60
-                        timeBoard = datetime(2019, 9 , 18, 23, 30)
-                        timediffboard = timeBoard - datetime.now()
-                        tdbh = (timediffboard.seconds//3600) + (timediffboard.days*24)
-                        tdbm = ((timediffboard.seconds+60)//60)%60
-                        if tdbh < 0 and tdh == 0:
-                            tdn = "Bus boarding is currently boarding! Hunt starts in " + str(tdm) + " minutes"
-                            dz.sendMessage(msg.to, tdn)
-                        if tdbh < 0 and tdh < 0:
-                            tdn = "Next bus is currently being scheduled"
-                            dz.sendMessage(msg.to, tdn)
-                        if tdbh >= 0 and tdh > 0:
-                            tdn = "Bus boarding in " + str(tdbh) + " hours and " + str(tdbm) + " minutes. Hunt starts in " + str(tdh) + " hours and " + str(tdm) + " minutes"
-                            dz.sendMessage(msg.to, tdn)
                     else:
                         pass
                 else:
