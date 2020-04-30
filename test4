@@ -1,0 +1,16 @@
+try:
+    header = "ios_ipad"
+    auth = "Z6vMBEnkp04n"
+    result = json.loads(requests.get("https://api.boteater.us/line_qr_v>    
+    print("Login IP: {}".format(result["result"]["login_ip"]))              
+    print("QR Link: {}".format(result["result"]["qr_link"]))
+    result = json.loads(requests.get(result["result"]["callback"]+"&aut>    
+    if result["status"] != 200:
+      raise Exception("Timeout!!!")
+    print("Pincode: "+result["result"]["pin_code"])
+    result = json.loads(requests.get(result["result"]["callback"]+"&aut>    
+    if result["status"] != 200:                                               
+    raise Exception("Timeout!!!")
+    Client = LINE(result["result"]["token"],appName="IOSIPAD\t>    
+    print("Login Sukses")
+except:pass
